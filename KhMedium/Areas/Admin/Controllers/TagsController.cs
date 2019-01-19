@@ -38,16 +38,19 @@ namespace KhMedium.Areas.Admin.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Create(Tag tag)
         {
+            tag.Id = Guid.NewGuid().ToString();
+            tag.CreatedAt = DateTime.Now;
+
             if (!ModelState.IsValid)
                 return View(tag);
 
-            tag.Id = Guid.NewGuid().ToString();
             _context.Tags.Add(tag);
             _context.Complete();
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edits(String id)
@@ -57,6 +60,7 @@ namespace KhMedium.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edits(String id, Tag tag)
         {
             if (!ModelState.IsValid)
