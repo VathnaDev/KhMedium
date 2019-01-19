@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class BookmarkRepository : Repository<BookmarkModel> , IBookmarkRepository
+    public class BookmarkRepository : Repository<Bookmark> , IBookmarkRepository
     {
         public BookmarkRepository(DbContext context) : base(context)
         {

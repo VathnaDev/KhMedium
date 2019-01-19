@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class ShareRepository : Repository<ShareModel> , IShareRepository
+    public class ShareRepository : Repository<Share> , IShareRepository
     {
         public ShareRepository(DbContext context) : base(context)
         {

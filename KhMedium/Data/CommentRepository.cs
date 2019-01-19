@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class CommentRepository : Repository<CommentModel>, ICommentRepository
+    public class CommentRepository : Repository<Comment>, ICommentRepository
     {
         public CommentRepository(DbContext context) : base(context)
         {

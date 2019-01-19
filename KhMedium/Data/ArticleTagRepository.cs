@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class ArticleTagRepository : Repository<ArticleTagModel>, IArticleTagRepository
+    public class ArticleTagRepository : Repository<ArticleTag>, IArticleTagRepository
     {
         public ArticleTagRepository(DbContext context) : base(context)
         {

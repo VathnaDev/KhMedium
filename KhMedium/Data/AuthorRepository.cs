@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class AuthorRepository : Repository<AuthorModel>, IAuthorRepository
+    public class AuthorRepository : Repository<Author>, IAuthorRepository
     {
         public AuthorRepository(DbContext context) : base(context)
         {
