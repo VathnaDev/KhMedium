@@ -1,0 +1,1544 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<style type="text/css" data-fela-rehydration="236" data-fela-type="STATIC">
+    html {
+        box-sizing: border-box
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: rgba(0,0,0,0.8);
+        position: relative;
+        min-height: 100vh
+    }
+
+    h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
+        margin: 0
+    }
+
+    menu, ol, ul {
+        padding: 0;
+        list-style: none;
+        list-style-image: none
+    }
+
+    main {
+        display: block
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none
+    }
+
+    a, button, input {
+        -webkit-tap-highlight-color: transparent
+    }
+
+    img, svg {
+        vertical-align: middle
+    }
+
+    button {
+        background: transparent;
+        overflow: visible
+    }
+
+    button, input, optgroup, select, textarea {
+        margin: 0
+    }
+</style>
+<style type="text/css" data-fela-rehydration="236" data-fela-type="RULE">
+    .a {
+        font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif
+    }
+
+    .b {
+        font-weight: 400
+    }
+
+    .c {
+        display: block
+    }
+
+    .d {
+        position: absolute
+    }
+
+    .e {
+        top: 0
+    }
+
+    .f {
+        left: 0
+    }
+
+    .g {
+        right: 0
+    }
+
+    .h {
+        background-color: rgba(255, 255, 255, 1)
+    }
+
+    .i {
+        z-index: 500
+    }
+
+    .j {
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05)
+    }
+
+    .k {
+        padding-left: 24px
+    }
+
+    .l {
+        padding-right: 24px
+    }
+
+    .m {
+        margin-left: auto
+    }
+
+    .n {
+        margin-right: auto
+    }
+
+    .o {
+        width: 100%
+    }
+
+    .p {
+        max-width: 1080px
+    }
+
+    .q {
+        box-sizing: border-box
+    }
+
+    .r {
+        height: 65px
+    }
+
+    .s {
+        display: flex
+    }
+
+    .t {
+        align-items: center
+    }
+
+    .w {
+        flex: 1 0 auto
+    }
+
+    .y {
+        fill: rgba(0, 0, 0, 0.84)
+    }
+
+    .z {
+        display: none
+    }
+
+    .ae {
+        margin-left: 10px
+    }
+
+    .af {
+        margin-top: 1px
+    }
+
+    .ag {
+        font-family: 'Helvetica Neue', sans-serif
+    }
+
+    .ah {
+        font-size: 20px
+    }
+
+    .ai {
+        color: rgba(0, 0, 0, 0.84)
+    }
+
+    .aj {
+        margin-top: 7px
+    }
+
+    .ak {
+        display: -webkit-box
+    }
+
+    .al {
+        -webkit-line-clamp: 1
+    }
+
+    .am {
+        -webkit-box-orient: vertical
+    }
+
+    .an {
+        overflow: hidden
+    }
+
+    .as {
+        flex: 0 0 auto
+    }
+
+    .at {
+        color: inherit
+    }
+
+    .au {
+        fill: inherit
+    }
+
+    .av {
+        font-size: inherit
+    }
+
+    .aw {
+        border: inherit
+    }
+
+    .ax {
+        font-family: inherit
+    }
+
+    .ay {
+        letter-spacing: inherit
+    }
+
+    .az {
+        font-weight: inherit
+    }
+
+    .ba {
+        padding: 0
+    }
+
+    .bb {
+        margin: 0
+    }
+
+    .bc:hover {
+        cursor: pointer
+    }
+
+    .bd:hover {
+        color: rgba(0, 0, 0, 0.9)
+    }
+
+    .be:hover {
+        fill: rgba(0, 0, 0, 0.9)
+    }
+
+    .bf:focus {
+        outline: none
+    }
+
+    .bg:disabled {
+        cursor: default
+    }
+
+    .bh:disabled {
+        color: rgba(0, 0, 0, 0.54)
+    }
+
+    .bi:disabled {
+        fill: rgba(0, 0, 0, 0.54)
+    }
+
+    .bj {
+        font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif
+    }
+
+    .bk {
+        font-style: normal
+    }
+
+    .bl {
+        line-height: 20px
+    }
+
+    .bm {
+        font-size: 15.8px
+    }
+
+    .bn {
+        letter-spacing: 0px
+    }
+
+    .bo {
+        color: rgba(0, 0, 0, 0.54)
+    }
+
+    .bp {
+        fill: rgba(0, 0, 0, 0.54)
+    }
+
+    .bq {
+        margin-left: 16px
+    }
+
+    .br {
+        color: rgba(2, 158, 116, 1)
+    }
+
+    .bs {
+        fill: rgba(3, 168, 124, 1)
+    }
+
+    .bt:hover {
+        color: rgba(1, 143, 105, 1)
+    }
+
+    .bu:hover {
+        fill: rgba(2, 158, 116, 1)
+    }
+
+    .bv {
+        padding: 8px 16px
+    }
+
+    .bw {
+        background: 0
+    }
+
+    .bx {
+        border-color: rgba(3, 168, 124, 1)
+    }
+
+    .by:hover {
+        border-color: rgba(2, 158, 116, 1)
+    }
+
+    .bz {
+        border-radius: 4px
+    }
+
+    .ca {
+        border-width: 1px
+    }
+
+    .cb {
+        border-style: solid
+    }
+
+    .cc {
+        display: inline-block
+    }
+
+    .cd {
+        text-decoration: none
+    }
+
+    .ce {
+        margin-bottom: 64px
+    }
+
+    .cg {
+        justify-content: space-between
+    }
+
+    .ch {
+        max-width: 680px
+    }
+
+    .cl {
+        text-align: inherit
+    }
+
+    .cm {
+        font-weight: 600
+    }
+
+    .cn {
+        line-height: 32px
+    }
+
+    .co {
+        font-size: 28.8px
+    }
+
+    .cp {
+        letter-spacing: -0.62px
+    }
+
+    .cq {
+        max-height: 64px
+    }
+
+    .cr {
+        text-overflow: ellipsis
+    }
+
+    .cs {
+        margin-top: 5px
+    }
+
+    .ct {
+        max-height: 40px
+    }
+
+    .cu {
+        margin-top: 20px
+    }
+
+    .cv {
+        padding: 4px 12px
+    }
+
+    .cw {
+        border-color: rgba(0, 0, 0, 0.54)
+    }
+
+    .cx:hover {
+        color: rgba(0, 0, 0, 0.97)
+    }
+
+    .cy:hover {
+        fill: rgba(0, 0, 0, 0.97)
+    }
+
+    .cz:hover {
+        border-color: rgba(0, 0, 0, 0.84)
+    }
+
+    .da {
+        margin-top: 23px
+    }
+
+    .dc {
+        height: 100%
+    }
+
+    .dd {
+        line-height: 18px
+    }
+
+    .de {
+        font-size: 16.2px
+    }
+
+    .df {
+        letter-spacing: -0.09px
+    }
+
+    .dg {
+        color: rgba(0, 0, 0, 0.76)
+    }
+
+    .dh {
+        fill: rgba(0, 0, 0, 0.76)
+    }
+
+    .di {
+        text-transform: uppercase
+    }
+
+    .dm {
+        background-origin: border-box
+    }
+
+    .dn {
+        background-size: cover
+    }
+
+    .do {
+        background-position: 47% 43%
+    }
+
+    .dp {
+        background-image: url(https://miro.medium.com/max/1360/1*7X7-LcW3uW6rfNHQ3X9cOw.jpeg)
+    }
+
+    .dq {
+        height: 320px
+    }
+
+    .dr {
+        margin-top: 14px
+    }
+
+    .ds {
+        height: 382px
+    }
+
+    .dt {
+        margin-top: 13px
+    }
+
+    .dv {
+        word-break: break-word
+    }
+
+    .dw {
+        word-wrap: break-word
+    }
+
+    .dx {
+        line-height: 48px
+    }
+
+    .dy {
+        font-size: 44px
+    }
+
+    .dz {
+        letter-spacing: -1.25px
+    }
+
+    .ea {
+        max-height: 96px
+    }
+
+    .eb {
+        margin-top: 4px
+    }
+
+    .ec {
+        line-height: 24px
+    }
+
+    .ed {
+        font-size: 18.96px
+    }
+
+    .ee {
+        max-height: 48px
+    }
+
+    .ef {
+        overflow-wrap: break-word
+    }
+
+    .eg {
+        margin-top: 21px
+    }
+
+    .ei {
+        line-height: 28px
+    }
+
+    .ej {
+        font-size: 25.2px
+    }
+
+    .ek {
+        letter-spacing: -0.47px
+    }
+
+    .el {
+        max-height: 56px
+    }
+
+    .em {
+        margin-top: 16px
+    }
+
+    .en {
+        border-radius: 50%
+    }
+
+    .eo {
+        height: 40px
+    }
+
+    .ep {
+        width: 40px
+    }
+
+    .eq {
+        margin-top: 3px
+    }
+
+    .er {
+        flex-wrap: wrap
+    }
+
+    .es {
+        padding-left: 4px
+    }
+
+    .et {
+        padding-right: 4px
+    }
+
+    .eu {
+        margin-left: 4px
+    }
+
+    .ev {
+        align-self: center
+    }
+
+    .ew {
+        margin-top: 40px
+    }
+
+    .ey {
+        line-height: 16px
+    }
+
+    .ez {
+        font-size: 15px
+    }
+
+    .fa {
+        letter-spacing: -0.04px
+    }
+
+    .fb {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    }
+
+    .fc {
+        padding-bottom: 8px
+    }
+
+    .fd {
+        padding-bottom: 12px
+    }
+
+    .fe {
+        padding-top: 12px
+    }
+
+    .ff {
+        max-width: 1032px
+    }
+
+    .fg {
+        margin-right: 0px
+    }
+
+    .fh {
+        flex-direction: column
+    }
+
+    .fi {
+        flex: 1 1 auto
+    }
+
+    .fl {
+        margin-right: 25px
+    }
+
+    .fm {
+        font-size: 21.6px
+    }
+
+    .fn {
+        letter-spacing: -0.32px
+    }
+
+    .fp {
+        background-position: 50% 50%
+    }
+   
+    .fq {
+        background-image: url(https://miro.medium.com/max/154/1*hUO_8TtnehSqpj_NPESE8Q.jpeg)
+    }
+
+    .fr {
+        height: 77px
+    }
+
+    .fs {
+        width: 77px
+    }
+
+    .ft {
+        margin-top: 12px
+    }
+
+    .fv {
+        background-image: url(https://miro.medium.com/max/304/1*hUO_8TtnehSqpj_NPESE8Q.jpeg)
+    }
+
+    .fw {
+        width: 152px
+    }
+
+    .fx {
+        background-image: url(https://miro.medium.com/max/154/1*-Dwx-YFB_xYyneW7Z4PnIw.jpeg)
+    }
+
+    .fy {
+        background-image: url(https://miro.medium.com/max/304/1*-Dwx-YFB_xYyneW7Z4PnIw.jpeg)
+    }
+
+    /*.fz {
+        background-image: url(https://miro.medium.com/max/154/1*UDaAm-hoVwR3iEsbVl8MFg.jpeg)
+    }*/
+
+    .ga {
+        background-image: url(https://miro.medium.com/max/304/1*UDaAm-hoVwR3iEsbVl8MFg.jpeg)
+    }
+
+    .gb {
+        margin-bottom: 32px
+    }
+
+    .gc {
+        margin-left: -40px
+    }
+
+    .gd {
+        margin-top: 32px
+    }
+
+    .gg {
+        padding: 24px 40px
+    }
+
+    .gh {
+        min-width: 60%
+    }
+
+    .gi {
+        background-color: rgba(0, 0, 0, 0.05)
+    }
+
+    .gk {
+        margin-bottom: 24px
+    }
+
+    .gn {
+        height: 130px
+    }
+
+    .go {
+        width: 130px
+    }
+
+    .gp {
+        height: 55px
+    }
+
+    .gq {
+        width: 55px
+    }
+
+    .gr {
+        margin-left: 24px
+    }
+
+    .gt:hover {
+        text-decoration: underline
+    }
+
+    .gu {
+        margin-top: 8px
+    }
+
+    .gv {
+        max-height: 140px
+    }
+
+    .gx {
+        background-image: url(https://miro.medium.com/max/154/1*s9ABxJvgtaseAnq_m-ZlKg.jpeg)
+    }
+
+    .gy {
+        background-image: url(https://miro.medium.com/max/304/1*s9ABxJvgtaseAnq_m-ZlKg.jpeg)
+    }
+
+    .gz {
+        background-image: url(https://miro.medium.com/max/154/1*chQBAPWkRcwQF8lAwJJjAg.jpeg)
+    }
+
+    .ha {
+        background-image: url(https://miro.medium.com/max/304/1*chQBAPWkRcwQF8lAwJJjAg.jpeg)
+    }
+
+    .hb {
+        background-image: url(https://miro.medium.com/max/154/1*NO2d0XG1NwLAS4pTQZKPCg.jpeg)
+    }
+
+    .hc {
+        background-image: url(https://miro.medium.com/max/304/1*NO2d0XG1NwLAS4pTQZKPCg.jpeg)
+    }
+
+    .hd {
+        background-image: url(https://miro.medium.com/max/154/1*za5lqdNtqceEPUUdEgKfgQ.jpeg)
+    }
+
+    .he {
+        background-image: url(https://miro.medium.com/max/304/1*za5lqdNtqceEPUUdEgKfgQ.jpeg)
+    }
+
+    .hf {
+        background-image: url(https://miro.medium.com/max/154/1*pYwSyihmU20SBdWevafO8Q.jpeg)
+    }
+
+    .hg {
+        background-image: url(https://miro.medium.com/max/304/1*pYwSyihmU20SBdWevafO8Q.jpeg)
+    }
+
+    .hh {
+        background-image: url(https://miro.medium.com/max/154/1*7T76dmss5yDekqH_Qe5V_A.jpeg)
+    }
+
+    .hi {
+        background-image: url(https://miro.medium.com/max/304/1*7T76dmss5yDekqH_Qe5V_A.jpeg)
+    }
+
+    .hj {
+        background-image: url(https://miro.medium.com/max/154/0*2IaJ8X-JNgEhYGbq)
+    }
+
+    .hk {
+        background-image: url(https://miro.medium.com/max/304/0*2IaJ8X-JNgEhYGbq)
+    }
+
+    .hl {
+        max-width: 328px
+    }
+
+    .hm {
+        margin-left: 56px
+    }
+
+    .ho {
+        margin-top: 48px
+    }
+
+    .hp {
+        font-size: 14.22px
+    }
+
+    .hq {
+        margin-bottom: 16px
+    }
+
+    .hr {
+        margin-right: 12px
+    }
+
+    .hs {
+        flex: 1 1 0%
+    }
+
+    .ht {
+        margin-bottom: 4px
+    }
+
+    .hu {
+        font-size: 18px
+    }
+
+    .hv {
+        letter-spacing: -0.17px
+    }
+
+    .hw {
+        max-height: 60px
+    }
+
+    .hx {
+        background-image: url(https://miro.medium.com/max/110/1*7X7-LcW3uW6rfNHQ3X9cOw.jpeg)
+    }
+
+    /*.hy {
+        background-image: url(https://miro.medium.com/max/110/1*wyxuq21keffc5b0d_lMkUw.jpeg)
+    }*/
+
+    /*.hz {
+        background-image: url(https://miro.medium.com/max/110/1*w65XJRcyUy2Yd5J2kFRjpw.jpeg)
+    }*/
+
+    .ia {
+        background-position: 46% 32%
+    }
+
+    /*.ib {
+        background-image: url(https://miro.medium.com/max/110/1*eLxBPt-eI64jhXZDMpGMuQ.jpeg)
+    }*/
+
+    /*.ic {
+        background-image: url(https://miro.medium.com/max/110/0*FRYYlp-7SavsEM5n)
+    }*/
+</style>
+<style type="text/css" data-fela-rehydration="236" data-fela-type="RULE" media="screen and (max-width: 728px)">
+    .u {
+        height: 56px
+    }
+
+    .v {
+        display: flex
+    }
+
+    .x {
+        display: none
+    }
+
+    .ab {
+        margin-left: -5px
+    }
+
+    .ac {
+        display: block
+    }
+
+    .ao {
+        font-size: 14px
+    }
+
+    .ap {
+        margin-top: 0px
+    }
+
+    .aq {
+        margin-left: 4px
+    }
+
+    .ar {
+        -webkit-line-clamp: 2
+    }
+
+    .cf {
+        margin-bottom: 24px
+    }
+
+    .ci {
+        padding-bottom: 32px
+    }
+
+    .cj {
+        justify-content: space-between
+    }
+
+    .ck {
+        margin-right: 32px
+    }
+
+    .db {
+        margin-top: 15px
+    }
+
+    .dj {
+        margin-left: -24px
+    }
+
+    .dk {
+        margin-top: 14px
+    }
+
+    .dl {
+        margin-right: -24px
+    }
+
+    .ex {
+        margin-top: 24px
+    }
+
+    .fj {
+        padding-right: 0px
+    }
+
+    .fk {
+        margin-right: 0px
+    }
+
+    .fo {
+        padding-left: 16px
+    }
+
+    .fu {
+        margin-left: 68px
+    }
+
+    .gj {
+        padding: 24px
+    }
+
+    .gl {
+        flex-direction: column
+    }
+
+    .gm {
+        align-items: center
+    }
+
+    .gs {
+        margin-left: 16px
+    }
+
+    .gw {
+        margin-top: 12px
+    }
+    .mb{
+        margin-top: 20px;
+    }
+
+</style>
+<style type="text/css" data-fela-rehydration="236" data-fela-type="RULE" media="screen and (max-width: 904px)">
+    .du {
+        display: none
+    }
+
+    .eh {
+        display: block
+    }
+</style>
+<style type="text/css" data-fela-rehydration="236" data-fela-type="RULE" media="screen and (max-width: 1080px)">
+    .ge {
+        margin-left: 0px
+    }
+
+    .gf {
+        display: block
+    }
+
+    .hn {
+        margin-left: 24px
+    }
+</style>
+
+
+<section class="k l m n o p q s cg">
+	<section class="o ch q c">
+		<div class="z ci ac">
+			<div class="c v cj">
+				<div class="c ck ac">
+					<h2 class="ai y cl bj cm bk cn co cp c an cq cr">Startups</h2>
+					<div class="cs c">
+						<span class="bj b bk bl bm bn c an ct cr bo bp">Founding, funding, and beyond.</span>
+					</div>
+				</div>
+				<div class="cu c ap ac">
+					<a href="//medium.com/m/signin?redirect=%2F%2Fmedium.com%2F_%2Fsubscriptions%2Ftopic%2Fstartups%2F&amp;source=topic_page--------------------ba2d3ab15ed6------follow_topicpage-" class="cv ai y bw cw cx cy cz bc bz bj b bk bl bm bn ca cb q cc cd bf">Follow</a>
+				</div>
+			</div>
+			<div class="da c db ac">
+				<span class="bj b bk bl bm bn c bo bp">Follow to get great stories about <!-- -->Startups<!-- --> in your inbox and on your homepage</span>
+			</div>
+		</div>
+		<div class="cs c ap ac">
+			<div class="o dc">
+				<span class="bj cm bk dd de df c dg dh di">Featured</span>
+				<div class="z dj dk dl ac">
+					<a href="" class="c dm dn do dp dq o"></a>
+				</div>
+				<div class="dr c x">
+					<a href="" class="c dm dn do dp ds o"></a>
+				</div>
+				<div class="dt c du">
+					<div class="dv dw">
+						<h1 class="ai y cl bj cm bk dx dy dz c an ea cr">
+							<a href="">Nothing Can Stop Google. DuckDuckGo Is Trying Anyway.</a>
+						</h1>
+						<div class="eb c">
+							<p class="bo bp bj b bk ec ed bn c an ee cr dv ef">
+								<a href="">2019 may finally be the year for ‘The Search Engine That Doesn’t Track You’</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="eg z eh">
+					<div class="dv dw">
+						<h3 class="ai y cl bj cm bk ei ej ek c an el cr">
+							<a href="https://medium.com/""drewmillard/nothing-can-stop-google-duckduckgo-is-trying-anyway-718eb7391423?source=topic_page---------------------------20">Nothing Can Stop Google. DuckDuckGo Is Trying Anyway.</a>
+						</h3>
+						<div class="eb c">
+							<p class="bo bp bj b bk ec ed bn c an ee cr dv ef">
+								<a href="">2019 may finally be the year for ‘The Search Engine That Doesn’t Track You’</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="em c">
+					<div class="s t">
+						<a href="">
+							<img alt="Drew Millard" src="https://miro.medium.com/fit/c/80/80/1*sQ0GLVTkBJIX49OP_uc_5Q.jpeg" class="c en eo ep" width="40" height="40">
+						</a>
+						<div class="bq c">
+							<a href="">
+								<span class="bj b bk bl bm bn c ai y">Drew Millard</span>
+							</a>
+							<span class="bj b bk bl bm bn c bo bp">
+								<div class="s t">
+									<div class="eq s er">Jan 17<div class="es et c">
+									<span class="c">
+										<span class="bj b bk bl bm bn c bo bp">·</span>
+									</span>
+									</div>14 min read</div>
+									<div class="eu af c ev as">
+										<svg class="svgIcon-use" width="15" height="15" viewBox="0 0 15 15">
+											<path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg>
+									</div>
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ew c ex ac">
+			<div>
+				<h2 class="bj cm bk ey ez fa ai y fb fc di">Latest</h2>
+			<div class="fd fe c">
+			<section class="m n o ff q c">
+				<div class="o dc">
+					<section class="fd fe s">
+						<div class="l fg q s fh cg fi fj fk v">
+							<div class="fl c fk v cj">
+								<div class="dv dw">
+									<h3 class="ai y cl bj cm bk ec fm fn c an ee cr">
+										<a href="">Stop searching the web for answers. Go talk to your customers</a>
+									</h3>
+									<div class="eb c">
+										<p class="bo bp bj b bk bl bm bn c an ct cr dv ef">
+											<a href="">About me: I’m a PM Founder making a lot of bets at Marax AI and learning in the process. I write about good products I experience and my…</a>
+										</p>
+									</div>
+								</div>
+								<div class="z fo ac">
+									<a href="" class="c dm dn fp fq fr fs">
+										</a>
+								</div>
+							</div>
+							<div class="ft c">
+								<div class="o s cg">
+									<div class="c fi">
+										<div class="s">
+											<span class="bj b bk bl bm bn c an ct cr ai y">
+												<a href="">Sumant US</a>
+											</span>
+										</div>
+										<span class="bj b bk bl bm bn c bo bp">
+											<div class="s t">Jan 20·5 min read</div>
+										</span>
+									</div>
+									<div class="c ev as fu ac">
+										<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c">
+							<div class="dc c x">
+								<a href="" class="c dm dn fp fv dc fw">
+								</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+			<section class="m n o ff q c">
+				<div class="o dc">
+					<section class="fd fe s">
+						<div class="l fg q s fh cg fi fj fk v">
+							<div class="fl c fk v cj">
+								<div class="dv dw">
+									<h3 class="ai y cl bj cm bk ec fm fn c an ee cr">
+										<a href="">Japan’s Entrepreneurial Ecosystem: A showcase of disparity and paradox</a>
+									</h3>
+									<div class="eb c">
+										<p class="bo bp bj b bk bl bm bn c an ct cr dv ef">
+											<a href="">The new year has come and 365 days gone by since my first visit to Japan. Japan is a showcase of disparity and paradox. Every city visited…</a>
+										</p>
+									</div>
+								</div>
+								<div class="z fo ac">
+									<a href="" class="c dm dn fp fx fr fs"></a>
+								</div>
+							</div>
+							<div class="ft c">
+								<div class="o s cg">
+									<div class="c fi">
+										<div class="s">
+											<span class="bj b bk bl bm bn c an ct cr ai y">
+												<a href="">Corbin Norman</a>
+												<a href="">&nbsp;in <!-- -->Makers Boot Camp</a>
+											</span>
+										</div>
+										<span class="bj b bk bl bm bn c bo bp">
+											<div class="s t">
+												<div class="eq s er">Jan 20<div class="es et c">
+												<span class="c">
+													<span class="bj b bk bl bm bn c bo bp">·</span>
+												</span>
+												</div>5 min read</div>
+												<div class="eu af c ev as">
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="c ev as fu ac">
+										<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c">
+							<div class="dc c x">
+								<a href="" class="c dm dn fp fy dc fw"></a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+			<section class="m n o ff q c">
+				<div class="o dc">
+					<section class="fd fe s">
+						<div class="l fg q s fh cg fi fj fk v">
+							<div class="fl c fk v cj">
+								<div class="dv dw">
+									<h3 class="ai y cl bj cm bk ec fm fn c an ee cr">
+										<a href="">How The Next Trillion Start-Ups Will Be Funded</a>
+									</h3>
+									<div class="eb c">
+										<p class="bo bp bj b bk bl bm bn c an ct cr dv ef">
+											<a href="">On the breakthrough in funding for business growth</a>
+										</p>
+									</div>
+								</div>
+								<div class="z fo ac">
+									<a href="" class="c dm dn fp fz fr fs">
+									</a>
+								</div>
+							</div>
+							<div class="ft c">
+								<div class="o s cg">
+									<div class="c fi">
+										<div class="s">
+											<span class="bj b bk bl bm bn c an ct cr ai y">
+												<a href="">Adriaan Jacob Brouwer</a>
+												<a href="">&nbsp;in <!-- -->The Startup</a>
+											</span>
+										</div>
+										<span class="bj b bk bl bm bn c bo bp">
+											<div class="s t">
+												<div class="eq s er">Jan 22<div class="es et c">
+												<span class="c">
+													<span class="bj b bk bl bm bn c bo bp">·</span>
+												</span>
+												</div>8 min read</div>
+												<div class="eu af c ev as"></div>
+											</div>
+										</span>
+									</div>
+									<div class="c ev as fu ac">
+										<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c">
+							<div class="dc c x">
+								<a href="" class="c dm dn fp ga dc fw"></a>
+							</div>
+						</div>
+					</section>
+					</div>
+			</section>
+			<div class="gb gc gd c ge gf">
+				<div class="gg gh c gi gj ac">
+					<div class="gk c">
+						<h2 class="bj cm bk dd de df c dg dh di">Featured Writer</h2>
+					</div>
+					<div class="s ac gl">
+						<div class="s fi v gm">
+							<div class="s t fh as">
+								<div class="c x">
+									<a href="">
+										<img alt="Deb Knobelman, PhD" src="https://miro.medium.com/fit/c/260/260/1*sGfS_SdBClDJax2txOmwvA.jpeg" class="c en gn go" width="130" height="130">
+									</a>
+								</div>
+								<div class="z ac">
+									<a href="" src="https://miro.medium.com/fit/c/110/110/1*sGfS_SdBClDJax2txOmwvA.jpeg" class="c en gp gq" width="55" height="55"></a>
+								</div>
+								<div class="em c x">
+									<a href="" class="cv ai y bw cw cx cy cz bc bz bj b bk bl bm bn ca cb q cc cd bf">Follow</a>
+								</div>
+							</div>
+							<div class="gr c fi gs ac">
+								<h3 class="ai y cl bj cm bk ec fm fn c">
+									<a class="at au av aw ax ay az ba bb bc gt bf bg bh bi" href="knobelman">Deb Knobelman, PhD</a>
+								</h3>
+								<div class="gu c x">
+									<p class="bo bp bj b bk bl bm bn c an gv cr dv ef">Neuroscience. Wall Street. C-Suite. Parent. Recovering Nervous Nelly. https://www.debknobelman.com</p>
+								</div>
+							</div>
+							<div class="z as gs ac">
+								<a href="" class="cv ai y bw cw cx cy cz bc bz bj b bk bl bm bn ca cb q cc cd bf">Follow</a>
+							</div>
+						</div>
+						<div class="z gw ac">
+							<p class="bo bp bj b bk bl bm bn c an gv cr dv ef">Neuroscience. Wall Street. C-Suite. Parent. Recovering Nervous Nelly. https://www.debknobelman.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="m n o ff q c">
+				<div class="o dc">
+					<section class="fd fe s">
+						<div class="l fg q s fh cg fi fj fk v">
+							<div class="fl c fk v cj">
+							<div class="dv dw">
+									<h3 class="ai y cl bj cm bk ec fm fn c an ee cr">
+										<a href="">Quitting My Addiction to Struggle Porn</a>
+									</h3>
+									<div class="eb c">
+										<p class="bo bp bj b bk bl bm bn c an ct cr dv ef">
+											<a href="">No more Gary Vee for me</a>
+										</p>
+									</div>
+								</div>
+								<div class="z fo ac">
+									<a href="" class="c dm dn fp gx fr fs">
+									</a>
+								</div>
+							</div>
+							<div class="ft c">
+								<div class="o s cg">
+									<div class="c fi">
+										<div class="s">
+											<span class="bj b bk bl bm bn c an ct cr ai y">
+												<a href="">Aphinya Dechalert</a>
+											</span>
+										</div>
+										<span class="bj b bk bl bm bn c bo bp">
+											<div class="s t">
+												<div class="eq s er">Jan 22<div class="es et c">
+															<span class="c">
+																<span class="bj b bk bl bm bn c bo bp">·</span>
+															</span>
+													</div>4 min read</div>
+												<div class="eu af c ev as">
+													<svg class="svgIcon-use" width="15" height="15" viewBox="0 0 15 15"><path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="c ev as fu ac">
+										<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c">
+							<div class="dc c x">
+								<a href="" class="c dm dn fp gy dc fw">
+								</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+			<section class="m n o ff q c">
+				<div class="o dc">
+			<section class="fd fe s">
+				<div class="l fg q s fh cg fi fj fk v">
+					<div class="fl c fk v cj">
+						<div class="dv dw">
+							<h3 class="ai y cl bj cm bk ec fm fn c an ee cr">
+								<a href="">Being Conservative vs. Taking Risks: Why You Need Both</a>
+							</h3>
+							<div class="eb c">
+								<p class="bo bp bj b bk bl bm bn c an ct cr dv ef">
+									<a href="">Life needs balance.</a>
+								</p>
+							</div>
+						</div>
+						<div class="z fo ac">
+							<a href="" class="c dm dn fp gz fr fs"></a>
+						</div>
+					</div>
+					<div class="ft c">
+						<div class="o s cg">
+							<div class="c fi">
+								<div class="s">
+									<span class="bj b bk bl bm bn c an ct cr ai y">
+										<a href="">Tim Rettig</a>
+										<a href="">&nbsp;in <!-- -->The Startup</a>
+									</span>
+								</div>
+								<span class="bj b bk bl bm bn c bo bp">
+									<div class="s t">
+											<div class="eq s er">Jan 21
+												<div class="es et c">
+													<span class="c"><span class="bj b bk bl bm bn c bo bp">·</span></span>
+												</div>4 min read
+											</div>
+											<div class="eu af c ev as"></div>
+									</div>
+								</span>
+							</div>
+							<div class="c ev as fu ac">
+								<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="c">
+					<div class="dc c x">
+						<a href="" class="c dm dn fp ha dc fw"></a>
+					</div>
+				</div>
+			</section>
+		</div>
+		</section>
+</div>
+                
+</section>
+@*<section class="o hy q c x">
+    <div class="hz c ia fz">
+        <div class="c v cj">
+            <div class="c ck ac">
+                <h2 class="ai y cl bj cm bk cn co cp c an cq cr">Startups</h2>
+            <div class="cs c">
+                <span class="bj b bk bl bm bn c an ct cr bo bp">Founding, funding, and beyond.</span>
+            </div>
+            </div>
+            <div class="cu c ap ac">
+                <a href="" class="cv ai y bw cw cx cy cz bc bz bj b bk bl bm bn ca cb q cc cd bf">Follow</a>
+            </div>
+          </div>
+            <div class="da c db ac">
+                    <span class="bj b bk bl bm bn c bo bp">Follow to get great stories about Startups  in your inbox and on your homepage</span>
+             </div>
+        <div class="ib c">
+            <h2 class="bj cm bk eq er es ai y et eu ev">Related topics</h2>
+        </div>
+        <div class="cu c">
+            <a href="/topic/business">
+                <span class="bj b bk gf ic bn c bo bp ev">Business</span></a>
+         </div>
+        <div class="gt c">
+            <a href="/topic/economy"><span class="bj b bk gf ic bn c bo bp ev">Economy</span></a>
+        </div>
+        <div class="gt c">
+            <a href="">
+                <span class="bj b bk gf ic bn c bo bp ev">Leadership</span>
+            </a>
+       </div>
+        <div class="gt c">
+            <a href="">
+                <span class="bj b bk gf ic bn c bo bp ev">Technology</span>
+            </a>
+        </div>
+        <div class="gt c">
+                <a href="">
+                        <span class="bj b bk gf ic bn c bo bp ev">Work</span>
+                 </a>
+         </div>
+        <div class="ib c">
+                <h2 class="bj cm bk eq er es ai y et eu ev">Popular in  Startups</h2>
+                <div class="o dd">
+                        <article class="id eg s">
+                            <div class="ie q s fa if">
+                                    <div class="c as"><a href="">
+                                            <div class="ig c"><h4 class="ai y cl bj cm bk bl hf hg c an ih cr">Nothing Can Stop Google. DuckDuckGo Is Trying Anyway.</h4>
+                                             </div></a>
+                                   </div>
+                                    <div class="c">
+                                            <span class="bj b bk bl bm bn c bo bp">14 min read</span>
+                                    </div>
+                             </div>
+                        </article>
+                   </div>
+                  <div class="o dd">
+                        <article class="id eg s">
+                                <div class="ie q s fa if">
+                                        <div class="c as">
+                                            <a href="">
+                                                <div class="ig c">
+                                                        <h4 class="ai y cl bj cm bk bl hf hg c an ih cr">How I went from newbie to Software Engineer in 9 months while working full time</h4>
+                                                </div>
+                                           </a>
+                                       </div>
+                            <div class="c">
+                                        <span class="bj b bk bl bm bn c bo bp">19 min read</span>
+                             </div>
+                            </div>
+                          </article>
+                  </div>
+                    <div class="o dd">
+                        <article class="id eg s">
+                                <div class="ie q s fa if">
+                                        <div class="c as">
+                                                <a href="">
+                                                        <div class="ig c">
+                                                                <h4 class="ai y cl bj cm bk bl hf hg c an ih cr">Why learning more isn’t always better</h4>
+                                                         </div>
+                                                </a>
+                                               </div>
+                                    <div class="c">
+                                                <span class="bj b bk bl bm bn c bo bp">7 min read</span>
+                                    </div>
+                                    </div>
+                            </article>
+                        </div>
+        <div class="o dd">
+                <article class="id eg s">
+                        <div class="ie q s fa if">
+                                <div class="c as">
+                                        <a href="">
+                                                <div class="ig c">
+                                                        <h4 class="ai y cl bj cm bk bl hf hg c an ih cr">How I landed a full stack developer job without a tech degree or work experience</h4>
+                                                 </div>
+                                        </a>
+                                </div>
+                            <div class="c">
+                                        <span class="bj b bk bl bm bn c bo bp">59 min read</span>
+                             </div>
+                            </div>
+                  </article>
+           </div>
+            <div class="o dd">
+                    <article class="id eg s">
+                            <div class="ie q s fa if">
+                                    <div class="c as">
+                                         <a href="">
+                                                <div class="ig c">
+                                                        <h4 class="ai y cl bj cm bk bl hf hg c an ih cr">The Mistakes I Made As a Beginner Programmer</h4>
+                                                </div>
+                                         </a>
+                                    </div>
+                                    <div class="c">
+                                                <span class="bj b bk bl bm bn c bo bp">28 min read</span>
+                                    </div>
+                                </div>
+                </article>
+              </div>
+            </div>
+   </div>
+</section>*@
+    <div class="container" style="margin-top: 30px;">
+       <div class="col-lg-12">
+           <h1>Startups</h1>
+           <span>Founding, funding, and beyond.</span>
+           
+           <button type="submit" class="btn border" style="margin-top: 20px; margin-bottom:20px;border-color: rgba(0, 0, 0, 0.54);">Confirm identity</button>
+           <div class="col-lg-12">
+               <span>Follow to get great stories about Startups in your inbox and on your homepage</span>
+           </div>
+           <div class="col-lg-12" style="margin-top: 50px;">
+                    <h4 class="bj cm bk eq er es ai y et eu ev">Related topics</h4>
+               <hr />
+           </div>
+       </div>
+
+    </div>
+</section>
