@@ -15,6 +15,7 @@ namespace KhMedium.Areas.Admin.Controllers
         // GET: Admin/Tags
         public ActionResult Index()
         {
+          
             //Seed Data For First Run
             var tags = _context.Tags.GetAll().OrderBy(t => t.Name);
             if (tags.ToList().Count == 0)
