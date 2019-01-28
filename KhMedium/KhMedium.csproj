@@ -6698,6 +6698,7 @@
     <Content Include="Content\pages\mailbox\read-mail.html" />
     <Content Include="Content\pages\tables\data.html" />
     <Content Include="Content\pages\tables\simple.html" />
+    <Content Include="Content\pages\tops\index.css" />
     <Content Include="Content\pages\UI\buttons.html" />
     <Content Include="Content\pages\UI\general.html" />
     <Content Include="Content\pages\UI\icons.html" />
