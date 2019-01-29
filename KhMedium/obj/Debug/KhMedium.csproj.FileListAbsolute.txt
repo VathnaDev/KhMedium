@@ -1,101 +1,203 @@
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\ApplicationInsights.config
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.exe
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.exe.config
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.rsp
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csi.exe
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csi.rsp
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\System.AppContext.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\vbc.exe
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\vbc.exe.config
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\vbc.rsp
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\VBCSCompiler.exe
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.dll.config
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.pdb
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Antlr3.Runtime.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\AutoMapper.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\EntityFramework.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\EntityFramework.SqlServer.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.Web.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.ApplicationInsights.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Newtonsoft.Json.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Owin.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.ValueTuple.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Helpers.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Mvc.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Optimization.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Razor.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.Deployment.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.Razor.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\WebGrease.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\AutoMapper.pdb
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\AutoMapper.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.ValueTuple.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Helpers.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Mvc.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Optimization.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Razor.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.Deployment.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.Razor.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Antlr3.Runtime.pdb
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Newtonsoft.Json.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\EntityFramework.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\EntityFramework.SqlServer.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.ApplicationInsights.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.Web.xml
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/obj/Debug/KhMedium.csprojResolveAssemblyReference.cache
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/ApplicationInsights.config
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/csc.exe
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/csc.exe.config
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/csc.rsp
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/csi.exe
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/csi.rsp
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.CSharp.Core.targets
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/Microsoft.VisualBasic.Core.targets
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/System.AppContext.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/System.Collections.Immutable.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/System.Diagnostics.StackTrace.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/System.IO.FileSystem.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/System.IO.FileSystem.Primitives.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/System.Reflection.Metadata.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/vbc.exe
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/vbc.exe.config
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/vbc.rsp
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/VBCSCompiler.exe
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/roslyn/VBCSCompiler.exe.config
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/KhMedium.dll.config
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/KhMedium.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/KhMedium.pdb
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Antlr3.Runtime.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/AutoMapper.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/EntityFramework.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/EntityFramework.SqlServer.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.Agent.Intercept.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.DependencyCollector.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.PerfCounterCollector.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.ServerTelemetryChannel.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.Web.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.WindowsServer.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.ApplicationInsights.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Core.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.EntityFramework.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Owin.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Host.SystemWeb.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Cookies.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Facebook.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Google.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.MicrosoftAccount.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.OAuth.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Twitter.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Web.Infrastructure.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Newtonsoft.Json.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Owin.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.ValueTuple.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Helpers.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Mvc.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Optimization.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Razor.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.WebPages.Deployment.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.WebPages.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.WebPages.Razor.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/WebGrease.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/AutoMapper.pdb
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/AutoMapper.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.ValueTuple.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Helpers.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Mvc.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Optimization.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.Razor.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.WebPages.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.WebPages.Deployment.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/System.Web.WebPages.Razor.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Antlr3.Runtime.pdb
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Newtonsoft.Json.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/EntityFramework.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/EntityFramework.SqlServer.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Core.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Owin.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.EntityFramework.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Host.SystemWeb.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Facebook.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Cookies.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.OAuth.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Google.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Twitter.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.MicrosoftAccount.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.ApplicationInsights.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.DependencyCollector.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.ServerTelemetryChannel.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.WindowsServer.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/bin/Microsoft.AI.Web.xml
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/obj/Debug/KhMedium.dll
+C:/Users/user/Documents/Visual Studio 2017/Projects/KhMedium/KhMedium/obj/Debug/KhMedium.pdb
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/ApplicationInsights.config
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/csc.exe
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/csc.exe.config
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/csc.rsp
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/csi.exe
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/csi.rsp
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.CSharp.Core.targets
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/Microsoft.VisualBasic.Core.targets
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/System.AppContext.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/System.Collections.Immutable.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/System.Diagnostics.StackTrace.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/System.IO.FileSystem.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/System.IO.FileSystem.Primitives.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/System.Reflection.Metadata.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/vbc.exe
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/vbc.exe.config
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/vbc.rsp
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/VBCSCompiler.exe
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/roslyn/VBCSCompiler.exe.config
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/KhMedium.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/KhMedium.pdb
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Antlr3.Runtime.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/AutoMapper.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/EntityFramework.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/EntityFramework.SqlServer.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.Agent.Intercept.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.DependencyCollector.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.PerfCounterCollector.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.ServerTelemetryChannel.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.Web.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.WindowsServer.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.ApplicationInsights.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Core.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.EntityFramework.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Owin.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Host.SystemWeb.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Cookies.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Facebook.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Google.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.MicrosoftAccount.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.OAuth.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Twitter.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Web.Infrastructure.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Newtonsoft.Json.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Owin.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.ValueTuple.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Helpers.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Mvc.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Optimization.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Razor.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.WebPages.Deployment.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.WebPages.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.WebPages.Razor.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/WebGrease.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/AutoMapper.pdb
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/AutoMapper.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.ValueTuple.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Helpers.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Mvc.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Optimization.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.Razor.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.WebPages.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.WebPages.Deployment.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/System.Web.WebPages.Razor.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Antlr3.Runtime.pdb
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Newtonsoft.Json.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/EntityFramework.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/EntityFramework.SqlServer.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Core.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.Owin.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AspNet.Identity.EntityFramework.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Host.SystemWeb.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Facebook.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Cookies.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.OAuth.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Google.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.Twitter.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.Owin.Security.MicrosoftAccount.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.ApplicationInsights.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.DependencyCollector.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.ServerTelemetryChannel.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.WindowsServer.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/bin/Microsoft.AI.Web.xml
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/obj/Debug/KhMedium.csprojAssemblyReference.cache
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/obj/Debug/KhMedium.csproj.CoreCompileInputs.cache
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/obj/Debug/KhMedium.csproj.CopyComplete
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/obj/Debug/KhMedium.dll
+/Users/mac/Bo/WebProjects/KhMedium/KhMedium/obj/Debug/KhMedium.pdb
