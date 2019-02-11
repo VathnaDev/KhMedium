@@ -20,6 +20,7 @@ namespace KhMedium.Entities
             this.Articles = new HashSet<Article>();
             this.Followers = new HashSet<Follower>();
             this.Followings = new HashSet<Following>();
+            this.AuthorPublications = new HashSet<AuthorPublication>();
         }
     
         public string Id { get; set; }
@@ -29,6 +30,7 @@ namespace KhMedium.Entities
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
+        public string UserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Article> Articles { get; set; }
@@ -37,5 +39,7 @@ namespace KhMedium.Entities
         public virtual ICollection<Follower> Followers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Following> Followings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AuthorPublication> AuthorPublications { get; set; }
     }
 }

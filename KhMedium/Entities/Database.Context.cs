@@ -44,5 +44,8 @@ namespace KhMedium.Entities
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<UserTopic> UserTopics { get; set; }
+        public virtual DbSet<File> Files { get; set; }
+        public virtual DbSet<AuthorPublication> AuthorPublications { get; set; }
     }
 }

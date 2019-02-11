@@ -50,15 +50,43 @@
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.1.0.0\lib\net451\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.1.0.0\lib\net451\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.PlatformAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.PlatformAbstractions.1.0.0\lib\net451\Microsoft.Extensions.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.BrowserLink.Loader, Version=14.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.BrowserLink.Loader.14.1.0\lib\net451\Microsoft.VisualStudio.Web.BrowserLink.Loader.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -204,8 +232,10 @@
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
     <Compile Include="Data\Core\IArticleTagRepository.cs" />
@@ -214,6 +244,7 @@
     <Compile Include="Data\Core\ICategoryRepository.cs" />
     <Compile Include="Data\Core\IClapRepository.cs" />
     <Compile Include="Data\Core\ICommentRepository.cs" />
+    <Compile Include="Data\Core\IFileRepository.cs" />
     <Compile Include="Data\Core\IFollowerRepository.cs" />
     <Compile Include="Data\Core\IFollowingRepository.cs" />
     <Compile Include="Data\Core\IPublicationRepository.cs" />
@@ -228,7 +259,9 @@
     <Compile Include="Data\CategoryRepository.cs" />
     <Compile Include="Data\ClapRepository.cs" />
     <Compile Include="Data\CommentRepository.cs" />
+    <Compile Include="Data\Core\IUserTopicRepository.cs" />
     <Compile Include="Data\Extension.cs" />
+    <Compile Include="Data\FileRepository.cs" />
     <Compile Include="Data\FollowerRepository.cs" />
     <Compile Include="Data\FollowingRepository.cs" />
     <Compile Include="Data\PublicationRepository.cs" />
@@ -237,6 +270,7 @@
     <Compile Include="Data\TopicRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Data\UnitOfWork.cs" />
+    <Compile Include="Data\UserTopicRespository.cs" />
     <Compile Include="Entities\Article.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -288,6 +322,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\File.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Follower.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -309,6 +346,9 @@
     <Compile Include="Entities\Topic.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\UserTopic.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -322,12 +362,15 @@
     <Compile Include="Models\FollowerModel.cs" />
     <Compile Include="Models\FollowingModel.cs" />
     <Compile Include="Models\PublicationModel.cs" />
+    <Compile Include="Models\ViewModel\HomeViewModel.cs" />
+    <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
     <Compile Include="Models\ShareModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Models\TopicModel.cs" />
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModel\TopicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -7471,6 +7514,9 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Author\Views\web.config" />
     <Content Include="Areas\Guest\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Tags\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tags\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tags\Edits.cshtml" />
     <EntityDeploy Include="Entities\Database.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Database.Designer.cs</LastGenOutput>
@@ -7478,9 +7524,6 @@
     <Content Include="Entities\Database.edmx.diagram">
       <DependentUpon>Database.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Tags\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Tags\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Tags\Edits.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -7533,6 +7576,8 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Article\Create.cshtml" />
     <Content Include="Views\Tag\Index.cshtml" />
+    <Content Include="Views\Start\Index.cshtml" />
+    <Content Include="Views\Start\SelectTopics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7542,6 +7587,8 @@
     <Folder Include="Areas\Author\Views\Shared\" />
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Models\" />
+    <Folder Include="FileUpload\" />
+    <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
