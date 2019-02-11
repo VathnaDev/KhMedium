@@ -38,11 +38,13 @@ namespace KhMedium
                 "~/Content/bower_components/jvectormap/jquery-jvectormap.css",
                 "~/Content/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
                 "~/Content/bower_components/bootstrap-daterangepicker/daterangepicker.css",
-                "~/Content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"));
+                "~/Content/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css",
+                "~/Content/plugins/iCheck/all.css",
+                "~/Content/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
+                "~/Content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css,"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                 "~/Content/bower_components/jquery/dist/jquery.min.js",
-                "~/Content/bower_components/jquery-ui/jquery-ui.min.js",
                 "~/Content/bower_components/bootstrap/dist/js/bootstrap.min.js",
                 "~/Content/bower_components/raphael/raphael.min.js",
                 "~/Content/bower_components/morris.js/morris.min.js",
@@ -58,6 +60,9 @@ namespace KhMedium
                 "~/Content/bower_components/fastclick/lib/fastclick.js",
                 "~/Content/dist/js/adminlte.min.js",
                 "~/Content/dist/js/pages/dashboard.js",
+                "~/Content/bower_components/datatables.net/js/jquery.dataTables.min.js",
+                "~/Content/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js",
+                "~/Content/bower_components/jquery-ui/jquery-ui.min.js",
                 "~/Content/dist/js/demo.js"));
         }
     }

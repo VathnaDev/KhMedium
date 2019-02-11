@@ -1,24 +1,23 @@
-﻿@model KhMedium.Entities.Tag
+﻿@model KhMedium.Entities.Category
 
 @{
-    ViewBag.Title = "title";
-    Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
-<br/>
-@using (Html.BeginForm("Edits", "Tags", FormMethod.Post))
+
+<br />
+@using (Html.BeginForm("Create", "Category", FormMethod.Post))
 {
-    DateTime date = DateTime.Now;
     @Html.AntiForgeryToken()
     {
         @Html.ValidationSummary(true)
         {
-            @Html.HiddenFor(model => model.CreatedAt)
             <div class="row">
                 <div class="col-sm-6">
                     <div class="box box-info">
-                        <div class="box-header">
-                            <h3 class="box-title">Edit Tags</h3>
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Edit Category</h3>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
@@ -27,13 +26,12 @@
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                             </div>
                             <div class="box-footer">
-                                @Html.ActionLink("Cancel", "Index", "Tags", new { @Class = "btn btn-default" })
+                                @Html.ActionLink("Cancel", "Index", "Category", new { @Class = "btn btn-default" })
                                 <button type="submit" class="btn btn-info pull-right">Update</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         }
     }

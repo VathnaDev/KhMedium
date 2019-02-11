@@ -1,0 +1,55 @@
+﻿@model IEnumerable<KhMedium.Entities.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+@Html.ActionLink("Create", "Create", "Category", new { @Class = "btn btn-info pull-right" })
+<br />
+<br />
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of category</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+            
+                    <table id="dataTableCategory" class="table table-bordered table-striped dataTable">
+                        <thead>
+                       
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Create At</th>
+                                <th style="width: 20%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var i = 1; i <= Model.Count(); i++)
+                            {
+                                var category = Model.ToList()[i - 1];
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@category.Name</td>
+                                    <td>@category.CreatedAt</td>
+                                    <td class="text-center">
+                                        @Html.ActionLink("Edit", "Edits", new { id = category.Id }, new { @class = "btn btn-warning" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = category.Id }, new { @class = "btn btn-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                       
+                    </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function() {
+        $('#dataTableCategory').DataTable({
+            "order": [[0, "asc"]]
+        });
+    });
+</script>
