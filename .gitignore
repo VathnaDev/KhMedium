@@ -260,3 +260,27 @@ paket-files/
 __pycache__/
 *.pyc
 Web.config
+.vs
+KhMedium/bin/
+KhMedium/obj/
+
+KhMedium/.gitignore
+.vs/KhMedium/v15/.suo
+.vs/config/applicationhost.config
+KhMedium/.gitignore
+KhMedium/App_Start/BundleConfig.cs
+KhMedium/Entities/AspNetUser.cs
+KhMedium/Entities/Database.Designer.cs
+KhMedium/KhMedium.csproj
+KhMedium/KhMedium.csproj.user
+KhMedium/Views/Shared/_Layout.cshtml
+KhMedium/Web - Copy.config
+KhMedium/Web.config
+KhMedium/bin/KhMedium.dll
+KhMedium/bin/KhMedium.pdb
+KhMedium/obj/Debug/CoreCompileInputs.cache
+KhMedium/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+KhMedium/obj/Debug/KhMedium.dll
+KhMedium/obj/Debug/KhMedium.pdb
+KhMedium/obj/Debug/TempPE/Entities.Database.Designer.cs.dll
+KhMedium/obj/Debug/TempPE/Entities.Database.cs.dll

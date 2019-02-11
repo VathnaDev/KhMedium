@@ -66,6 +66,7 @@ namespace KhMedium.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
                 return View(tag);
+            tag.CreatedAt = DateTime.Now;
 
             _context.Tags.Update(tag);
             _context.Complete();

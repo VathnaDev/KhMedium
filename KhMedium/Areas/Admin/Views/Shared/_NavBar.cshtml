@@ -41,13 +41,21 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="~/Content/pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Tage</a></li>
+                    <li><a href="" @Url.Action("Index", "Tags", new { id = "id" }) "><i class="fa fa-circle-o text-red"></i> <span>Tags</span></a></li>
+
+                    @*<li> @Html.ActionLink("Tags", "Index", "Tags",null, new { @class="fa fa-circle-o"})</li>*@
+                    <li> @Html.ActionLink("Category", "Index", "Category", null, new {  @class = "fa fa-circle-o" })</li>
+                    <li> @Html.ActionLink("Topics", "Index", "Topics", null, new { @class = "fa fa-circle-o" })</li>
+                    <li> @Html.ActionLink("Publications", "Index", "Publications", null, new { @class = "fa fa-circle-o" })</li>
+
+                    
+
                 </ul>
             </li>
           
             
             <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+            @*<li><a href=""@Url.Action("actionName", "controllerName", new { id = "id" })"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>*@
            
         </ul>
     </section>
