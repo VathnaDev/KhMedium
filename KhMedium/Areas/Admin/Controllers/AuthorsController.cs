@@ -8,13 +8,17 @@ using System.Web.Mvc;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
-    public class PublicationsController : Controller
+    public class AuthorsController : Controller
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
-        // GET: Admin/Publications
+        // GET: Admin/Authors
         public ActionResult Index()
         {
-            var model = _context.Publications.GetAll();
+            var model = _context.Authors.GetAll();
+            if(model == null)
+            {
+                return View("No Data");
+            }
             return View(model);
         }
         public ActionResult Create()
@@ -23,15 +27,16 @@ namespace KhMedium.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Publication publication)
+        public ActionResult Create(String author)
         {
-            Console.WriteLine(publication);
-            if(!ModelState.IsValid)
-                return View(publication);
-            publication.Id = Guid.NewGuid().ToString();
-            publication.CreatedAt = DateTime.Now;
-            publication.UpdatedAt = DateTime.Now;
-            _context.Publications.Add(publication);
+           
+          
+            if (!ModelState.IsValid)
+                return View(author);
+            author.Id = Guid.NewGuid().ToString();
+            author.CreatedAt = DateTime.Now;
+            author.UpdatedAt = DateTime.Now;
+            _context.Publications.Add(author);
             _context.Complete();
             return RedirectToAction("Index");
         }
@@ -51,7 +56,7 @@ namespace KhMedium.Areas.Admin.Controllers
             _context.Publications.Update(publication);
             _context.Complete();
             return RedirectToAction("Index");
-            
+
         }
         public ActionResult Delete(String id)
         {

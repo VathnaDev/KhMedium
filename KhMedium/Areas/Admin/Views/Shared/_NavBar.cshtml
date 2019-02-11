@@ -41,15 +41,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="" @Url.Action("Index", "Tags", new { id = "id" }) "><i class="fa fa-circle-o text-red"></i> <span>Tags</span></a></li>
+                    <li><a href="@Url.Action("Index", "Tags") "><i class="fa fa-circle-o text-green"></i> <span>Tags</span></a></li>
+                    <li><a href="@Url.Action("Index", "Topics") "><i class="fa fa-circle-o text-green"></i> <span>Topics</span></a></li>
+                    <li><a href="@Url.Action("Index", "Category") "><i class="fa fa-circle-o text-green"></i> <span>Category</span></a></li>
+                    <li><a href="@Url.Action("Index", "Publications") "><i class="fa fa-circle-o text-green"></i> <span>Publications</span></a></li>
 
-                    @*<li> @Html.ActionLink("Tags", "Index", "Tags",null, new { @class="fa fa-circle-o"})</li>*@
-                    <li> @Html.ActionLink("Category", "Index", "Category", null, new {  @class = "fa fa-circle-o" })</li>
-                    <li> @Html.ActionLink("Topics", "Index", "Topics", null, new { @class = "fa fa-circle-o" })</li>
-                    <li> @Html.ActionLink("Publications", "Index", "Publications", null, new { @class = "fa fa-circle-o" })</li>
-
-                    
-
+                 
                 </ul>
             </li>
           
