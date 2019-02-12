@@ -27,6 +27,8 @@ namespace KhMedium.Data
             Shares = new ShareRepository(_context);
             Tags = new TagRepository(_context);
             Topics = new TopicRepository(_context);
+            UserTopics = new UserTopicRespository(_context);
+            Files = new FileRepository(_context);
         }
 
         public IArticleRepository Articles { get; }
@@ -42,6 +44,8 @@ namespace KhMedium.Data
         public IShareRepository Shares { get; }
         public ITagRepository Tags { get; }
         public ITopicRepository Topics { get; }
+        public IUserTopicRepository UserTopics{ get; }
+        public IFileRepository Files{ get; }
 
         public int Complete()
         {

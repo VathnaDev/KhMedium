@@ -93,6 +93,7 @@
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
     <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
     <Property Name="DeletedAt" Type="datetime" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="Bookmarks">
     <Key>
@@ -131,6 +132,18 @@
     <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PublicationId" Type="nvarchar" MaxLength="128" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+    <Property Name="ArticleId" Type="nvarchar" MaxLength="128" />
+    <Property Name="TopicId" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="Followers">
     <Key>
       <PropertyRef Name="Id" />
@@ -161,9 +174,12 @@
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="About" Type="nvarchar(max)" />
-    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Logo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactInfo" Type="nvarchar(max)" />
     <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
     <Property Name="DeletedAt" Type="datetime" />
   </EntityType>
   <EntityType Name="Shares">
@@ -201,6 +217,14 @@
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CategoryId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserTopic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="TopicId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <Association Name="FK_Articles_Authors">
     <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
@@ -522,6 +546,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserTopic_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="UserTopic" Type="Self.UserTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserTopic">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTopic_Topics">
+    <End Role="Topics" Type="Self.Topics" Multiplicity="1" />
+    <End Role="UserTopic" Type="Self.UserTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topics">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserTopic">
+        <PropertyRef Name="TopicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="khmediumModelStoreContainer">
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
@@ -536,6 +584,7 @@
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Claps" EntityType="Self.Claps" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="File" EntityType="Self.File" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Followers" EntityType="Self.Followers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Followings" EntityType="Self.Followings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publications" EntityType="Self.Publications" Schema="dbo" store:Type="Tables" />
@@ -543,6 +592,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tags" EntityType="Self.Tags" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTopic" EntityType="Self.UserTopic" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Articles_Authors" Association="Self.FK_Articles_Authors">
       <End Role="Authors" EntitySet="Authors" />
       <End Role="Articles" EntitySet="Articles" />
@@ -646,6 +696,14 @@
     <AssociationSet Name="FK_Topics_Categories" Association="Self.FK_Topics_Categories">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Topics" EntitySet="Topics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTopic_AspNetUsers" Association="Self.FK_UserTopic_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="UserTopic" EntitySet="UserTopic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTopic_Topics" Association="Self.FK_UserTopic_Topics">
+      <End Role="Topics" EntitySet="Topics" />
+      <End Role="UserTopic" EntitySet="UserTopic" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

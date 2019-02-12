@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Dynamic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
@@ -19,9 +20,9 @@ namespace KhMedium.Data
 
         public TEntity Get(String id)
         {
-            return Context.Set<TEntity>().Find(id);
+           return Context.Set<TEntity>().Find(id);
         }
-       
+
         public IEnumerable<TEntity> GetAll()
         {
             return Context.Set<TEntity>().ToList();
@@ -61,6 +62,14 @@ namespace KhMedium.Data
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
             Context.Set<TEntity>().RemoveRange(entities);
+        }
+
+        public static bool IsPropertyExist(dynamic theObject, string name)
+        {
+            if (theObject is ExpandoObject)
+                return ((IDictionary<string, object>) theObject).ContainsKey(name);
+
+            return theObject.GetType().GetProperty(name) != null;
         }
     }
 }

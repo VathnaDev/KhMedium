@@ -8,7 +8,6 @@
 <br/>
 @using (Html.BeginForm("Edits", "Tags", FormMethod.Post))
 {
-    DateTime date = DateTime.Now;
     @Html.AntiForgeryToken()
     {
         @Html.ValidationSummary(true)

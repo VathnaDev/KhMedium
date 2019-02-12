@@ -9,6 +9,6 @@ namespace KhMedium.Data.Core
 {
     public interface IBookmarkRepository : IRepository<Bookmark>
     {
-
+        List<Bookmark> GetUserBookmarks(String userId);
     }
 }

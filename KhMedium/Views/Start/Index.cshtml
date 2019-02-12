@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .container {
+            margin: auto auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="text-center">
+        <h1>Welcome to KhMedium</h1> 
+        <h3>A place where words matter</h3> 
+        @Html.ActionLink("Dive In", "SelectTopics", new {  }, new { @class = "btn btn-info" })
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

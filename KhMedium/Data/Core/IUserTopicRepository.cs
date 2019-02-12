@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using KhMedium.Entities;
-using KhMedium.Models;
 
 namespace KhMedium.Data.Core
 {
-    public interface IArticleRepository : IRepository<Article>
+    public interface IUserTopicRepository : IRepository<UserTopic>
     {
-        List<Article> GetFeatureArticle(String userId = "");
     }
 }

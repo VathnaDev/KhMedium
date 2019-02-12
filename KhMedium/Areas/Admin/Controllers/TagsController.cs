@@ -57,6 +57,8 @@ namespace KhMedium.Areas.Admin.Controllers
         public ActionResult Edits(String id)
         {
             var tag = _context.Tags.Get(id);
+            if (tag == null)
+                return View("Error");
             return View(tag);
         }
 
@@ -80,6 +82,12 @@ namespace KhMedium.Areas.Admin.Controllers
             _context.Tags.Remove(tag);
             _context.Complete();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Test()
+        {
+            var articles = _context.Articles.GetAll().ToList();
+            return View("Index");
         }
     }
 }
