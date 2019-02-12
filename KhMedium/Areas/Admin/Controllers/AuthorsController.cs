@@ -27,19 +27,19 @@ namespace KhMedium.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(String author)
-        {
+        //public ActionResult Create(Tag author)
+        //{
            
           
-            if (!ModelState.IsValid)
-                return View(author);
-            author.Id = Guid.NewGuid().ToString();
-            author.CreatedAt = DateTime.Now;
-            author.UpdatedAt = DateTime.Now;
-            _context.Publications.Add(author);
-            _context.Complete();
-            return RedirectToAction("Index");
-        }
+        //    if (!ModelState.IsValid)
+        //        return View(author);
+        //    author.Id = Guid.NewGuid().ToString();
+        //    author.CreatedAt = DateTime.Now;
+        //    author.UpdatedAt = DateTime.Now;
+        //    _context.Publications.Add(author);
+        //    _context.Complete();
+        //    return RedirectToAction("Index");
+        //}
         public ActionResult Edits(String id)
         {
             var publication = _context.Publications.Get(id);

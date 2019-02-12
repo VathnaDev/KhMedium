@@ -1,0 +1,40 @@
+﻿@model KhMedium.Entities.Tag
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+<br/>
+@using (Html.BeginForm("Edits", "Tags", FormMethod.Post))
+{
+    DateTime date = DateTime.Now;
+    @Html.AntiForgeryToken()
+    {
+        @Html.ValidationSummary(true)
+        {
+            @Html.HiddenFor(model => model.CreatedAt)
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box box-info">
+                        <div class="box-header">
+                            <h3 class="box-title">Edit Tags</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.Label("Name")
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="box-footer">
+                                @Html.ActionLink("Cancel", "Index", "Tags", new { @Class = "btn btn-default" })
+                                <button type="submit" class="btn btn-info pull-right">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+}
