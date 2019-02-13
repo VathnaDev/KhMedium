@@ -237,3 +237,4 @@ E:\VisualStudioProjects\KhMedium\KhMedium\bin\Microsoft.AI.Web.xml
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CopyComplete
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
+E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
