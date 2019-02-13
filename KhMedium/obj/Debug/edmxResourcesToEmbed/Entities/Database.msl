@@ -64,6 +64,7 @@
     <EntitySetMapping Name="AspNetUsers">
       <EntityTypeMapping TypeName="khmediumModel.AspNetUser">
         <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
@@ -241,6 +242,15 @@
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="PublicationId" ColumnName="PublicationId" />
           <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorPublications">
+      <EntityTypeMapping TypeName="khmediumModel.AuthorPublication">
+        <MappingFragment StoreEntitySet="AuthorPublication">
+          <ScalarProperty Name="PublicationId" ColumnName="PublicationId" />
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

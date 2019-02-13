@@ -81,6 +81,15 @@
     <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Avatar" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AuthorPublication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="AuthorId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PublicationId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <EntityType Name="Authors">
     <Key>
@@ -271,6 +280,30 @@
       </Principal>
       <Dependent Role="ArticleTags">
         <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorPublication_Authors">
+    <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+    <End Role="AuthorPublication" Type="Self.AuthorPublication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorPublication">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorPublication_Publications">
+    <End Role="Publications" Type="Self.Publications" Multiplicity="1" />
+    <End Role="AuthorPublication" Type="Self.AuthorPublication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorPublication">
+        <PropertyRef Name="PublicationId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -579,6 +612,7 @@
     <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorPublication" EntityType="Self.AuthorPublication" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bookmarks" EntityType="Self.Bookmarks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
@@ -608,6 +642,14 @@
     <AssociationSet Name="FK_ArticleTags_Tags" Association="Self.FK_ArticleTags_Tags">
       <End Role="Tags" EntitySet="Tags" />
       <End Role="ArticleTags" EntitySet="ArticleTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorPublication_Authors" Association="Self.FK_AuthorPublication_Authors">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="AuthorPublication" EntitySet="AuthorPublication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorPublication_Publications" Association="Self.FK_AuthorPublication_Publications">
+      <End Role="Publications" EntitySet="Publications" />
+      <End Role="AuthorPublication" EntitySet="AuthorPublication" />
     </AssociationSet>
     <AssociationSet Name="FK_Authors_Publications" Association="Self.FK_Authors_Publications">
       <End Role="Publications" EntitySet="Publications" />
