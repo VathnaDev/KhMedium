@@ -26,12 +26,12 @@ namespace KhMedium.Entities
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Avatar { get; set; }
         public string Logo { get; set; }
         public string ContactInfo { get; set; }
         public System.DateTime UpdatedAt { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
+        public string Cover { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Author> Authors { get; set; }

@@ -14,6 +14,7 @@
     <EntitySetMapping Name="Articles">
       <EntityTypeMapping TypeName="khmediumModel.Article">
         <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Content" ColumnName="Content" />
@@ -64,6 +65,7 @@
     <EntitySetMapping Name="AspNetUsers">
       <EntityTypeMapping TypeName="khmediumModel.AspNetUser">
         <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
@@ -82,6 +84,7 @@
     <EntitySetMapping Name="Authors">
       <EntityTypeMapping TypeName="khmediumModel.Author">
         <MappingFragment StoreEntitySet="Authors">
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
@@ -163,10 +166,10 @@
     <EntitySetMapping Name="Publications">
       <EntityTypeMapping TypeName="khmediumModel.Publication">
         <MappingFragment StoreEntitySet="Publications">
+          <ScalarProperty Name="Cover" ColumnName="Cover" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="Logo" ColumnName="Logo" />
           <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
           <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
@@ -208,6 +211,7 @@
     <EntitySetMapping Name="Topics">
       <EntityTypeMapping TypeName="khmediumModel.Topic">
         <MappingFragment StoreEntitySet="Topics">
+          <ScalarProperty Name="Cover" ColumnName="Cover" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
@@ -241,6 +245,15 @@
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="PublicationId" ColumnName="PublicationId" />
           <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorPublications">
+      <EntityTypeMapping TypeName="khmediumModel.AuthorPublication">
+        <MappingFragment StoreEntitySet="AuthorPublication">
+          <ScalarProperty Name="PublicationId" ColumnName="PublicationId" />
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
