@@ -12,6 +12,7 @@ namespace KhMedium.Data.Core
         List<Article> GetFeatureArticle(String userId = "");
         List<Article> GetPopularArticle(String userId = "");
         List<Article> GetArticlesByTopic(String topicId);
+        List<Article> GetAuthorArticlesByPublication(String publicationId, String authorId);
 
     }
 }
