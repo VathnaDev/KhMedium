@@ -1,4 +1,6 @@
-﻿@{
+﻿@model KhMedium.Models.ViewModel.HomeViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -9,57 +11,38 @@
                 <div style="background-image: url(/Content/assets/img/demo/blog4.jpg); height: 150px;    background-size: cover;    background-repeat: no-repeat;"></div>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
                     <h2 class="h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">Brain Stimulation Relieves Depression Symptoms</a>
+                        <a class="text-dark" href="article.html">@Model.FeatureArticles[0].Title</a>
                     </h2>
                     <p class="card-text">
-                        Researchers have found an effective target in the brain for electrical stimulation to improve mood in people suffering from depression.
+                        @Model.FeatureArticles[0].Content
                     </p>
                     <div>
-                        <small class="d-block"><a class="text-muted" href="author.html">Favid Rick</a></small>
-                        <small class="text-muted">Dec 12 &middot; 5 min read</small>
+                        <small class="d-block"><a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a></small>
+                        <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="flex-md-row mb-4 box-shadow h-xl-300">
-                <div class="mb-3 d-flex align-items-center">
-                    <img height="80" src="~/Content/assets/img/demo/blog4.jpg">
-                    <div class="pl-3">
-                        <h2 class="mb-2 h6 font-weight-bold">
-                            <a class="text-dark" href="article.html">Nasa's IceSat space laser makes height maps of Earth</a>
-                        </h2>
-                        <div class="card-text text-muted small">
-                            Jake Bittle in LOVE/HATE
+            @for (var i = 0; i < Model.FeatureArticles.Count; i++)
+            {
+                var article = Model.FeatureArticles[i];
+                <div class="flex-md-row mb-4 box-shadow h-xl-300">
+                    <div class="mb-3 d-flex align-items-center">
+                        <img height="80" src="~/Content/assets/img/demo/blog4.jpg">
+                        <div class="pl-3">
+                            <h2 class="mb-2 h6 font-weight-bold">
+                                <a class="text-dark" href="article.html">@article.Title</a>
+                            </h2>
+                            <div class="card-text text-muted small">
+                                @article.Author.Name
+                            </div>
+                            <small class="text-muted">@article.CreatedAt</small>
                         </div>
-                        <small class="text-muted">Dec 12 &middot; 5 min read</small>
                     </div>
                 </div>
-                <div class="mb-3 d-flex align-items-center">
-                    <img height="80" src="~/Content/assets/img/demo/blog5.jpg">
-                    <div class="pl-3">
-                        <h2 class="mb-2 h6 font-weight-bold">
-                            <a class="text-dark" href="article.html">Underwater museum brings hope to Lake Titicaca</a>
-                        </h2>
-                        <div class="card-text text-muted small">
-                            Jake Bittle in LOVE/HATE
-                        </div>
-                        <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                    </div>
-                </div>
-                <div class="mb-3 d-flex align-items-center">
-                    <img height="80" src="~/Content/assets/img/demo/1.jpg">
-                    <div class="pl-3">
-                        <h2 class="mb-2 h6 font-weight-bold">
-                            <a class="text-dark" href="article.html">Sun-skimming probe starts calling home</a>
-                        </h2>
-                        <div class="card-text text-muted small">
-                            Jake Bittle in LOVE/HATE
-                        </div>
-                        <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                    </div>
-                </div>
-            </div>
+            }
+            
         </div>
     </div>
 </div>

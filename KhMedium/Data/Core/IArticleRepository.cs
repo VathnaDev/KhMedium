@@ -10,5 +10,8 @@ namespace KhMedium.Data.Core
     public interface IArticleRepository : IRepository<Article>
     {
         List<Article> GetFeatureArticle(String userId = "");
+        List<Article> GetPopularArticle(String userId = "");
+        List<Article> GetArticlesByTopic(String topicId);
+
     }
 }

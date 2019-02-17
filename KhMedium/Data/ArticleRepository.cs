@@ -47,7 +47,7 @@ namespace KhMedium.Data
         {
             var articles = KhMediumContext.Articles.OrderBy(
                     a => a.CreatedAt)
-                .ThenBy(a => a.Claps)
+                .ThenBy(a => a.Claps.Count)
                 .ToList();
 
             if (userId.IsEmpty()) return articles;
@@ -64,8 +64,8 @@ namespace KhMedium.Data
         {
             var articles = KhMediumContext.Articles.OrderBy(
                     a => a.CreatedAt)
-                .ThenBy(a => a.Claps)
-                .ThenBy(a => a.Comments)
+                .ThenBy(a => a.Claps.Count)
+                .ThenBy(a => a.Comments.Count)
                 .ToList();
 
             if (!userId.IsEmpty())
