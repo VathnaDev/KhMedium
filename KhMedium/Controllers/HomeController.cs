@@ -21,6 +21,8 @@ namespace KhMedium.Controllers
         {
             string uid = "";
 
+            var allArticles = _context.Articles.GetAll().OrderBy(a => a.CreatedAt).Take(10).ToList();
+
             if (User.Identity.IsAuthenticated)
             {
                 uid = User.Identity.GetUserId();
@@ -30,7 +32,9 @@ namespace KhMedium.Controllers
                 Topics = _context.Topics.GetAll().ToList(),
                 FeatureArticles = _context.Articles.GetFeatureArticle(uid),
                 BasedHistoryArticles = _context.Articles.GetFeatureArticle(uid),
-                PopularArticles = _context.Articles.GetPopularArticle(uid)
+                PopularArticles = _context.Articles.GetPopularArticle(uid).Take(4).ToList(),
+                AllStoriesArticles = allArticles
+                
             };
 
             return View(viewModel);
