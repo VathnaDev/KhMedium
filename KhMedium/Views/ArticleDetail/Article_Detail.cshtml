@@ -1,0 +1,456 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .postArticle--full .graf--title.graf--leading {
+            padding-top: 16px !important;
+        }
+
+        .uiScale {
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        .u-fontSize15 {
+            font-size: 17px !important;
+        }
+
+        .u-marginVertical24 {
+            margin-top: 24px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .u-flexCenter {
+            display: -webkit-box !important;
+            display: -webkit-flex !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -webkit-box-align: center !important;
+            -webkit-align-items: center !important;
+            -ms-flex-align: center !important;
+            align-items: center !important;
+        }
+
+        .u-flex0 {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+        }
+
+        .link {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .avatar {
+            display: block;
+            white-space: nowrap;
+            overflow: visible;
+            text-overflow: ellipsis;
+            line-height: normal;
+            position: relative;
+        }
+
+        a,
+        button,
+        input {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a {
+            background-color: transparent;
+        }
+
+        .avatar-image {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+        }
+
+        .u-size50x50 {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        img {
+            border: 0;
+        }
+
+        div {
+            display: block;
+        }
+
+        .u-paddingLeft15 {
+            padding-left: 15px !important;
+        }
+
+        .u-flex1 {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+        }
+
+        .u-overflowHidden {
+            overflow: hidden !important;
+        }
+
+        div {
+            display: block;
+        }
+
+        .uiScale {
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        .u-fontSize15 {
+            font-size: 17px !important;
+        }
+
+        .followState.is-blocking > .button--unblock,
+        .followState > .button--block,
+        .followState > .button--follow {
+            display: inline-block;
+        }
+
+        .followState .button {
+            vertical-align: middle;
+        }
+
+        .button--withChrome.button--smallest {
+            height: 19px;
+            line-height: 19px;
+            padding: 0 10px;
+        }
+
+        .button--dark.button--primary {
+            color: rgba(0, 0, 0, .84);
+            border-color: rgba(0, 0, 0, .68);
+        }
+
+        .button--primary {
+            border-color: #03a87c;
+        }
+
+            .button--primary,
+            .button--primary .label,
+            .button--primary.button--link {
+                color: #03a87c;
+            }
+
+        .button--smallest,
+        .button--smallest.button--chromeless,
+        .button--smallest.button--link {
+            font-size: 15px;
+        }
+
+        .button--dark {
+            border-color: rgba(0, 0, 0, .68);
+            color: rgba(0, 0, 0, .68);
+        }
+
+        .button--withChrome {
+            height: 37px;
+            line-height: 37px;
+            padding: 0 16px;
+            border: 1px solid rgba(0, 0, 0, .15);
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .button,
+        .button .svgIcon {
+            -webkit-transition: .1s background-color, .1s border-color, .1s color, .1s fill;
+            transition: .1s background-color, .1s border-color, .1s color, .1s fill;
+        }
+
+            .button.is-active > .button-activeState,
+            .button > .button-defaultState {
+                display: inline;
+            }
+
+            .button > .button-activeState {
+                display: none;
+            }
+
+        .button {
+            display: inline-block;
+            position: relative;
+            color: rgba(0, 0, 0, .54);
+            background: rgba(0, 0, 0, 0);
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            vertical-align: bottom;
+            white-space: nowrap;
+            text-rendering: auto;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            letter-spacing: 0;
+            font-weight: 400;
+            font-style: normal;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -moz-font-feature-settings: "liga"on;
+        }
+
+        .u-marginLeft10 {
+            margin-left: 10px !important;
+        }
+
+        .u-noUserSelect {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+        }
+
+        a,
+        button,
+        input {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+            button,
+            html input[type=button],
+            input[type=reset],
+            input[type=submit] {
+                -webkit-appearance: button;
+                cursor: pointer;
+            }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button {
+            overflow: visible;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            color: inherit;
+            font: inherit;
+            margin: 0;
+        }
+
+        .v-glyph--m2 .uiScale-caption--regular .ui-caption {
+            font-weight: 400 !important;
+        }
+
+        .uiScale-caption--regular .ui-caption {
+            --x-height-multiplier: 0.342 !important;
+            --baseline-multiplier: 0.22 !important;
+            font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+            letter-spacing: -.02em !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            letter-spacing: 0 !important;
+            font-size: 16px !important;
+            line-height: 20px !important;
+            -webkit-transform: translateY(1.52px);
+            transform: translateY(1.52px);
+        }
+
+        .uiScale .ui-caption {
+            color: rgba(0, 0, 0, .54) !important;
+            fill: rgba(0, 0, 0, .54) !important;
+        }
+
+        .u-noWrapWithEllipsis {
+            white-space: nowrap !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+
+        .middotDivider:after {
+            content: '\00B7';
+        }
+
+        .readingTime:after {
+            content: attr(title);
+        }
+
+        .v-glyph--m2 .graf-dropCap {
+            font-weight: 600;
+        }
+
+        .graf-dropCap {
+            --x-height-multiplier: 0.342;
+            --baseline-multiplier: 0.22;
+            font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+            letter-spacing: -.02em;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 0;
+            font-size: 72px;
+            padding-top: 6px;
+            margin-left: -5px;
+            margin-right: 7px;
+            letter-spacing: -.03em;
+            line-height: .83;
+            margin-bottom: -.08em;
+        }
+
+        .graf-dropCap {
+            display: block;
+            position: relative;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Content here -->
+
+        <div class="section-inner sectionLayout--insetColumn">
+            <h1 name="db9d" id="db9d" class="graf graf--h3 graf--leading graf--title">
+                Decentralized Disruption — Who
+                Dares Wins? — Bittorrent Lessons for Crypto (4 of&nbsp;4)
+            </h1>
+            <div class="uiScale uiScale-ui--regular uiScale-caption--regular u-flexCenter u-marginVertical24 u-fontSize15 js-postMetaLockup">
+                <div class="u-flex0">
+                    <a class="link u-baseColor--link avatar" href="https://medium.com/@simonhmorris?source=post_header_lockup"
+                       data-action="show-user-card" data-action-source="post_header_lockup" data-action-value="b0d50f0b5bb7"
+                       data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">
+                        <img src="https://cdn-images-1.medium.com/fit/c/78/78/1*S_VOWMtvaNHQ5za0F4GGXw.png" class="avatar-image u-size50x50"
+                             alt="Go to the profile of Simon Morris">
+                    </a>
+                </div>
+                <div class="u-flex1 u-paddingLeft15 u-overflowHidden">
+                    <div class="u-paddingBottom3">
+                        <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker"
+                           href="https://medium.com/@simonhmorris" data-action="show-user-card" data-action-value="b0d50f0b5bb7"
+                           data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">Simon Morris</a>
+                        <span class="followState js-followState" data-user-id="b0d50f0b5bb7">
+
+                            <button class="button button--primary button--smallest button--dark u-noUserSelect button--withChrome u-accentColor--buttonDark button--follow js-followButton u-marginLeft10 u-xs-hide"
+                                    data-action="toggle-subscribe-user" data-action-value="b0d50f0b5bb7" data-action-source="post_header_lockup-b0d50f0b5bb7-------------------------follow_byline"
+                                    data-subscribe-source="post_header_lockup" data-follow-context-entity-id="f022e8641c1a">
+                                <span class="button-label  button-defaultState js-buttonLabel">Follow</span>
+                                <span class="button-label button-activeState">Following</span>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="ui-caption u-noWrapWithEllipsis js-testPostMetaInlineSupplemental">
+                        <time datetime="2019-01-10T20:02:26.519Z">Jan 11</time>
+                        <span class="middotDivider u-fontSize12"></span>
+                        <span class="readingTime" title="8 min read"></span>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+                <img src="https://cdn-images-1.medium.com/max/1250/1*LtxuQDJl8JIElUDGr_LBdw.png" class="img-fluid" alt="Responsive image" />
+
+            </div>
+            <canvas class="progressiveMedia-canvas js-progressiveMedia-canvas" width="75" height="53"></canvas>
+
+            <h4 name="90c3" id="90c3" class="graf graf--h4 graf-after--figure">The End of an&nbsp;Era</h4>
+
+            <p name="5dcd" id="5dcd" class="graf graf--p graf--hasDropCapModel graf--hasDropCap graf-after--p">
+                <span class="graf-dropCap">T</span>
+                he Bittorrent ecosystem grew into a decentralized, slow-moving, almost ungovernable network. Yet it has
+                remained strongly censor-resistant as hundreds of millions of users continue to share all types of
+                media files online. BitTorrent Inc built a modest-sized business distributing two of the most popular
+                Bittorrent clients (<a href="https://www.utorrent.com" data-href="https://www.utorrent.com" class="markup--anchor markup--p-anchor"
+                                       rel="nofollow noopener" target="_blank">uTorrent</a> and <a href="https://www.bittorrent.com"
+                                                                                                   data-href="https://www.bittorrent.com" class="markup--anchor markup--p-anchor" rel="nofollow noopener"
+                                                                                                   target="_blank">Bittorrent</a>) and putting ads in front of their users. There were a number of
+                other VC-backed companies which became involved in different parts of the ecosystem, all hoping to find
+                a way to capture some of the copious amounts of value that had clearly been created for consumers. But
+                if the objective of the game was to secure billion dollar exits and huge returns on capital invested,
+                then every one of them failed. With the wonderful benefit of hindsight, here is what actually happened:
+
+                <div>
+
+                    <img src="https://cdn-images-1.medium.com/max/1250/0*T0dXKJ_CKT7Pqxqm" class="img-fluid"
+                         alt="Responsive image" />
+
+                </div>
+
+                <canvas class="progressiveMedia-canvas js-progressiveMedia-canvas" width="75" height="53"></canvas>
+
+                <h4 name="90c3" id="90c3" class="graf graf--h4 graf-after--figure">The End of an&nbsp;Era</h4>
+
+            <p name="5dcd" id="5dcd" class="graf graf--p graf--hasDropCapModel graf--hasDropCap graf-after--p">
+                <span class="graf-dropCap">T</span>
+                he Bittorrent ecosystem grew into a decentralized, slow-moving, almost ungovernable network. Yet it
+                has
+                remained strongly censor-resistant as hundreds of millions of users continue to share all types of
+                media files online. BitTorrent Inc built a modest-sized business distributing two of the most
+                popular
+                Bittorrent clients (<a href="https://www.utorrent.com" data-href="https://www.utorrent.com" class="markup--anchor markup--p-anchor"
+                                       rel="nofollow noopener" target="_blank">uTorrent</a> and <a href="https://www.bittorrent.com"
+                                                                                                   data-href="https://www.bittorrent.com" class="markup--anchor markup--p-anchor" rel="nofollow noopener"
+                                                                                                   target="_blank">Bittorrent</a>) and putting ads in front of their users. There were a number of
+                other VC-backed companies which became involved in different parts of the ecosystem, all hoping to
+                find
+                a way to capture some of the copious amounts of value that had clearly been created for consumers.
+                But
+                if the objective of the game was to secure billion dollar exits and huge returns on capital
+                invested,
+                then every one of them failed. With the wonderful benefit of hindsight, here is what actually
+                happened:
+
+                <div>
+
+                    <img src="https://cdn-images-1.medium.com/max/1250/0*T0dXKJ_CKT7Pqxqm" class="img-fluid"
+                         alt="Responsive image" />
+
+                </div>
+
+
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
