@@ -8,6 +8,7 @@ using AutoMapper;
 using KhMedium.Data;
 using KhMedium.Entities;
 using KhMedium.Models;
+using KhMedium.Models.ViewModel;
 
 namespace KhMedium.Controllers
 {
@@ -17,6 +18,8 @@ namespace KhMedium.Controllers
 
         public ActionResult Index()
         {
+            var viewModel = new HomeViewModel();
+
             return View();
         }
 

@@ -234,7 +234,9 @@
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LutherController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\PublicationController.cs" />
@@ -368,6 +370,7 @@
     <Compile Include="Models\FollowerModel.cs" />
     <Compile Include="Models\FollowingModel.cs" />
     <Compile Include="Models\PublicationModel.cs" />
+    <Compile Include="Models\ViewModel\CreateArticleViewModel.cs" />
     <Compile Include="Models\ViewModel\HomeViewModel.cs" />
     <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
     <Compile Include="Models\ShareModel.cs" />
@@ -376,6 +379,7 @@
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModel\TopicArticlesViewModel.cs" />
     <Compile Include="Models\ViewModel\TopicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -7587,6 +7591,7 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Publication\Create.cshtml" />
     <Content Include="Views\Publication\Index.cshtml" />
+    <Content Include="Views\Luther\CreateArticlesDemo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

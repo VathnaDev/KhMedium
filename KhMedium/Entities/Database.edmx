@@ -22,6 +22,7 @@
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Thumbnail" Type="nvarchar(max)" />
           <Property Name="TopicId" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="AuthorId" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -103,6 +104,7 @@
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ProfilePicture" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Bio" Type="nvarchar(max)" />
           <Property Name="PublicationId" Type="nvarchar" MaxLength="128" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
           <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
@@ -189,8 +191,8 @@
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Logo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cover" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ContactInfo" Type="nvarchar(max)" />
           <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -229,6 +231,7 @@
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cover" Type="nvarchar(max)" />
           <Property Name="CategoryId" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
         </EntityType>
@@ -786,6 +789,7 @@
           <NavigationProperty Name="Claps" Relationship="Self.FK_Claps_Articles" FromRole="Articles" ToRole="Claps" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Articles" FromRole="Articles" ToRole="Comments" />
           <NavigationProperty Name="Shares" Relationship="Self.FK_Shares_Articles" FromRole="Articles" ToRole="Shares" />
+          <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ArticleTag">
           <Key>
@@ -871,6 +875,7 @@
           <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Authors" FromRole="Authors" ToRole="Followers" />
           <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Authors" FromRole="Authors" ToRole="Followings" />
           <NavigationProperty Name="AuthorPublications" Relationship="khmediumModel.FK_AuthorPublication_Authors" FromRole="Author" ToRole="AuthorPublication" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Bookmark">
           <Key>
@@ -955,7 +960,6 @@
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
@@ -965,6 +969,7 @@
           <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Publications" FromRole="Publications" ToRole="Followers" />
           <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Publications" FromRole="Publications" ToRole="Followings" />
           <NavigationProperty Name="AuthorPublications" Relationship="khmediumModel.FK_AuthorPublication_Publications" FromRole="Publication" ToRole="AuthorPublication" />
+          <Property Name="Cover" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Share">
           <Key>
@@ -1009,6 +1014,7 @@
           <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Topics" FromRole="Topics" ToRole="Followers" />
           <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Topics" FromRole="Topics" ToRole="Followings" />
           <NavigationProperty Name="UserTopics" Relationship="Self.FK_UserTopic_Topics" FromRole="Topics" ToRole="UserTopic" />
+          <Property Name="Cover" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="UserTopic">
           <Key>
@@ -1545,6 +1551,7 @@
           <EntitySetMapping Name="Articles">
             <EntityTypeMapping TypeName="khmediumModel.Article">
               <MappingFragment StoreEntitySet="Articles">
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
@@ -1614,6 +1621,7 @@
           <EntitySetMapping Name="Authors">
             <EntityTypeMapping TypeName="khmediumModel.Author">
               <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
@@ -1695,10 +1703,10 @@
           <EntitySetMapping Name="Publications">
             <EntityTypeMapping TypeName="khmediumModel.Publication">
               <MappingFragment StoreEntitySet="Publications">
+                <ScalarProperty Name="Cover" ColumnName="Cover" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
                 <ScalarProperty Name="Logo" ColumnName="Logo" />
                 <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
                 <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
@@ -1740,6 +1748,7 @@
           <EntitySetMapping Name="Topics">
             <EntityTypeMapping TypeName="khmediumModel.Topic">
               <MappingFragment StoreEntitySet="Topics">
+                <ScalarProperty Name="Cover" ColumnName="Cover" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />

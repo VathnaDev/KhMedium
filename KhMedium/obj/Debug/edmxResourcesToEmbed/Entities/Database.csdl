@@ -29,6 +29,7 @@
     <NavigationProperty Name="Claps" Relationship="Self.FK_Claps_Articles" FromRole="Articles" ToRole="Claps" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Articles" FromRole="Articles" ToRole="Comments" />
     <NavigationProperty Name="Shares" Relationship="Self.FK_Shares_Articles" FromRole="Articles" ToRole="Shares" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ArticleTag">
     <Key>
@@ -114,6 +115,7 @@
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Authors" FromRole="Authors" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Authors" FromRole="Authors" ToRole="Followings" />
     <NavigationProperty Name="AuthorPublications" Relationship="khmediumModel.FK_AuthorPublication_Authors" FromRole="Author" ToRole="AuthorPublication" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Bookmark">
     <Key>
@@ -198,7 +200,6 @@
     <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
@@ -208,6 +209,7 @@
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Publications" FromRole="Publications" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Publications" FromRole="Publications" ToRole="Followings" />
     <NavigationProperty Name="AuthorPublications" Relationship="khmediumModel.FK_AuthorPublication_Publications" FromRole="Publication" ToRole="AuthorPublication" />
+    <Property Name="Cover" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Share">
     <Key>
@@ -252,6 +254,7 @@
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Topics" FromRole="Topics" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Topics" FromRole="Topics" ToRole="Followings" />
     <NavigationProperty Name="UserTopics" Relationship="Self.FK_UserTopic_Topics" FromRole="Topics" ToRole="UserTopic" />
+    <Property Name="Cover" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="UserTopic">
     <Key>

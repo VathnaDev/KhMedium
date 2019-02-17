@@ -23,7 +23,7 @@ namespace KhMedium.Controllers
             return Json(SaveFile(file, type, Id));
         }
 
-        public static String SaveFile(HttpPostedFileBase file, FileType type, String Id)
+        public static String SaveFile(HttpPostedFileBase file, FileType type, String id)
         {
             UnitOfWork context = new UnitOfWork(new KhMediumEntities());
             if (file == null) return "Invalid file";
@@ -40,6 +40,22 @@ namespace KhMedium.Controllers
                 CreatedAt = DateTime.Now,
                 UserId = System.Web.HttpContext.Current.User.Identity.GetUserId()
             };
+
+            switch (type)
+            {
+                case FileType.Article:
+                    dbFile.ArticleId = id;
+                    break;
+                case FileType.Publication:
+                    dbFile.PublicationId = id;
+                    break;
+                case FileType.Topic:
+                    break;
+                default:
+                    dbFile.TopicId = id;
+                    break;
+            }
+
 
             context.Files.Add(dbFile);
             context.Complete();

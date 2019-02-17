@@ -32,6 +32,7 @@ namespace KhMedium.Entities
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
+        public string Thumbnail { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual Topic Topic { get; set; }

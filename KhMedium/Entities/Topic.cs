@@ -27,6 +27,7 @@ namespace KhMedium.Entities
         public string Name { get; set; }
         public string CategoryId { get; set; }
         public System.DateTime CreatedAt { get; set; }
+        public string Cover { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Article> Articles { get; set; }

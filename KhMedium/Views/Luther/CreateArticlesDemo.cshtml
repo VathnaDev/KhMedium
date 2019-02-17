@@ -1,0 +1,19 @@
+﻿@model KhMedium.Models.ViewModel.CreateArticleViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<br/>
+@using (Html.BeginForm("CreateArticlesDemo", "Luther", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row">
+            @Html.EditorFor(model => model.Title) <br/><br />
+            @Html.TextAreaFor(model => model.Content) <br /> <br />
+            <input type="file" name="ArticlesImage" id="ArticlesImage" /> <br />
+            <input type="submit" name="name" value="Save" />
+        </div>
+    </div>
+}

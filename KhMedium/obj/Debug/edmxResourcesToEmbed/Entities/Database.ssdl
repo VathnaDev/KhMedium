@@ -17,6 +17,7 @@
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Thumbnail" Type="nvarchar(max)" />
     <Property Name="TopicId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="AuthorId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -98,6 +99,7 @@
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProfilePicture" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bio" Type="nvarchar(max)" />
     <Property Name="PublicationId" Type="nvarchar" MaxLength="128" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
     <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
@@ -184,8 +186,8 @@
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Logo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cover" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ContactInfo" Type="nvarchar(max)" />
     <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -224,6 +226,7 @@
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cover" Type="nvarchar(max)" />
     <Property Name="CategoryId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />
   </EntityType>
