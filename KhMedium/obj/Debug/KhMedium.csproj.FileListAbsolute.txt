@@ -1,4 +1,3 @@
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\ApplicationInsights.config
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.exe
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.exe.config
@@ -26,7 +25,6 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\vbc.rsp
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\VBCSCompiler.exe
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.dll.config
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.pdb
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Antlr3.Runtime.dll
@@ -238,3 +236,6 @@ E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CopyComplete
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CopyComplete

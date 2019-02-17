@@ -86,6 +86,15 @@ namespace KhMedium.Data
             return topic?.Articles.ToList() ?? new List<Article>();
         }
 
+        public List<Article> GetAuthorArticlesByPublication(string publicationId, string authorId)
+        {
+            return KhMediumContext.Articles.Where(
+                a => a.DeletedAt != null &&
+                     a.Author.Id == authorId &&
+                     a.Author.Publication.Id == publicationId
+            ).ToList();
+        }
+
         public KhMediumEntities KhMediumContext => Context as KhMediumEntities;
     }
 }
