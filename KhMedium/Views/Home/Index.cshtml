@@ -10,16 +10,20 @@
             <div class="card border-0 mb-4 box-shadow h-xl-300">
                 <div style="background-image: url(/Content/assets/img/demo/blog4.jpg); height: 150px;    background-size: cover;    background-repeat: no-repeat;"></div>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-                    <h2 class="h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a>
-                    </h2>
-                    <p class="card-text">
-                        @Model.FeatureArticles[0].Content
-                    </p>
-                    <div>
-                        <small class="d-block"><a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a></small>
-                        <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
-                    </div>
+                    @if (Model.FeatureArticles.Count > 0)
+                    {
+                        <h2 class="h4 font-weight-bold">
+                            <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a>
+                        </h2>
+                        <p class="card-text">
+                            @Model.FeatureArticles[0].Content
+                        </p>
+                        <div>
+                            <small class="d-block"><a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a></small>
+                            <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
+                        </div>
+                    }
+                   
                 </div>
             </div>
         </div>

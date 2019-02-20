@@ -19,6 +19,7 @@ namespace KhMedium.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             var model = new CreateArticleViewModel
