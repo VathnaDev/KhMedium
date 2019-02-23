@@ -389,6 +389,8 @@
     <Content Include="Content\assets\css\main.css" />
     <Content Include="Content\assets\css\vendor\bootstrap-toc.css" />
     <Content Include="Content\assets\css\vendor\prism.css" />
+    <Content Include="Content\assets\img\bookmarked.png" />
+    <Content Include="Content\assets\img\unbookmark.png" />
     <Content Include="Content\assets\img\demo\1.jpg" />
     <Content Include="Content\assets\img\demo\3.jpg" />
     <Content Include="Content\assets\img\demo\5.jpg" />

@@ -23,7 +23,7 @@
                             <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
                         </div>
                     }
-                   
+
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
             @for (var i = 1; i < Model.FeatureArticles.Count; i++)
             {
                 var article = Model.FeatureArticles[i];
-                <div class="flex-md-row mb-4 box-shadow h-xl-300">
+                <div class="flex-md-row mb-4 box-shadow">
                     <div class="mb-3 d-flex align-items-center">
                         <img height="80" src="~/Content/assets/img/demo/blog4.jpg">
                         <div class="pl-3">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             }
-            
+
         </div>
     </div>
 </div>
@@ -57,22 +57,31 @@
             <h5 class="font-weight-bold spanborder"><span>All Stories</span></h5>
             @foreach (var article in Model.AllStoriesArticles)
             {
-                <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">@article.Title</a>
-                    </h2>
-                    <p>
-                        @(new HtmlString(article.Content))
-                    </p>
-                    <div class="card-text text-muted small">
-                        @article.Author.Name
+                <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
+                    <div class="col-md-9">
+                        <h2 class="col-md-12 mb-1 h4 font-weight-bold">
+                            <a class="text-dark" href="article.html">@article.Title</a>
+                        </h2>
+                        <div class="col-md-12">
+                            @(new HtmlString(article.Content))
+                        </div>
+                        <div class="col-md-12" style="position: absolute; bottom: 0">
+                            <div class="card-text text-muted small">
+                                @article.Author.Name
+                            </div>
+                            <small class="text-muted">@article.CreatedAt</small>
+                            <span style="float: right; cursor: pointer;">
+                                <img class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png" />
+                            </span>
+                        </div>
+
                     </div>
-                    <small class="text-muted">@article.CreatedAt</small>
+                    <div class="col-md-3">
+                        <img style="height: 150px" src="~/Content/assets/img/demo/blog8.jpg">
+                    </div>
+
                 </div>
-                <img height="120" src="~/Content/assets/img/demo/blog8.jpg">
-            </div>
-            }            
+            }
         </div>
         <div class="col-md-4 pl-4">
             <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
@@ -91,7 +100,7 @@
                             </span>
                         </li>
                     }
-                    
+
 
                     @* <li> *@
                     @*     <span> *@
@@ -118,3 +127,31 @@
         </div>
     </div>
 </div>
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+        $('.bookmark').click(function () {
+            console.log('click');
+            $.ajax({
+                type: "POST",
+                url: "Home/AddBookMark",
+                data: '{articleId: "7874c654-1d1c-4ff0-a109-2ef021c196be" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log($('p').text());
+//                    if ($('p').text() === "Test") {
+//                        $('.bookmark').attr('src', '/Content/assets/img/bookmarked.png');
+
+//                    }
+                },
+                failure: function(response) {
+                    console.log("Failure " + response);
+                },
+                error: function(response) {
+                    console.log("Error " + response);
+                }
+            });
+        });
+    });
+</script>
