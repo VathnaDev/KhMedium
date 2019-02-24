@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
+using System.Web.UI;
 
 namespace KhMedium.Models.ViewModel
 {
@@ -65,6 +67,16 @@ namespace KhMedium.Models.ViewModel
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Full Name")]
+        public string Name { get; set; }
+
+        [Display(Name = "About")]
+        public string Bio { get; set; }
+
+        [Display(Name = "Profile Image")]
+        public HttpPostedFileBase Profile { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -79,6 +91,7 @@ namespace KhMedium.Models.ViewModel
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
     }
 
     public class ResetPasswordViewModel
