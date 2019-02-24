@@ -240,6 +240,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\PublicationController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Data\AuthorPublicationRepository.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
@@ -376,6 +377,7 @@
     <Compile Include="Models\ViewModel\CreateArticleViewModel.cs" />
     <Compile Include="Models\ViewModel\CreatePublicationViewModel.cs" />
     <Compile Include="Models\ViewModel\HomeViewModel.cs" />
+    <Compile Include="Models\ViewModel\SearchViewModel.cs" />
     <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
     <Compile Include="Models\ShareModel.cs" />
     <Compile Include="Models\TagModel.cs" />
@@ -7606,6 +7608,9 @@
     <Content Include="Views\Publication\Create.cshtml" />
     <Content Include="Views\Publication\Index.cshtml" />
     <Content Include="Views\Luther\CreateArticlesDemo.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Users.cshtml" />
+    <Content Include="Views\Search\Publications.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

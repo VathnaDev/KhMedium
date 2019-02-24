@@ -1,0 +1,227 @@
+﻿@model KhMedium.Models.ViewModel.SearchViewModel
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .textInput--underlined {
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+
+    .textInput--jumbo {
+        font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        letter-spacing: 0;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 52px;
+        height: 80px;
+        padding: 0;
+        width: 100%;
+    }
+
+    form {
+        display: block;
+        margin-top: 0em;
+    }
+
+    input[type=search] {
+        -webkit-appearance: none;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    blockquote, dd, dl, figure, form, h1, h2, h3, h4, h5, h6, menu, ol, p, pre, ul { margin: 0; }
+
+    input { outline: none; }
+
+    .space { margin: 8px; }
+
+    .col {
+        position: relative;
+        min-height: 1px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .col, .container, .row {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .u-size9of12 { width: 75% !important; }
+
+    .u-size10of12, .u-size11of12, .u-size12of12, .u-size1of12, .u-size2of12, .u-size3of12, .u-size4of12, .u-size5of12, .u-size6of12, .u-size7of12, .u-size8of12, .u-size9of12 { float: left !important; }
+
+    div { display: block; }
+
+    .heading--allCaps, .heading-prefix {
+        font-size: 15px;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+
+    .heading--borderedTop { border-top: 1px solid rgba(0, 0, 0, .05); }
+
+    .heading {
+        color: rgba(0, 0, 0, .84);
+        font-size: 18px;
+        letter-spacing: 0;
+        position: relative;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+    article, aside, footer, header, hgroup, main, nav, section { display: block; }
+    .u-marginBottom50 {
+        margin-bottom: 50px!important;
+    }
+    .u-marginTop10 {
+        margin-top: 10px!important;
+    }
+    menu, ol, ul {
+        padding: 0;
+        list-style: none;
+        list-style-image: none;
+    }
+    blockquote, dd, dl, figure, form, h1, h2, h3, h4, h5, h6, menu, ol, p, pre, ul {
+        margin: 0;
+    }
+   
+    .uiScale {
+        line-height: 20px;
+        font-size: 16px;
+    }
+    .u-paddingBottom18 {
+        padding-bottom: 18px!important;
+    }
+    .u-block {
+        display: block!important;
+    }
+li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+    .u-marginLeft20 {
+        margin-left: 20px!important;
+    }
+
+    .u-floatRight {
+        float: right!important;
+    }
+div {
+        display: block;
+    }
+    .u-tableCell {
+        display: table-cell!important;
+    }
+    .u-breakWord {
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+    .u-paddingLeft15 {
+        padding-left: 15px!important;
+    }
+    .u-tableCell {
+        display: table-cell!important;
+    }
+    .u-verticalAlignMiddle {
+        vertical-align: middle!important;
+    }
+div {
+        display: block;
+    }
+    .uiScale {
+        line-height: 20px;
+        font-size: 16px;
+    }
+li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+   
+</style>
+
+
+@using (Html.BeginForm("Index", "Search", FormMethod.Get, new {enctype = "multipart/form-data"}))
+{
+    <div class="container">
+        <input type="search" placeholder="Search" name="q" class="js-searchInput textInput textInput--jumbo textInput--underlined">
+        <br/>
+        <br/>
+        @Html.ActionLink("Stories", "Index", "Search", htmlAttributes: new {@class = "btn btn-primary btn-sm", q = Model.Query})
+        @Html.ActionLink("People", "Users", "Search", htmlAttributes: new {@class = "btn btn-info btn-sm", q = Model.Query})
+        @Html.ActionLink("Publications", "Publications", "Search", htmlAttributes: new {@class = "btn btn-primary btn-sm", q = Model.Query})
+
+        <br/>
+        <br/>
+
+        <div class="col u-size9of12 u-sm-size12of12">
+            <header class="heading heading--borderedTop heading--allCaps u-sm-hide">
+                <div class="u-clearfix">
+                    <div class="heading-content u-floatLeft">
+                        <span class="heading-title heading-title--bold"></span>
+                    </div>
+                </div>
+            </header>
+            <ul class="u-clearfix u-marginTop10 u-marginBottom50 js-userResultsList">
+                <li
+                    class="uiScale uiScale-ui--small uiScale-caption--regular u-block u-paddingBottom18 js-cardUser">
+                    <div class="u-marginLeft20 u-floatRight">
+                        <span class="followState js-followState" data-user-id="77ce6c03c7fe">
+                            <button
+                                class="button button--small u-noUserSelect button--withChrome u-baseColor--buttonNormal button--withHover button--unblock js-unblockButton"
+                                data-action="toggle-block-user"
+                                data-action-value="77ce6c03c7fe"
+                                data-action-source="search_user">
+                                <span class="button-label  button-defaultState">Blocked</span
+                                ><span class="button-label button-hoverState">Unblock</span>
+                            </button
+                            ><button
+                                 class="button button--primary button--small u-noUserSelect button--withChrome u-accentColor--buttonNormal button--follow js-followButton"
+                                 data-action="toggle-subscribe-user"
+                                 data-action-value="77ce6c03c7fe"
+                                 data-action-source="search_user-77ce6c03c7fe-------------------------follow_search"
+                                 data-subscribe-source="search_user">
+                                <span class="button-label  button-defaultState js-buttonLabel">Follow</span
+                                ><span class="button-label button-activeState">Following</span>
+                            </button>
+                        </span
+                        >
+                    </div>
+                    <div class="u-tableCell">
+                        <a
+                            class="link u-baseColor--link avatar">
+                            <img
+                                src="https://cdn-images-1.medium.com/fit/c/66/66/0*_Hb822l12dby3Y4v.jpeg"
+                                class="avatar-image avatar-image--small"/>
+                        </a>
+                    </div>
+                    <div
+                        class="u-tableCell u-verticalAlignMiddle u-breakWord u-paddingLeft15">
+                        <h3 class="ui-h3 u-fontSize18 u-lineHeightTighter u-marginBottom4">
+                            <a
+                                class="link link--primary u-accentColor--hoverTextNormal">
+                                Kerri Jablonski
+                            </a
+                            >
+                        </h3>
+                        <p
+                            class="ui-body u-fontSize14 u-lineHeightBaseSans u-textColorDark u-marginBottom4">
+                            I don't write, I ramble. Mom-Influencer #ASD #prematurity #NoiseGirl
+                            #AVENTmoms #DisneySMMoms
+                            <a rel="nofollow" href="mailto:press@themavenofsocialmedia.com">press@themavenofsocialmedia.com</a
+                            >
+                            RTs aren't endorsements
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+}
