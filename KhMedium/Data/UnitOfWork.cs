@@ -29,6 +29,7 @@ namespace KhMedium.Data
             Topics = new TopicRepository(_context);
             UserTopics = new UserTopicRespository(_context);
             Files = new FileRepository(_context);
+            AuthorPublication = new AuthorPublicationRepository(_context);
         }
 
         public IArticleRepository Articles { get; }
@@ -44,8 +45,9 @@ namespace KhMedium.Data
         public IShareRepository Shares { get; }
         public ITagRepository Tags { get; }
         public ITopicRepository Topics { get; }
-        public IUserTopicRepository UserTopics{ get; }
-        public IFileRepository Files{ get; }
+        public IUserTopicRepository UserTopics { get; }
+        public IFileRepository Files { get; }
+        public IAuthorPublicationRepository AuthorPublication { get; }
 
         public int Complete()
         {

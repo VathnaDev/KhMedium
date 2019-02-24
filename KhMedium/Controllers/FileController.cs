@@ -17,16 +17,16 @@ namespace KhMedium.Controllers
 
         // GET: File
         [HttpPost]
-        public JsonResult CreateFile(HttpPostedFileBase file, FileType type, String Id)
+        public JsonResult CreateFile(HttpPostedFileBase file)
         {
             if (file == null) return Json("Invalid file");
-            return Json(SaveFile(file, type, Id));
+            return Json(SaveFile(file).FullPath());
         }
 
-        public static String SaveFile(HttpPostedFileBase file, FileType type, String id)
+        public static File SaveFile(HttpPostedFileBase file)
         {
             UnitOfWork context = new UnitOfWork(new KhMediumEntities());
-            if (file == null) return "Invalid file";
+            if (file == null) return null;
             var fileName = Path.GetFileName(file.FileName);
             var extension = Path.GetExtension(fileName);
             var fileNamePath = Guid.NewGuid() + extension;
@@ -40,33 +40,17 @@ namespace KhMedium.Controllers
                 CreatedAt = DateTime.Now,
                 UserId = System.Web.HttpContext.Current.User.Identity.GetUserId()
             };
-
-            switch (type)
-            {
-                case FileType.Article:
-                    dbFile.ArticleId = id;
-                    break;
-                case FileType.Publication:
-                    dbFile.PublicationId = id;
-                    break;
-                case FileType.Topic:
-                    break;
-                default:
-                    dbFile.TopicId = id;
-                    break;
-            }
-
-
             context.Files.Add(dbFile);
             context.Complete();
-            return dbFile.FullPath();
+            return dbFile;
+        }
+
+        public static void DeleteFile(String fileId)
+        {
+            UnitOfWork context = new UnitOfWork(new KhMediumEntities());
+            var file = context.Files.SingleOrDefault(f => f.Id == fileId);
+            context.Files.Remove(file);
+            context.Complete();
         }
     }
-}
-
-public enum FileType
-{
-    Article,
-    Publication,
-    Topic
 }

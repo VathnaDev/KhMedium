@@ -34,8 +34,8 @@ namespace KhMedium.Controllers
             article.CreatedAt = DateTime.Now;
             article.UpdatedAt = DateTime.Now;
 
-            var thumnail = FileController.SaveFile(model.ArticlesImage, FileType.Article, article.Id);
-            article.Thumbnail = thumnail;
+            var thumnail = FileController.SaveFile(model.ArticlesImage);
+            article.Thumbnail = thumnail.FullPath();
             _context.Articles.Add(article);
             _context.Complete();
 

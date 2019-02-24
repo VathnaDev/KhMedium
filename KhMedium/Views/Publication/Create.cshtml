@@ -1,7 +1,9 @@
+@model KhMedium.Models.ViewModel.CreatePublicationViewModel
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <style>
     .mw1000 { max-width: 1000px }
 
@@ -134,9 +136,9 @@
         background-color: rgba(0, 0, 0, .05);
         width: 100px;
     }
-    .none-padding-left {
-        padding-left: 0;
-    }
+
+    .none-padding-left { padding-left: 0; }
+
     .btn-save {
         float: right !important;
         padding: 10px 30px;
@@ -144,34 +146,41 @@
         color: rgba(148, 0, 211, .7);
         border: 1px solid rgba(148, 0, 211, .7);
     }
+
     .btn-save:hover {
         color: rgb(148, 0, 211);
         border: 1px solid rgb(148, 0, 211);
     }
+
     .btn-save:focus {
         color: rgb(148, 0, 211);
         border: 1px solid rgb(148, 0, 211);
     }
-    button:focus {
-        outline: 0 !important;
-    }
+
+    button:focus { outline: 0 !important; }
 </style>
-<form>
+<link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet"/>
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">*@
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css">*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.css">
+
+@using (Html.BeginForm("Create", "Publication", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
     <div class="container mw1000">
         <div class="row">
             <div class="col-12 margin-top60">
                 <h1>New Publication</h1>
             </div>
             <div class="col-12 form-group row margin-top60">
-                <label for="name" class="col-md-2 col-form-label">Name<span class="form-asterisk">*</span></label>
+                <label for="Name" class="col-md-2 col-form-label">Name<span class="form-asterisk">*</span></label>
                 <div class="col-md-10 input-border-bottom">
-                    <input type="text" class="form-control" placeholder="Type your publication's name">
+                    <input type="text" name="Name" class="form-control" placeholder="Type your publication's name">
                 </div>
             </div>
             <div class="col-12 form-group row form-group-margin-top32">
-                <label for="description" class="col-sm-2 col-form-label">Description<span class="form-asterisk">*</span></label>
+                <label for="Description" class="col-sm-2 col-form-label">Description<span class="form-asterisk">*</span></label>
                 <div class="col-sm-10 input-border-bottom">
-                    <input type="text" class="form-control" placeholder="Type a short description">
+                    <input type="text" name="Description" class="form-control" placeholder="Type a short description">
                 </div>
             </div>
             <div class="col-12 form-group row form-group-margin-top32">
@@ -190,9 +199,8 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="js-avatarPreview">
-                        <button class="choose-image-button">
-
-                        </button>
+                        @*                        <img type="button" id="btnAvatar" class="choose-image-button" />*@
+                        <input type="file" id="Logo" name="Logo"/>
                     </div>
                 </div>
             </div>
@@ -207,9 +215,8 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="js-avatarPreview">
-                        <button class="choose-cover-button">
-
-                        </button>
+                        @*                        <input type="button" id="btnCover" class="choose-cover-button" />*@
+                        <input type="file" id="cover" name="Cover"/>
                     </div>
                 </div>
             </div>
@@ -220,48 +227,29 @@
                 <label for="tags" class="col-sm-2 col-form-label">Tags</label>
                 <div class="col-sm-10" style="padding-left: 0;">
                     <div class="col-md-12">
-                        <input class="form-control add-tag-input" placeholder="Add a tag"/>
+                        <input type="text" class="form-control" data-role="tagsinput"/>
                     </div>
                     <div class="col-md-12 margin-top12">
                         <p class="form-hint">Adding tags (up to 5) allows people to search for and discover your publication.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 form-group row form-group-margin-top32">
-                <label for="editors" class="col-sm-2 col-form-label">Editors</label>
-                <p class="col-sm-10 form-hint" style="padding-top: 6px;">Editors can review submissions, add stories, edit and publish submitted drafts, and remove any stories from this publication.</p>
-            </div>
-            <div class="col-12 form-group row form-group-margin-top32">
-                <label for="writers" class="col-sm-2 col-form-label">Writers</label>
-                <div class="col-sm-10 input-border-bottom">
-                    <input type="text" class="form-control" placeholder="Add or remove writers">
-                </div>
-            </div>
+            @*            <div class="col-12 form-group row form-group-margin-top32">*@
+            @*                <label for="editors" class="col-sm-2 col-form-label">Editors</label>*@
+            @*                <p class="col-sm-10 form-hint" style="padding-top: 6px;">Editors can review submissions, add stories, edit and publish submitted drafts, and remove any stories from this publication.</p>*@
+            @*            </div>*@
+            @*            <div class="col-12 form-group row form-group-margin-top32">*@
+            @*                <label for="writers" class="col-sm-2 col-form-label">Writers</label>*@
+            @*                <div class="col-sm-10 input-border-bottom">*@
+            @*                    <input type="text" class="form-control" placeholder="Add or remove writers">*@
+            @*                </div>*@
+            @*            </div>*@
             <div class="col-md-12 none-padding-left  margin-top60">
                 <button class="btn btn-save">Save</button>
             </div>
         </div>
     </div>
-</form>
-@*<div class="container mw1000">
-    <div class="row">
-        <div class="col-12">
-            <h1>New Publication</h1>
-        </div>
-        <div class="container form form--borderless margin-top60">
-            <div class="row form-row">
-                <div class="col form-heading w-3of12">
-                    Name
-                    <span class="form-asterisk">*</span>
-                </div>
-                <div class="col w-9of12">
-                    <div class="editor-with-underline hide-out-line min-height28 editable">
-                        <p name="3c96" class="graf graf--p">
-                            <span class="default-value default-value-root">Type your publication's name</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/bootstrap-tagsinput.js"></script>

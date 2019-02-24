@@ -241,9 +241,11 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\PublicationController.cs" />
     <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Data\AuthorPublicationRepository.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
     <Compile Include="Data\Core\IArticleTagRepository.cs" />
+    <Compile Include="Data\Core\IAuthorPublicationRepository.cs" />
     <Compile Include="Data\Core\IAuthorRepository.cs" />
     <Compile Include="Data\Core\IBookmarkRepository.cs" />
     <Compile Include="Data\Core\ICategoryRepository.cs" />
@@ -367,10 +369,12 @@
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ClapModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\DropdownModel.cs" />
     <Compile Include="Models\FollowerModel.cs" />
     <Compile Include="Models\FollowingModel.cs" />
     <Compile Include="Models\PublicationModel.cs" />
     <Compile Include="Models\ViewModel\CreateArticleViewModel.cs" />
+    <Compile Include="Models\ViewModel\CreatePublicationViewModel.cs" />
     <Compile Include="Models\ViewModel\HomeViewModel.cs" />
     <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
     <Compile Include="Models\ShareModel.cs" />
@@ -412,6 +416,9 @@
     <Content Include="Content\assets\js\vendor\jquery.min.js" />
     <Content Include="Content\assets\js\vendor\popper.min.js" />
     <Content Include="Content\assets\js\vendor\prism.js" />
+    <Content Include="Content\bootstrap-tagsinput.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bower_components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
@@ -6900,6 +6907,8 @@
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Content\starter.html" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\tokenize2.min.css" />
     <Content Include="Entities\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>
@@ -6914,8 +6923,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -7534,7 +7542,12 @@
     <Content Include="Entities\Database.edmx.diagram">
       <DependentUpon>Database.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -7545,6 +7558,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\tokenize2.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -7603,15 +7617,6 @@
     <Folder Include="Areas\Guest\Models\" />
     <Folder Include="FileUpload\" />
     <Folder Include="Views\File\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
