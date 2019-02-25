@@ -47,7 +47,6 @@ namespace KhMedium.Controllers
 
         public static void DeleteFile(String fileId)
         {
-
             UnitOfWork context = new UnitOfWork(new KhMediumEntities());
             var file = context.Files.SingleOrDefault(f => f.Id == fileId);
             context.Files.Remove(file);
