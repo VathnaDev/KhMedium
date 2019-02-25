@@ -233,6 +233,8 @@
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -394,6 +396,8 @@
     <Content Include="Content\assets\css\main.css" />
     <Content Include="Content\assets\css\vendor\bootstrap-toc.css" />
     <Content Include="Content\assets\css\vendor\prism.css" />
+    <Content Include="Content\assets\img\bookmarked.png" />
+    <Content Include="Content\assets\img\unbookmark.png" />
     <Content Include="Content\assets\img\demo\1.jpg" />
     <Content Include="Content\assets\img\demo\3.jpg" />
     <Content Include="Content\assets\img\demo\5.jpg" />
@@ -7621,6 +7625,7 @@
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Models\" />
     <Folder Include="FileUpload\" />
+    <Folder Include="Views\Api\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>

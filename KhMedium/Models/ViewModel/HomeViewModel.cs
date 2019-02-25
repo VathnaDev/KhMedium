@@ -12,5 +12,6 @@ namespace KhMedium.Models.ViewModel
         public List<Article> FeatureArticles { get; set; }
         public List<Article> PopularArticles { get; set; }
         public List<Article> BasedHistoryArticles { get; set; }
+        public List<Article> AllStoriesArticles { get; set; }
     }
 }

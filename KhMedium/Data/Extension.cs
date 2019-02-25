@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using KhMedium.Entities;
+using Microsoft.AspNet.Identity;
 using File = KhMedium.Entities.File;
 
 namespace KhMedium.Data
 {
-    public static class Extension 
+    public static class Extension
     {
         //Articles
         public static Boolean IsDeleted(this Article article)
@@ -20,6 +21,11 @@ namespace KhMedium.Data
         public static String FullPath(this File file)
         {
             return Path.Combine(HttpContext.Current.Server.MapPath("~/FileUpload/"), file.Path);
+        }
+
+        public static bool IsBookmarked(this Article article)
+        {
+            return article.Bookmarks.Any(b => b.UserId == HttpContext.Current.User.Identity.GetUserId());
         }
     }
 }
