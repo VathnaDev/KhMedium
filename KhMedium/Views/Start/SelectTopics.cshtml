@@ -1,0 +1,91 @@
+﻿@model KhMedium.Models.SelectedTopicViewModel
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .topic {
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 90px
+    }
+
+    .topic-name {
+        border-radius: 4px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+        vertical-align: middle;
+        line-height: 90px;
+    }
+</style>
+
+<br/>
+@using (Html.BeginForm("SelectTopics", "Start", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            <h3 id="title" class="col-md-10">
+                Select all the topics you're interested in reading about.
+            </h3>
+            <div class="col-md-2 pull-right">
+                <input type="submit" id = "btn-start" class = "btn btn-info" name="save" value="Start Reading" />
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var topic in Model.Topics)
+            {
+                <div class="col-md-2 col-sm-3 col-xs-4 text-center" style="padding: 2px;">
+                    <div class="topic" style="background-image: url(@topic.Cover);">
+                        <label class="topic-name" data-value="@topic.Id">@topic.Name</label>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div id="selectedTopics">
+        @for (var i = 0; i < Model.SelectedTopics.Count; i++)
+        {
+            @Html.HiddenFor(model => model.SelectedTopics[i]);
+        }
+    </div>
+}
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(function() {
+        $('#btn-start').hide();
+        var selectedTopics = [];
+
+        $('.topic-name').on('click', toggleTopic);
+
+        function toggleTopic(e) {
+            var topic = $(this).data('value');
+            if (selectedTopics.indexOf(topic) < 0) {
+                $(this).css('background-color', 'rgba(3,168,124, 0.7)');
+                selectedTopics.push(topic);
+            } else {
+                $(this).css('background-color', 'rgba(0,0,0, 0.7)');
+                selectedTopics.splice(selectedTopics.indexOf(topic), 1);
+            }
+
+            if (selectedTopics.length > 4) {
+                $('#btn-start').show();
+                $('#title').html("Great! We'll make sure you see the best stories on those topics");
+            } else {
+                $('#btn-start').hide();
+                $('#title').html("Select all the topics you're interested in reading about.");
+            }
+
+            $('#selectedTopics').empty();
+            for (var i = 0; i < selectedTopics.length; i++) {
+                var hidden = '<input type="hidden" name="SelectedTopics['+i+']" value="'+selectedTopics[i]+'" />';
+                $('#selectedTopics').append(hidden);
+            }
+        }
+    });
+</script>

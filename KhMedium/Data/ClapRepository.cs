@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class ClapRepository : Repository<ClapModel>, IClapRepository
+    public class ClapRepository : Repository<Clap>, IClapRepository
     {
         public ClapRepository(DbContext context) : base(context)
         {

@@ -25,6 +25,7 @@ namespace KhMedium.Entities
             this.Followers = new HashSet<Follower>();
             this.Followings = new HashSet<Following>();
             this.Shares = new HashSet<Share>();
+            this.UserTopics = new HashSet<UserTopic>();
             this.AspNetRoles = new HashSet<AspNetRole>();
         }
     
@@ -40,6 +41,7 @@ namespace KhMedium.Entities
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
+        public string Avatar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
@@ -57,6 +59,8 @@ namespace KhMedium.Entities
         public virtual ICollection<Following> Followings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Share> Shares { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserTopic> UserTopics { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
     }

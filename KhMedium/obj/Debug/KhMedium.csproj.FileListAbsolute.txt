@@ -99,7 +99,6 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Micros
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.Web.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
-D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache
 D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\bin\ApplicationInsights.config
 D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\bin\roslyn\csc.exe
 D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\bin\roslyn\csc.exe.config
@@ -200,3 +199,4 @@ D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\bin\Microsoft.AI.WindowsSer
 D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\bin\Microsoft.AI.Web.xml
 D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\obj\Debug\KhMedium.dll
 D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
+D:\Year4\WEB\Semester02\Assignment\KhMedium\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache

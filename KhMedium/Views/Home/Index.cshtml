@@ -1,31 +1,157 @@
-﻿@{
+﻿@model KhMedium.Models.ViewModel.HomeViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container pt-4 pb-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card border-0 mb-4 box-shadow h-xl-300">
+                <div style="background-image: url(/Content/assets/img/demo/blog4.jpg); height: 150px;    background-size: cover;    background-repeat: no-repeat;"></div>
+                <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+                    @if (Model.FeatureArticles.Count > 0)
+                    {
+                        <h2 class="h4 font-weight-bold">
+                            <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a>
+                        </h2>
+                        <p class="card-text">
+                            @Model.FeatureArticles[0].Content
+                        </p>
+                        <div>
+                            <small class="d-block"><a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a></small>
+                            <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            @for (var i = 1; i < Model.FeatureArticles.Count; i++)
+            {
+                var article = Model.FeatureArticles[i];
+                <div class="flex-md-row mb-4 box-shadow">
+                    <div class="mb-3 d-flex align-items-center">
+                        <img height="80" src="~/Content/assets/img/demo/blog4.jpg">
+                        <div class="pl-3">
+                            <h2 class="mb-2 h6 font-weight-bold">
+                                <a class="text-dark" href="article.html">@article.Title</a>
+                            </h2>
+                            <div class="card-text text-muted small">
+                                @(new HtmlString(@article.Content))
+                            </div>
+                            <small class="text-muted">@article.CreatedAt</small>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-md-8">
+            <h5 class="font-weight-bold spanborder"><span>All Stories</span></h5>
+            @foreach (var article in Model.AllStoriesArticles)
+            {
+                <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
+                    <div class="col-md-9">
+                        <h2 class="col-md-12 mb-1 h4 font-weight-bold">
+                            <a class="text-dark" href="article.html">@article.Title</a>
+                        </h2>
+                        <div class="col-md-12">
+                            @(new HtmlString(article.Content))
+                        </div>
+                        <div class="col-md-12" style="position: absolute; bottom: 0">
+                            <div class="card-text text-muted small">
+                                @article.Author.Name
+                            </div>
+                            <small class="text-muted">@article.CreatedAt</small>
+                            <span style="float: right; cursor: pointer;">
+                                <img class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png" />
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <img style="height: 150px" src="~/Content/assets/img/demo/blog8.jpg">
+                    </div>
+
+                </div>
+            }
+        </div>
+        <div class="col-md-4 pl-4">
+            <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                <h5 class="font-weight-bold spanborder col-md-12"><span>Popular</span></h5>
+                <ol class="list-featured">
+                    @foreach (var article in Model.PopularArticles)
+                    {
+                        <li>
+                            <span>
+                                <h6 class="font-weight-bold">
+                                    <a href="article.html" class="text-dark">@article.Title</a>
+                                </h6>
+                                <p class="text-muted">
+                                    @article.Author.Name
+                                </p>
+                            </span>
+                        </li>
+                    }
+
+
+                    @* <li> *@
+                    @*     <span> *@
+                    @*         <h6 class="font-weight-bold"> *@
+                    @*             <a href="article.html" class="text-dark">Unprecedented Views of the Birth of Planets</a> *@
+                    @*         </h6> *@
+                    @*         <p class="text-muted"> *@
+                    @*             Jake Bittle in SCIENCE *@
+                    @*         </p> *@
+                    @*     </span> *@
+                    @* </li> *@
+                    @* <li> *@
+                    @*     <span> *@
+                    @*         <h6 class="font-weight-bold"> *@
+                    @*             <a href="article.html" class="text-dark">Effective New Target for Mood-Boosting Brain Stimulation Found</a> *@
+                    @*         </h6> *@
+                    @*         <p class="text-muted"> *@
+                    @*             Jake Bittle in SCIENCE *@
+                    @*         </p> *@
+                    @*     </span> *@
+                    @* </li> *@
+                </ol>
+            </ul>
+        </div>
     </div>
 </div>
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+        $('.bookmark').click(function () {
+            console.log('click');
+            $.ajax({
+                type: "POST",
+                url: "Home/AddBookMark",
+                data: '{articleId: "7874c654-1d1c-4ff0-a109-2ef021c196be" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log($('p').text());
+//                    if ($('p').text() === "Test") {
+//                        $('.bookmark').attr('src', '/Content/assets/img/bookmarked.png');
+
+//                    }
+                },
+                failure: function(response) {
+                    console.log("Failure " + response);
+                },
+                error: function(response) {
+                    console.log("Error " + response);
+                }
+            });
+        });
+    });
+</script>

@@ -29,6 +29,7 @@
     <NavigationProperty Name="Claps" Relationship="Self.FK_Claps_Articles" FromRole="Articles" ToRole="Claps" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Articles" FromRole="Articles" ToRole="Comments" />
     <NavigationProperty Name="Shares" Relationship="Self.FK_Shares_Articles" FromRole="Articles" ToRole="Shares" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ArticleTag">
     <Key>
@@ -93,7 +94,9 @@
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_AspNetUsers" FromRole="AspNetUsers" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_AspNetUsers" FromRole="AspNetUsers" ToRole="Followings" />
     <NavigationProperty Name="Shares" Relationship="Self.FK_Shares_AspNetUsers1" FromRole="AspNetUsers" ToRole="Shares" />
+    <NavigationProperty Name="UserTopics" Relationship="Self.FK_UserTopic_AspNetUsers" FromRole="AspNetUsers" ToRole="UserTopic" />
     <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+    <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Author">
     <Key>
@@ -106,10 +109,13 @@
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Articles" Relationship="Self.FK_Articles_Authors" FromRole="Authors" ToRole="Articles" />
     <NavigationProperty Name="Publication" Relationship="Self.FK_Authors_Publications" FromRole="Authors" ToRole="Publications" />
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Authors" FromRole="Authors" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Authors" FromRole="Authors" ToRole="Followings" />
+    <NavigationProperty Name="AuthorPublications" Relationship="khmediumModel.FK_AuthorPublication_Authors" FromRole="Author" ToRole="AuthorPublication" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Bookmark">
     <Key>
@@ -193,13 +199,17 @@
     </Key>
     <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="About" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DeletedAt" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Authors" Relationship="Self.FK_Authors_Publications" FromRole="Publications" ToRole="Authors" />
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Publications" FromRole="Publications" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Publications" FromRole="Publications" ToRole="Followings" />
+    <NavigationProperty Name="AuthorPublications" Relationship="khmediumModel.FK_AuthorPublication_Publications" FromRole="Publication" ToRole="AuthorPublication" />
+    <Property Name="Cover" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Share">
     <Key>
@@ -243,6 +253,18 @@
     <NavigationProperty Name="Category" Relationship="Self.FK_Topics_Categories" FromRole="Topics" ToRole="Categories" />
     <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Topics" FromRole="Topics" ToRole="Followers" />
     <NavigationProperty Name="Followings" Relationship="Self.FK_Followings_Topics" FromRole="Topics" ToRole="Followings" />
+    <NavigationProperty Name="UserTopics" Relationship="Self.FK_UserTopic_Topics" FromRole="Topics" ToRole="UserTopic" />
+    <Property Name="Cover" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserTopic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TopicId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_UserTopic_AspNetUsers" FromRole="UserTopic" ToRole="AspNetUsers" />
+    <NavigationProperty Name="Topic" Relationship="Self.FK_UserTopic_Topics" FromRole="UserTopic" ToRole="Topics" />
   </EntityType>
   <Association Name="FK_Articles_Authors">
     <End Role="Authors" Type="Self.Author" Multiplicity="1" />
@@ -440,6 +462,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserTopic_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="UserTopic" Type="Self.UserTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserTopic">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Authors_Publications">
     <End Role="Publications" Type="Self.Publication" Multiplicity="0..1" />
     <End Role="Authors" Type="Self.Author" Multiplicity="*" />
@@ -536,6 +570,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserTopic_Topics">
+    <End Role="Topics" Type="Self.Topic" Multiplicity="1" />
+    <End Role="UserTopic" Type="Self.UserTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topics">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserTopic">
+        <PropertyRef Name="TopicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="AspNetUserRoles">
     <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
     <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
@@ -560,6 +606,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Tags" EntityType="Self.Tag" />
     <EntitySet Name="Topics" EntityType="Self.Topic" />
+    <EntitySet Name="UserTopics" EntityType="Self.UserTopic" />
     <AssociationSet Name="FK_Articles_Authors" Association="Self.FK_Articles_Authors">
       <End Role="Authors" EntitySet="Authors" />
       <End Role="Articles" EntitySet="Articles" />
@@ -624,6 +671,10 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Shares" EntitySet="Shares" />
     </AssociationSet>
+    <AssociationSet Name="FK_UserTopic_AspNetUsers" Association="Self.FK_UserTopic_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="UserTopic" EntitySet="UserTopics" />
+    </AssociationSet>
     <AssociationSet Name="FK_Authors_Publications" Association="Self.FK_Authors_Publications">
       <End Role="Publications" EntitySet="Publications" />
       <End Role="Authors" EntitySet="Authors" />
@@ -656,9 +707,69 @@
       <End Role="Topics" EntitySet="Topics" />
       <End Role="Followings" EntitySet="Followings" />
     </AssociationSet>
+    <AssociationSet Name="FK_UserTopic_Topics" Association="Self.FK_UserTopic_Topics">
+      <End Role="Topics" EntitySet="Topics" />
+      <End Role="UserTopic" EntitySet="UserTopics" />
+    </AssociationSet>
     <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
     </AssociationSet>
+    <EntitySet Name="Files" EntityType="khmediumModel.File" />
+    <EntitySet Name="AuthorPublications" EntityType="khmediumModel.AuthorPublication" />
+    <AssociationSet Name="FK_AuthorPublication_Authors" Association="khmediumModel.FK_AuthorPublication_Authors">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="AuthorPublication" EntitySet="AuthorPublications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorPublication_Publications" Association="khmediumModel.FK_AuthorPublication_Publications">
+      <End Role="Publication" EntitySet="Publications" />
+      <End Role="AuthorPublication" EntitySet="AuthorPublications" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PublicationId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="TopicId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="AuthorPublication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PublicationId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Author" Relationship="khmediumModel.FK_AuthorPublication_Authors" FromRole="AuthorPublication" ToRole="Author" />
+    <NavigationProperty Name="Publication" Relationship="khmediumModel.FK_AuthorPublication_Publications" FromRole="AuthorPublication" ToRole="Publication" />
+  </EntityType>
+  <Association Name="FK_AuthorPublication_Authors">
+    <End Type="khmediumModel.Author" Role="Author" Multiplicity="1" />
+    <End Type="khmediumModel.AuthorPublication" Role="AuthorPublication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorPublication">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorPublication_Publications">
+    <End Type="khmediumModel.Publication" Role="Publication" Multiplicity="1" />
+    <End Type="khmediumModel.AuthorPublication" Role="AuthorPublication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorPublication">
+        <PropertyRef Name="PublicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

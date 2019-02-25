@@ -8,6 +8,8 @@ using AutoMapper;
 using KhMedium.Data;
 using KhMedium.Entities;
 using KhMedium.Models;
+using KhMedium.Models.ViewModel;
+using Microsoft.AspNet.Identity;
 
 namespace KhMedium.Controllers
 {
@@ -17,7 +19,25 @@ namespace KhMedium.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            string uid = "";
+
+            var allArticles = _context.Articles.GetAll().OrderBy(a => a.CreatedAt).Take(10).ToList();
+
+            if (User.Identity.IsAuthenticated)
+            {
+                uid = User.Identity.GetUserId();
+            } 
+            var viewModel = new HomeViewModel()
+            {
+                Topics = _context.Topics.GetAll().ToList(),
+                FeatureArticles = _context.Articles.GetFeatureArticle(uid),
+                BasedHistoryArticles = _context.Articles.GetFeatureArticle(uid),
+                PopularArticles = _context.Articles.GetPopularArticle(uid).Take(4).ToList(),
+                AllStoriesArticles = allArticles
+                
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult About()
@@ -30,6 +50,34 @@ namespace KhMedium.Controllers
         {
             ViewBag.Message = "Your contact page.";
             return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public JsonResult AddBookMark(String articleId)
+        {
+            var bookmark = new Bookmark()
+            {
+                Id = Guid.NewGuid().ToString(),
+                ArticleId = articleId,
+                UserId = User.Identity.GetUserId(),
+                CreatedAt = DateTime.Now
+            };
+            _context.Bookmarks.Add(bookmark);
+            _context.Complete();
+            return Json(bookmark);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public JsonResult RemoveBookMark(String bookmarkId)
+        {
+            var bookmark = _context.Bookmarks.SingleOrDefault(b => b.Id == bookmarkId);
+            if (bookmark == null)
+                return Json(new { result = "Bookmark not found!" });
+            _context.Bookmarks.Remove(bookmark);
+            _context.Complete();
+            return Json(new { result = "successS" });
         }
     }
 }

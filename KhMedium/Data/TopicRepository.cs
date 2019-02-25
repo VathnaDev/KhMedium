@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class TopicRepository : Repository<TopicModel>, ITopicRepository
+    public class TopicRepository : Repository<Topic>, ITopicRepository
     {
         public TopicRepository(DbContext context) : base(context)
         {

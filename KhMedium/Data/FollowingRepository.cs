@@ -9,7 +9,7 @@ using KhMedium.Models;
 
 namespace KhMedium.Data
 {
-    public class FollowingRepository : Repository<FollowingModel>, IFollowingRepository
+    public class FollowingRepository : Repository<Following>, IFollowingRepository
     {
         public FollowingRepository(DbContext context) : base(context)
         {

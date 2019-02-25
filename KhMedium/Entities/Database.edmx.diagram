@@ -4,26 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3af9cccd2d2941a1a758882c149135cc" Name="Diagram1">
-        <EntityTypeShape EntityType="khmediumModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Article" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.ArticleTag" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.AspNetRole" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.AspNetUser" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Author" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Bookmark" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Clap" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Comment" Width="1.5" PointX="8.25" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Follower" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Following" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Publication" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Share" Width="1.5" PointX="11.25" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.sysdiagram" Width="1.5" PointX="10.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Tag" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="khmediumModel.Topic" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+      <Diagram DiagramId="2da8ff520f694536bccecc98c1580273" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="khmediumModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Article" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.ArticleTag" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.AspNetRole" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.AspNetUser" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Author" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Bookmark" Width="1.5" PointX="8.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Category" Width="1.5" PointX="3.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Clap" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Comment" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Follower" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Following" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Publication" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Share" Width="1.5" PointX="11.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.sysdiagram" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Tag" Width="1.5" PointX="6" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.Topic" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="khmediumModel.UserTopic" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
         <AssociationConnector Association="khmediumModel.FK_Articles_Authors" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Articles_Topics" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_ArticleTags_Articles" ManuallyRouted="false" />
@@ -40,6 +41,7 @@
         <AssociationConnector Association="khmediumModel.FK_Followers_AspNetUsers" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Followings_AspNetUsers" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Shares_AspNetUsers1" ManuallyRouted="false" />
+        <AssociationConnector Association="khmediumModel.FK_UserTopic_AspNetUsers" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Authors_Publications" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Followers_Authors" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Followings_Authors" ManuallyRouted="false" />
@@ -48,7 +50,12 @@
         <AssociationConnector Association="khmediumModel.FK_Followers_Topics" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Followings_Publications" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.FK_Followings_Topics" ManuallyRouted="false" />
+        <AssociationConnector Association="khmediumModel.FK_UserTopic_Topics" ManuallyRouted="false" />
         <AssociationConnector Association="khmediumModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="khmediumModel.File" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="khmediumModel.AuthorPublication" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="khmediumModel.FK_AuthorPublication_Authors" />
+        <AssociationConnector Association="khmediumModel.FK_AuthorPublication_Publications" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
