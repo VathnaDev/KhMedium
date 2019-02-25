@@ -33,8 +33,8 @@ namespace KhMedium.Areas.Admin.Controllers
             publication.UpdatedAt = DateTime.Now;
             _context.Publications.Add(publication);
 
-            publication.Avatar = FileController.SaveFile(avatar);
-            publication.Logo = FileController.SaveFile(cover, FileType.Publication, publication.Id);
+            publication.Cover = FileController.SaveFile(avatar).Path;
+            publication.Logo = FileController.SaveFile(cover).Path;
             _context.Complete();
             return RedirectToAction("Index");
         }

@@ -15,27 +15,18 @@ namespace KhMedium.Controllers
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
 
-        [HttpPost]
-        public ActionResult Create(HttpPostedFileBase file, Article model)
-        {
-            model.Id = Guid.NewGuid().ToString();
-            var filePath = FileController.SaveFile(file, FileType.Article, model.Id);
-            return View();
-        }
-
-
         // GET: File
         [HttpPost]
-        public JsonResult CreateFile(HttpPostedFileBase file, FileType type, String Id)
+        public JsonResult CreateFile(HttpPostedFileBase file)
         {
             if (file == null) return Json("Invalid file");
-            return Json(SaveFile(file, type, Id));
+            return Json(SaveFile(file).FullPath());
         }
 
-        public static String SaveFile(HttpPostedFileBase file, FileType type, String Id)
+        public static File SaveFile(HttpPostedFileBase file)
         {
             UnitOfWork context = new UnitOfWork(new KhMediumEntities());
-            if (file == null) return "Invalid file";
+            if (file == null) return null;
             var fileName = Path.GetFileName(file.FileName);
             var extension = Path.GetExtension(fileName);
             var fileNamePath = Guid.NewGuid() + extension;
@@ -49,21 +40,18 @@ namespace KhMedium.Controllers
                 CreatedAt = DateTime.Now,
                 UserId = System.Web.HttpContext.Current.User.Identity.GetUserId()
             };
-            var articles = context.Articles.GetAll();
-            articles = articles
-                .Where(a => a.CreatedAt == DateTime.Now)
-               .Take(5);
-
             context.Files.Add(dbFile);
             context.Complete();
-            return dbFile.FullPath();
+            return dbFile;
+        }
+
+        public static void DeleteFile(String fileId)
+        {
+
+            UnitOfWork context = new UnitOfWork(new KhMediumEntities());
+            var file = context.Files.SingleOrDefault(f => f.Id == fileId);
+            context.Files.Remove(file);
+            context.Complete();
         }
     }
-}
-
-public enum FileType
-{
-    Article,
-    Publication,
-    Topic
 }
