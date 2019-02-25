@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -211,6 +212,8 @@
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -7592,6 +7595,13 @@
     <Content Include="Views\Article\Create.cshtml" />
     <Content Include="Views\Tag\Index.cshtml" />
     <Content Include="_AdminLayoutStart.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Publication\Create.cshtml" />
+    <Content Include="Views\Publication\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Publications.cshtml" />
+    <Content Include="Views\Search\Users.cshtml" />
+    <Content Include="Views\Luther\CreateArticlesDemo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7602,6 +7612,8 @@
     <Folder Include="Areas\Author\Views\Shared\" />
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Models\" />
+    <Folder Include="Views\Api\" />
+    <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
