@@ -1,0 +1,534 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css" data-fela-rehydration="108" data-fela-type="STATIC">
+    html {
+        box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: rgba(0,0,0,0.8);
+        position: relative;
+        min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
+        margin: 0;
+    }
+
+    menu, ol, ul {
+        padding: 0;
+        list-style: none;
+        list-style-image: none;
+    }
+
+    main {
+        display: block;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a, button, input {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    img, svg {
+        vertical-align: middle;
+    }
+
+    button {
+        background: transparent;
+        overflow: visible;
+    }
+
+    button, input, optgroup, select, textarea {
+        margin: 0;
+    }
+</style>
+<style type="text/css" data-fela-rehydration="108" data-fela-type="RULE">
+    .a {
+        font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    .b {
+        font-weight: 400;
+    }
+
+    .c {
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    .d {
+        padding-left: 24px;
+    }
+
+    .e {
+        padding-right: 24px;
+    }
+
+    .f {
+        margin-left: auto;
+    }
+
+    .g {
+        margin-right: auto;
+    }
+
+    .h {
+        width: 100%;
+    }
+
+    .i {
+        max-width: 728px;
+    }
+
+    .j {
+        box-sizing: border-box;
+    }
+
+    .k {
+        display: block;
+    }
+
+    .l {
+        position: absolute;
+    }
+
+    .m {
+        top: 0;
+    }
+
+    .n {
+        left: 0;
+    }
+
+    .o {
+        right: 0;
+    }
+
+    .p {
+        z-index: 500;
+    }
+
+    .q {
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .r {
+        max-width: 1080px;
+    }
+
+    .s {
+        height: 65px;
+    }
+
+    .t {
+        display: flex;
+    }
+
+    .u {
+        align-items: center;
+    }
+
+    .x {
+        flex: 1 0 auto;
+    }
+
+    .z {
+        fill: rgba(0, 0, 0, 0.84);
+    }
+
+    .ab {
+        display: none;
+    }
+
+    .af {
+        flex: 0 0 auto;
+    }
+
+    .ag {
+        font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    }
+
+    .ah {
+        font-style: normal;
+    }
+
+    .ai {
+        line-height: 20px;
+    }
+
+    .aj {
+        font-size: 15.8px;
+    }
+
+    .ak {
+        letter-spacing: 0px;
+    }
+
+    .al {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    .am {
+        fill: rgba(0, 0, 0, 0.54);
+    }
+
+    .an {
+        color: inherit;
+    }
+
+    .ao {
+        fill: inherit;
+    }
+
+    .ap {
+        font-size: inherit;
+    }
+
+    .aq {
+        border: inherit;
+    }
+
+    .ar {
+        font-family: inherit;
+    }
+
+    .as {
+        letter-spacing: inherit;
+    }
+
+    .at {
+        font-weight: inherit;
+    }
+
+    .au {
+        padding: 0;
+    }
+
+    .av {
+        margin: 0;
+    }
+
+    .aw:hover {
+        cursor: pointer;
+    }
+
+    .ax:hover {
+        color: rgba(0, 0, 0, 0.9);
+    }
+
+    .ay:hover {
+        fill: rgba(0, 0, 0, 0.9);
+    }
+
+    .az:focus {
+        outline: none;
+    }
+
+    .ba:disabled {
+        cursor: default;
+    }
+
+    .bb:disabled {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    .bc:disabled {
+        fill: rgba(0, 0, 0, 0.54);
+    }
+
+    .bd {
+        margin-left: 16px;
+    }
+
+    .be {
+        margin-right: 16px;
+    }
+
+    .bh {
+        border-radius: 50%;
+    }
+
+    .bi {
+        height: 32px;
+    }
+
+    .bj {
+        width: 32px;
+    }
+
+    .bk {
+        margin-bottom: 64px;
+    }
+
+    .bm {
+        flex-direction: column;
+    }
+
+    .bn {
+        margin-bottom: 20px;
+    }
+
+    .bp {
+        height: 80px;
+    }
+
+    .bq {
+        width: 80px;
+    }
+
+    .br {
+        margin-bottom: 30px;
+    }
+
+    .bs {
+        margin-bottom: 10px;
+    }
+
+    .bt {
+        margin-left: 40px;
+    }
+
+    .bu {
+        margin-top: 10px;
+    }
+
+    .bv {
+        float: right;
+    }
+
+    .bx {
+        height: 120px;
+    }
+
+    .by {
+        width: 120px;
+    }
+
+    .bz {
+        margin-bottom: 4px;
+    }
+
+    .ca {
+        margin-top: 4px;
+    }
+
+    .cb {
+        flex-direction: row;
+    }
+
+    .cc {
+        color: rgba(0, 0, 0, 0.84);
+    }
+
+    .cd {
+        text-align: inherit;
+    }
+
+    .ce {
+        font-weight: 600;
+    }
+
+    .cf {
+        line-height: 40px;
+    }
+
+    .cg {
+        font-size: 36.33px;
+    }
+
+    .ch {
+        letter-spacing: -0.93px;
+    }
+
+    .ci {
+        margin-bottom: 16px;
+    }
+
+    .cj {
+        color: rgba(0, 0, 0, 0.76);
+    }
+
+    .ck {
+        fill: rgba(0, 0, 0, 0.76);
+    }
+
+    .cl {
+        line-height: 24px;
+    }
+
+    .cm {
+        font-size: 18.96px;
+    }
+
+    .cn {
+        margin-top: 8px;
+    }
+
+    .co:hover {
+        text-decoration: underline;
+    }
+
+    .cp {
+        margin-left: 20px;
+    }
+
+    .cq {
+        padding: 0px 8px;
+    }
+
+    .cr {
+        background: 0;
+    }
+
+    .cs {
+        border-color: rgba(0, 0, 0, 0.54);
+    }
+
+    .ct:hover {
+        color: rgba(0, 0, 0, 0.97);
+    }
+
+    .cu:hover {
+        fill: rgba(0, 0, 0, 0.97);
+    }
+
+    .cv:hover {
+        border-color: rgba(0, 0, 0, 0.84);
+    }
+
+    .cw {
+        border-radius: 4px;
+    }
+
+    .cx {
+        font-size: 15px;
+    }
+
+    .cy {
+        border-width: 1px;
+    }
+
+    .cz {
+        border-style: solid;
+    }
+
+    .da {
+        display: inline-block;
+    }
+
+    .db {
+        text-decoration: none;
+    }
+
+    .dc {
+        padding-top: 24px;
+    }
+
+    .dd {
+        word-break: break-word;
+    }
+
+    .de {
+        overflow-wrap: break-word;
+    }
+</style>
+<style type="text/css" data-fela-rehydration="108" data-fela-type="RULE" media="screen and (max-width: 728px)">
+    .v {
+        height: 56px;
+    }
+
+    .w {
+        display: flex;
+    }
+
+    .y {
+        display: none;
+    }
+
+    .ac {
+        margin-left: -5px;
+    }
+
+    .ae {
+        display: block;
+    }
+
+    .bf {
+        margin-left: 10px;
+    }
+
+    .bg {
+        margin-right: 10px;
+    }
+
+    .bl {
+        margin-bottom: 24px;
+    }
+</style>
+<style type="text/css" data-fela-rehydration="108" data-fela-type="RULE" media="screen and (max-width: 552px)">
+    .bo {
+        display: block;
+    }
+
+    .bw {
+        display: none;
+    }
+</style>
+<body>
+    <div id="root">
+        < class="a b c" data-reactroot>
+        <section class="d e f g h i j k">
+            <div class="c">
+                <div class="bk s k bl v ae"></div>
+                <div class="t bm">
+                    <div class="bn ab bo">
+                        <img alt="Vorreakboth Chhoeurn" src="https://miro.medium.com/fit/c/160/160/1*xxLZfRO516UUxRCpLsGHmQ.jpeg" class="k bh bp bq" width="80" height="80">
+                    </div>
+                    <div class="br k">
+                        <div class="bs bt bu k bv bw">
+                            <img alt="Vorreakboth Chhoeurn" src="https://miro.medium.com/fit/c/240/240/1*xxLZfRO516UUxRCpLsGHmQ.jpeg" class="k bh bx by" width="120" height="120">
+                        </div>
+                        <div class="bz ca t u cb">
+                            <h1 class="cc z cd ag ce ah cf cg ch k">Vorreakboth Chhoeurn</h1>
+                            <div class="cp t u cb">
+                                <a href="" class="cq cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az">Edit profile</a>
+                            </div>
+                        </div>
+                        <div class="ci k">
+                            <p class="cj ck ag b ah cl cm ak k"></p>
+                        </div>
+                        <span class="ag b ah ai aj ak k al am"></span>
+                        <div class="ci cn k">
+                            <span class="ag b ah ai aj ak k al am">
+                                <div class="t cb">
+                                    <div class="be k">
+                                        <a href="" class="an ao ap aq ar as at au av aw co az ba bb bc">2 Following</a>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fa k">
+                <p class="al am ag b ah cl cm ak k ei hc">Vorreakboth Chhoeurn hasn’t been active on Medium yet. Check back later to see their stories, claps, and highlights.</p>
+            </div>
+        </section>
+    </div>
+</body>

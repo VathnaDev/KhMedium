@@ -47,7 +47,7 @@ namespace KhMedium.Data
         {
             var articles = KhMediumContext.Articles.OrderBy(
                     a => a.CreatedAt)
-                .ThenBy(a => a.Claps)
+                .ThenBy(a => a.Claps.Count)
                 .ToList();
 
             if (userId.IsEmpty()) return articles;
@@ -64,8 +64,8 @@ namespace KhMedium.Data
         {
             var articles = KhMediumContext.Articles.OrderBy(
                     a => a.CreatedAt)
-                .ThenBy(a => a.Claps)
-                .ThenBy(a => a.Comments)
+                .ThenBy(a => a.Claps.Count)
+                .ThenBy(a => a.Comments.Count)
                 .ToList();
 
             if (!userId.IsEmpty())
@@ -84,6 +84,15 @@ namespace KhMedium.Data
         {
             var topic = KhMediumContext.Topics.SingleOrDefault(t => t.Id == topicId);
             return topic?.Articles.ToList() ?? new List<Article>();
+        }
+
+        public List<Article> GetAuthorArticlesByPublication(string publicationId, string authorId)
+        {
+            return KhMediumContext.Articles.Where(
+                a => a.DeletedAt != null &&
+                     a.Author.Id == authorId &&
+                     a.Author.Publication.Id == publicationId
+            ).ToList();
         }
 
         public KhMediumEntities KhMediumContext => Context as KhMediumEntities;

@@ -21,11 +21,14 @@ namespace KhMedium
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
+                "~/Scripts/popper.min.js",
+                "~/Scripts/functions.js",
                 "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
-                "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include( 
+                "~/Content/style.css",
+                "~/Content/assets/css/main.css"
+               ));
 
             //Admin LTE
             bundles.Add(new StyleBundle("~/bundles/css").Include(

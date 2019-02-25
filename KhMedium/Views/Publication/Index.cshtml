@@ -1,0 +1,113 @@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .mw800 { max-width: 800px !important }
+
+    .pub-header {
+        padding-top: 64px;
+        padding-bottom: 40px;
+    }
+
+    .btn-new-pub {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .pub-content-title {
+        padding-top: 30px;
+        padding-bottom: 10px
+    }
+
+    .heading {
+        color: #000000;
+        color: rgba(0, 0, 0, .84);
+        font-size: 15px;
+        letter-spacing: 0;
+        position: relative;
+        border-spacing: 5px;
+        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid rgba(0, 0, 0, .05)
+    }
+
+    .heading.heading-content {
+        margin-bottom: 8px;
+        padding-bottom: 0;
+        float: left !important
+    }
+
+    .u-clearfix:after {
+        display: table;
+        content: " "
+    }
+
+    .content-row {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .content-row-item { padding: 10px 20px 10px 20px; }
+
+    .item {
+        padding-bottom: 15px !important;
+        padding-top: 10px !important;
+        display: flex !important;
+        align-items: center !important
+    }
+
+    .u-flex1 { flex: 1 1 auto }
+
+    .u-flexCenter {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .u-paddingLeft20 { padding-left: 20px !important }
+
+    .u-paddingRight20 { padding-right: 20px !important }
+</style>
+<div class="container mw800">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row pub-header">
+                <div class="col-md-8">
+                    <h1>Publication</h1>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary btn-new-pub">New Publication</button>
+                </div>
+            </div>
+            <div class="row pub-content-title">
+                <div class="col content-row">
+                    <header class="heading">
+                        <div class="u-clearfix">
+                            <div class="heading-content">
+                                <span class="heading-title">Staff</span>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <div class="row content-row-item">
+                <div class="col">
+                    <div class="item">
+                        <div class="u-flexCenter u-flex1">
+                            <div style="width: 40px !important; height: 40px !important;">
+                                <a>
+                                    <img src="https://cdn-images-1.medium.com/fit/c/120/120/1*-Ikgav3D8yMCtbChfFgjfw.jpeg" style="max-height: 40px !important"/>
+                                </a>
+                            </div>
+                            <div class="u-flex1 u-paddingLeft20 u-paddingRight20">
+                                <a>
+                                    <h3 style="font-size: 18px; margin-top: 0; margin-bottom: 5px;">TestSample</h3>
+                                </a>
+                                <div style="font-size: 12px;">TestSample</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

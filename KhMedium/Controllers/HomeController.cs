@@ -8,6 +8,8 @@ using AutoMapper;
 using KhMedium.Data;
 using KhMedium.Entities;
 using KhMedium.Models;
+using KhMedium.Models.ViewModel;
+using Microsoft.AspNet.Identity;
 
 namespace KhMedium.Controllers
 {
@@ -17,7 +19,21 @@ namespace KhMedium.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            string uid = "";
+
+            if (User.Identity.IsAuthenticated)
+            {
+                uid = User.Identity.GetUserId();
+            } 
+            var viewModel = new HomeViewModel()
+            {
+                Topics = _context.Topics.GetAll().ToList(),
+                FeatureArticles = _context.Articles.GetFeatureArticle(uid),
+                BasedHistoryArticles = _context.Articles.GetFeatureArticle(uid),
+                PopularArticles = _context.Articles.GetPopularArticle(uid)
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult About()
