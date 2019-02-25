@@ -1,4 +1,5 @@
-﻿@model KhMedium.Models.ViewModel.HomeViewModel
+﻿@using KhMedium.Data
+@model KhMedium.Models.ViewModel.HomeViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -8,26 +9,32 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="card border-0 mb-4 box-shadow h-xl-300">
-                <div style="background-image: url(/Content/assets/img/demo/blog4.jpg); height: 150px;    background-size: cover;    background-repeat: no-repeat;"></div>
+                <div style="background-image: url(/Content/assets/img/demo/blog4.jpg); height: 150px; background-size: cover; background-repeat: no-repeat;"></div>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-                    <h2 class="h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">@Model.FeatureArticles[0].Title</a>
-                    </h2>
-                    <p class="card-text">
-                        @Model.FeatureArticles[0].Content
-                    </p>
-                    <div>
-                        <small class="d-block"><a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a></small>
-                        <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
-                    </div>
+                    @if (Model.FeatureArticles.Any())
+                    {
+                        <h2 class="h4 font-weight-bold">
+                            <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a>
+                        </h2>
+                        <p class="card-text">
+                            @Model.FeatureArticles[0].Content
+                        </p>
+                        <div>
+                            <small class="d-block">
+                                <a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a>
+                            </small>
+                            <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
-            @for (var i = 0; i < Model.FeatureArticles.Count; i++)
+            @for (var i = 1; i < Model.FeatureArticles.Count; i++)
             {
                 var article = Model.FeatureArticles[i];
-                <div class="flex-md-row mb-4 box-shadow h-xl-300">
+                <div class="flex-md-row mb-4 box-shadow">
                     <div class="mb-3 d-flex align-items-center">
                         <img height="80" src="~/Content/assets/img/demo/blog4.jpg">
                         <div class="pl-3">
@@ -35,14 +42,14 @@
                                 <a class="text-dark" href="article.html">@article.Title</a>
                             </h2>
                             <div class="card-text text-muted small">
-                                @article.Author.Name
+                                @(new HtmlString(@article.Content))
                             </div>
                             <small class="text-muted">@article.CreatedAt</small>
                         </div>
                     </div>
                 </div>
             }
-            
+
         </div>
     </div>
 </div>
@@ -50,189 +57,118 @@
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-md-8">
-            <h5 class="font-weight-bold spanborder"><span>All Stories</span></h5>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">Nearly 200 Great Barrier Reef coral species also live in the deep sea</a>
-                    </h2>
-                    <p>
-                        There are more coral species lurking in the deep ocean that previously thought.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
+            <h5 class="font-weight-bold spanborder">
+                <span>All Stories</span>
+            </h5>
+            @foreach (var article in Model.AllStoriesArticles)
+            {
+                <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
+                    <div class="col-md-9">
+                        <h2 class="col-md-12 mb-1 h4 font-weight-bold">
+                            <a class="text-dark" href="article.html">@article.Title</a>
+                        </h2>
+                        <div class="col-md-12">
+                            @(new HtmlString(article.Content))
+                        </div>
+                        <div class="col-md-12" style="position: absolute; bottom: 0">
+                            <div class="card-text text-muted small">
+                                @article.Author.Name
+                            </div>
+                            <small class="text-muted">@article.CreatedAt</small>
+                            <span style="float: right; cursor: pointer;">
+                                @if (article.IsBookmarked())
+                                {
+                                    <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/bookmarked.png"/>
+                                }
+                                else
+                                {
+                                    <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png"/>
+                                }
+                            </span>
+                        </div>
+
                     </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/blog8.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">East Antarctica's glaciers are stirring</a>
-                    </h2>
-                    <p>
-                        Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
+                    <div class="col-md-3">
+                        <img style="height: 150px" src="~/Content/assets/img/demo/blog8.jpg">
                     </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
+
                 </div>
-                <img height="120" src="~/Content/assets/img/demo/1.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">50 years ago, armadillos hinted that DNA wasn’t destiny</a>
-                    </h2>
-                    <p>
-                        Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/5.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">Nearly 200 Great Barrier Reef coral species also live in the deep sea</a>
-                    </h2>
-                    <p>
-                        There are more coral species lurking in the deep ocean that previously thought.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/blog8.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">East Antarctica's glaciers are stirring</a>
-                    </h2>
-                    <p>
-                        Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/1.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">50 years ago, armadillos hinted that DNA wasn’t destiny</a>
-                    </h2>
-                    <p>
-                        Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/5.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">Nearly 200 Great Barrier Reef coral species also live in the deep sea</a>
-                    </h2>
-                    <p>
-                        There are more coral species lurking in the deep ocean that previously thought.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/blog8.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">East Antarctica's glaciers are stirring</a>
-                    </h2>
-                    <p>
-                        Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/1.jpg">
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <div class="pr-3">
-                    <h2 class="mb-1 h4 font-weight-bold">
-                        <a class="text-dark" href="article.html">50 years ago, armadillos hinted that DNA wasn’t destiny</a>
-                    </h2>
-                    <p>
-                        Nasa says it has detected the first signs of significant melting in a swathe of glaciers in East Antarctica.
-                    </p>
-                    <div class="card-text text-muted small">
-                        Jake Bittle in SCIENCE
-                    </div>
-                    <small class="text-muted">Dec 12 &middot; 5 min read</small>
-                </div>
-                <img height="120" src="~/Content/assets/img/demo/5.jpg">
-            </div>
+            }
         </div>
         <div class="col-md-4 pl-4">
             <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-                <h5 class="font-weight-bold spanborder"><span>Popular</span></h5>
+                <h5 class="font-weight-bold spanborder col-md-12">
+                    <span>Popular</span>
+                </h5>
                 <ol class="list-featured">
-                    <li>
-                        <span>
-                            <h6 class="font-weight-bold">
-                                <a href="article.html" class="text-dark">Did Supernovae Kill Off Large Ocean Animals?</a>
-                            </h6>
-                            <p class="text-muted">
-                                Jake Bittle in SCIENCE
-                            </p>
-                        </span>
-                    </li>
-                    <li>
-                        <span>
-                            <h6 class="font-weight-bold">
-                                <a href="article.html" class="text-dark">Humans Reversing Climate Clock: 50 Million Years</a>
-                            </h6>
-                            <p class="text-muted">
-                                Jake Bittle in SCIENCE
-                            </p>
-                        </span>
-                    </li>
-                    <li>
-                        <span>
-                            <h6 class="font-weight-bold">
-                                <a href="article.html" class="text-dark">Unprecedented Views of the Birth of Planets</a>
-                            </h6>
-                            <p class="text-muted">
-                                Jake Bittle in SCIENCE
-                            </p>
-                        </span>
-                    </li>
-                    <li>
-                        <span>
-                            <h6 class="font-weight-bold">
-                                <a href="article.html" class="text-dark">Effective New Target for Mood-Boosting Brain Stimulation Found</a>
-                            </h6>
-                            <p class="text-muted">
-                                Jake Bittle in SCIENCE
-                            </p>
-                        </span>
-                    </li>
+                    @foreach (var article in Model.PopularArticles)
+                    {
+                        <li>
+                            <span>
+                                <h6 class="font-weight-bold">
+                                    <a href="article.html" class="text-dark">@article.Title</a>
+                                </h6>
+                                <p class="text-muted">
+                                    @article.Author.Name
+                                </p>
+                            </span>
+                        </li>
+                    }
+
+
+                    @* <li> *@
+                    @*     <span> *@
+                    @*         <h6 class="font-weight-bold"> *@
+                    @*             <a href="article.html" class="text-dark">Unprecedented Views of the Birth of Planets</a> *@
+                    @*         </h6> *@
+                    @*         <p class="text-muted"> *@
+                    @*             Jake Bittle in SCIENCE *@
+                    @*         </p> *@
+                    @*     </span> *@
+                    @* </li> *@
+                    @* <li> *@
+                    @*     <span> *@
+                    @*         <h6 class="font-weight-bold"> *@
+                    @*             <a href="article.html" class="text-dark">Effective New Target for Mood-Boosting Brain Stimulation Found</a> *@
+                    @*         </h6> *@
+                    @*         <p class="text-muted"> *@
+                    @*             Jake Bittle in SCIENCE *@
+                    @*         </p> *@
+                    @*     </span> *@
+                    @* </li> *@
                 </ol>
             </ul>
         </div>
     </div>
 </div>
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function() {
+        $('.bookmark').click(function() {
+            var articleId = $(this)[0].id;
+            var imageTag = $(this);
+            console.log(articleId);
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ToggleBookmark", "Api")",
+                data: JSON.stringify({
+                    "articleId": articleId
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(response) {
+                    if (response.result)
+                        $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
+                    else
+                        $(imageTag).attr('src', 'Content/assets/img/unbookmark.png');
+                },
+                failure: function(response) {
+                    console.log("Failure " + response);
+                },
+                error: function(response) {
+                    console.log("Error " + response.message);
+                }
+            });
+        });
+    });
+</script>

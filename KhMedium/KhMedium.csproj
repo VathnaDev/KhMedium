@@ -224,6 +224,7 @@
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
     <Compile Include="Data\Core\IArticleTagRepository.cs" />
+    <Compile Include="Data\Core\IAuthorPublicationRepository.cs" />
     <Compile Include="Data\Core\IAuthorRepository.cs" />
     <Compile Include="Data\Core\IBookmarkRepository.cs" />
     <Compile Include="Data\Core\ICategoryRepository.cs" />
