@@ -223,6 +223,7 @@
     <Compile Include="Controllers\PublicationController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Data\AuthorPublicationRepository.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
@@ -7602,6 +7603,9 @@
     <Content Include="Views\Search\Publications.cshtml" />
     <Content Include="Views\Search\Users.cshtml" />
     <Content Include="Views\Luther\CreateArticlesDemo.cshtml" />
+    <Content Include="Views\Start\Index.cshtml" />
+    <Content Include="Views\Start\SelectTopics.cshtml" />
+    <Content Include="Views\Topics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
