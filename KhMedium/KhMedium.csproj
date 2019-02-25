@@ -201,16 +201,20 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookmarksController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublicationsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TagsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestingController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicsController.cs" />
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
     <Compile Include="Data\Core\IArticleTagRepository.cs" />
@@ -219,6 +223,7 @@
     <Compile Include="Data\Core\ICategoryRepository.cs" />
     <Compile Include="Data\Core\IClapRepository.cs" />
     <Compile Include="Data\Core\ICommentRepository.cs" />
+    <Compile Include="Data\Core\IFileRepository.cs" />
     <Compile Include="Data\Core\IFollowerRepository.cs" />
     <Compile Include="Data\Core\IFollowingRepository.cs" />
     <Compile Include="Data\Core\IPublicationRepository.cs" />
@@ -233,7 +238,9 @@
     <Compile Include="Data\CategoryRepository.cs" />
     <Compile Include="Data\ClapRepository.cs" />
     <Compile Include="Data\CommentRepository.cs" />
+    <Compile Include="Data\Core\IUserTopicRepository.cs" />
     <Compile Include="Data\Extension.cs" />
+    <Compile Include="Data\FileRepository.cs" />
     <Compile Include="Data\FollowerRepository.cs" />
     <Compile Include="Data\FollowingRepository.cs" />
     <Compile Include="Data\PublicationRepository.cs" />
@@ -242,6 +249,7 @@
     <Compile Include="Data\TopicRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Data\UnitOfWork.cs" />
+    <Compile Include="Data\UserTopicRespository.cs" />
     <Compile Include="Entities\Article.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -263,6 +271,7 @@
     <Compile Include="Entities\Author.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\AuthorPublication.cs" />
     <Compile Include="Entities\Bookmark.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -293,6 +302,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\File.cs" />
     <Compile Include="Entities\Follower.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -314,6 +324,7 @@
     <Compile Include="Entities\Topic.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\UserTopic.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -332,7 +343,10 @@
     <Compile Include="Models\TopicModel.cs" />
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModel\HomeViewModel.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
+    <Compile Include="Models\ViewModel\TopicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -6863,6 +6877,9 @@
       <LastGenOutput>Database.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
+    <Content Include="FileUpload\7ad77c3d-d1bf-4c4d-b225-d075c2743b88.jpg" />
+    <Content Include="FileUpload\813f9e0d-8d8a-47f1-a960-f15ee0285a9f.jpg" />
+    <Content Include="FileUpload\a2f1fdca-7df0-49e4-864f-7a071c3eb245.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -7500,6 +7517,7 @@
     <Content Include="Areas\Admin\Views\Publications\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Publications\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Publications\Edits.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookmarks\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -7552,11 +7570,12 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Article\Create.cshtml" />
     <Content Include="Views\Tag\Index.cshtml" />
+    <Content Include="_AdminLayoutStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Authors\" />
+    <Folder Include="Areas\Admin\Views\Testing\" />
     <Folder Include="Areas\Author\Controllers\" />
     <Folder Include="Areas\Author\Models\" />
     <Folder Include="Areas\Author\Views\Shared\" />

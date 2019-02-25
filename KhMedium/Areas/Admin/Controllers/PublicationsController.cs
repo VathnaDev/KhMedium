@@ -1,4 +1,5 @@
-﻿using KhMedium.Data;
+﻿using KhMedium.Controllers;
+using KhMedium.Data;
 using KhMedium.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace KhMedium.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var model = _context.Publications.GetAll();
+
             return View(model);
         }
         public ActionResult Create()
@@ -23,21 +25,23 @@ namespace KhMedium.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Publication publication)
+        public ActionResult Create(Publication publication , HttpPostedFileBase cover,HttpPostedFileBase avatar)
         {
-            Console.WriteLine(publication);
-            if(!ModelState.IsValid)
-                return View(publication);
             publication.Id = Guid.NewGuid().ToString();
+            publication.ContactInfo = "sldfkdlds";
             publication.CreatedAt = DateTime.Now;
             publication.UpdatedAt = DateTime.Now;
             _context.Publications.Add(publication);
+
+            publication.Avatar = FileController.SaveFile(avatar, FileType.Publication, publication.Id).Replace();
+            publication.Logo = FileController.SaveFile(cover, FileType.Publication, publication.Id);
             _context.Complete();
             return RedirectToAction("Index");
         }
         public ActionResult Edits(String id)
         {
             var publication = _context.Publications.Get(id);
+           
             return View(publication);
         }
         [HttpPost]

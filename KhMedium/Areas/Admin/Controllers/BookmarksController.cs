@@ -23,7 +23,9 @@ namespace KhMedium.Areas.Admin.Controllers
 
             //ViewBag.CategoryList = new SelectList(_context.Categories.GetAll(), "Id", "Name");
             var ListArticles = _context.Articles.GetAll();
-
+            var ListUsers = _context.UserTopics.GetAll();
+           
+            ViewBag.ListUsers = new SelectList(ListUsers, "Id", "Name");
             ViewBag.ListArticles = new SelectList(ListArticles, "Id", "Name");
             return View();
         }

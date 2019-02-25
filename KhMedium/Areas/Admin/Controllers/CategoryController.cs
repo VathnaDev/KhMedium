@@ -16,6 +16,7 @@ namespace KhMedium.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var categories = _context.Categories.GetAll();
+           
             return View(categories);
         }
 

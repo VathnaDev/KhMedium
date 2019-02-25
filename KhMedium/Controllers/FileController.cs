@@ -15,6 +15,15 @@ namespace KhMedium.Controllers
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
 
+        [HttpPost]
+        public ActionResult Create(HttpPostedFileBase file, Article model)
+        {
+            model.Id = Guid.NewGuid().ToString();
+            var filePath = FileController.SaveFile(file, FileType.Article, model.Id);
+            return View();
+        }
+
+
         // GET: File
         [HttpPost]
         public JsonResult CreateFile(HttpPostedFileBase file, FileType type, String Id)
@@ -40,6 +49,10 @@ namespace KhMedium.Controllers
                 CreatedAt = DateTime.Now,
                 UserId = System.Web.HttpContext.Current.User.Identity.GetUserId()
             };
+            var articles = context.Articles.GetAll();
+            articles = articles
+                .Where(a => a.CreatedAt == DateTime.Now)
+               .Take(5);
 
             context.Files.Add(dbFile);
             context.Complete();
