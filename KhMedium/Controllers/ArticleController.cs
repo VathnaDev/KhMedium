@@ -43,7 +43,7 @@ namespace KhMedium.Controllers
             article.TopicId = model.TopicId;
             article.Content = model.Content;
             Console.WriteLine(User.Identity.GetUserId());
-            article.AuthorId = _context.Authors.GetAuthorByAspUserId(User.Identity.GetUserId()).Id;
+            article.AuthorId = _context.Authors.GetAuthorByUserId(User.Identity.GetUserId()).Id;
             article.CreatedAt = DateTime.Now;
             article.UpdatedAt = DateTime.Now;
 

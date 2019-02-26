@@ -15,16 +15,11 @@ namespace KhMedium.Data
         {
         }
 
-        public Models.AuthorModel GetAuthorWithCourses(String id)
-        {
-            return AutoMapper.Mapper.Map<Models.AuthorModel>(KhMediumContext.Authors.SingleOrDefault(a => a.Id == id));
-        }
-
-        public AuthorModel GetAuthorByAspUserId(string userId)
-        {
-            return AutoMapper.Mapper.Map<Models.AuthorModel>(KhMediumContext.Authors.SingleOrDefault(a => a.UserId == userId));
-        }
-
         public KhMediumEntities KhMediumContext => Context as KhMediumEntities;
+
+        public Author GetAuthorByUserId(string id)
+        {
+            return KhMediumContext.Authors.SingleOrDefault(a => a.UserId == id);
+        }
     }
 }

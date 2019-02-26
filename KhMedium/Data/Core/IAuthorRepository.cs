@@ -9,8 +9,6 @@ namespace KhMedium.Data.Core
 {
     public interface IAuthorRepository : IRepository<Author>
     {
-        AuthorModel GetAuthorWithCourses(String id);
-
-        AuthorModel GetAuthorByAspUserId(string id);
+        Author GetAuthorByUserId(String id);
     }
 }
