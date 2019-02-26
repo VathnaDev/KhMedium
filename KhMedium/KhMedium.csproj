@@ -6892,6 +6892,8 @@
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Content\starter.html" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\tokenize2.min.css" />
     <Content Include="Entities\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>
