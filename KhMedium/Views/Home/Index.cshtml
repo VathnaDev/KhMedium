@@ -1,4 +1,5 @@
 ﻿@using KhMedium.Data
+@using KhMedium.Utils
 @model KhMedium.Models.ViewModel.HomeViewModel
 
 @{
@@ -89,8 +90,8 @@
 
                     </div>
                     <div class="col-md-3">
-                        @* <img style="height: 150px" src="~/Content/assets/img/demo/blog8.jpg"> *@
-                        <img style="height: 150px" src="">
+                        <img style="height: 150px" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
+                        @* <img style="height: 150px" src=""> *@
                     </div>
 
                 </div>
@@ -148,7 +149,6 @@
         $('.bookmark').click(function() {
             var articleId = $(this)[0].id;
             var imageTag = $(this);
-            console.log(articleId);
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("ToggleBookmark", "Api")",
@@ -157,11 +157,14 @@
                 }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: function(response) {
-                    if (response.result)
+                success: function (response) {
+//                    $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
+                    if (response.result) {
                         $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
-                    else
+                    }
+                    else {
                         $(imageTag).attr('src', 'Content/assets/img/unbookmark.png');
+                    }
                 },
                 failure: function(response) {
                     console.log("Failure " + response);

@@ -27,5 +27,6 @@ namespace KhMedium.Data
         {
             return article.Bookmarks.Any(b => b.UserId == HttpContext.Current.User.Identity.GetUserId());
         }
+
     }
 }
