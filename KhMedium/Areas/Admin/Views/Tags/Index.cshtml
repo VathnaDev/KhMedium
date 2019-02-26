@@ -20,7 +20,7 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Create At</th>
+@*                <th>Create At</th>*@
                 <th style="width: 20%">Action</th>
             </tr>
         </thead>
@@ -31,7 +31,7 @@
                 <tr>
                     <td>@i</td>
                     <td>@tag.Name</td>
-                    <td>@tag.CreatedAt</td>
+@*                    <td>@tag.CreatedAt</td>*@
                     <td class="text-center">
                         @Html.ActionLink("Edit", "Edits", new { id = tag.Id }, new { @class = "btn btn-warning" })
                         @Html.ActionLink("Delete", "Delete", new { id = tag.Id }, new { @class = "btn btn-danger" })

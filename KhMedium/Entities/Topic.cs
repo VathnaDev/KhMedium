@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace KhMedium.Entities
 {
     using System;
@@ -24,7 +26,10 @@ namespace KhMedium.Entities
         }
     
         public string Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
+        [Display(Name = "Category")]
         public string CategoryId { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public string Cover { get; set; }

@@ -1,42 +1,41 @@
-﻿@model KhMedium.Entities.Topic
+﻿@model KhMedium.Areas.Admin.Models.BookmarkViewModel
 
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
 <br />
-@using (Html.BeginForm("Create", "Topics", FormMethod.Post, new { @Class = "form-horizontal" }))    
+@using (Html.BeginForm("Edits", "Bookmarks", FormMethod.Post, new { @Class = "form-horizontal" }))
 {
     @Html.AntiForgeryToken()
     {
         @Html.ValidationSummary(true)
         {
-
-
             <div class="row">
                 <div class="col-sm-6">
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Create Topic</h3>
+                            <h3 class="box-title">Edit Bookmarks</h3>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <div class="col-md-2">
-                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.Articles, "Article", htmlAttributes: new { @class = "control-label col-md-2" })
                                 </div>
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    @Html.DropDownListFor(model => model.ArticleId, Model.Articles, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ArticleId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-2">
-                                    @Html.LabelFor(model => model.CategoryId, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.AuthorId, "Author", htmlAttributes: new { @class = "control-label col-md-2" })
                                 </div>
                                 <div class="col-md-10">
-                                   @Html.DropDownListFor(model => model.CategoryId, (SelectList)ViewBag.List, new { @class = "form-control" })
+                                    @Html.DropDownListFor(model => model.AuthorId, Model.Authors, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AuthorId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -44,13 +43,9 @@
                             @Html.ActionLink("Back to List", "Index", "Tags", new { @Class = "btn btn-default" })
                             <button type="submit" class="btn btn-info pull-right">Save</button>
                         </div>
-                        </div>
                     </div>
                 </div>
-
-           
+            </div>
         }
     }
 }
-
-

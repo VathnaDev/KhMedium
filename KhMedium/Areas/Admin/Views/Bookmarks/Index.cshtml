@@ -5,42 +5,89 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Article.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AspNetUser.Email)
-        </th>
-        <th></th>
-    </tr>
+@Html.ActionLink("Create", "Create", "Bookmarks", new {@Class = "btn btn-info pull-right"})
+<br/>
+<br/>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Bookmarks</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Article.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <table id="table" class="table table-bordered table-striped dataTable">
+            <thead>
 
-</table>
+            <tr>
+                <th>No</th>
+                <th>Article Title</th>
+                <th>User</th>
+                <th style="width: 20%">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for (var i = 1; i <= Model.Count(); i++)
+            {
+                var bookmark = Model.ToList()[i - 1];
+                <tr>
+                    <td>@i</td>
+                    <td>@bookmark.Article.Title</td>
+                    <td>@bookmark.AspNetUser.UserName</td>
+                    <td class="text-center">
+                        @Html.ActionLink("Edit", "Edits", new {id = bookmark.Id}, new {@class = "btn btn-warning"})
+                        @Html.ActionLink("Delete", "Delete", new {id = bookmark.Id}, new {@class = "btn btn-danger"})
+                    </td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function() {
+        $('#table').DataTable({
+            "order": [[1, "asc"]]
+        });
+    });
+</script>
+
+@*<table class="table">*@
+@*    <tr>*@
+@*        <th>*@
+@*            @Html.DisplayNameFor(model => model.CreatedAt)*@
+@*        </th>*@
+@*        <th>*@
+@*            @Html.DisplayNameFor(model => model.Article.Title)*@
+@*        </th>*@
+@*        <th>*@
+@*            @Html.DisplayNameFor(model => model.AspNetUser.Email)*@
+@*        </th>*@
+@*        <th></th>*@
+@*    </tr>*@
+@**@
+@*    @foreach (var item in Model)*@
+@*    {*@
+@*        <tr>*@
+@*            <td>*@
+@*                @Html.DisplayFor(modelItem => item.CreatedAt)*@
+@*            </td>*@
+@*            <td>*@
+@*                @Html.DisplayFor(modelItem => item.Article.Title)*@
+@*            </td>*@
+@*            <td>*@
+@*                @Html.DisplayFor(modelItem => item.AspNetUser.Email)*@
+@*            </td>*@
+@*            <td>*@
+@*                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |*@
+@*                @Html.ActionLink("Details", "Details", new {id = item.Id}) |*@
+@*                @Html.ActionLink("Delete", "Delete", new {id = item.Id})*@
+@*            </td>*@
+@*        </tr>*@
+@*    }*@
+@**@
+@*</table>*@

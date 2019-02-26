@@ -209,6 +209,7 @@
     <Compile Include="Areas\Admin\Controllers\TagsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestingController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicsController.cs" />
+    <Compile Include="Areas\Admin\Models\BookmarkViewModel.cs" />
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -7547,6 +7548,8 @@
     <Content Include="Areas\Admin\Views\Publications\Edits.cshtml" />
     <Content Include="Areas\Admin\Views\Bookmarks\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookmarks\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookmarks\Edits.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -7612,7 +7615,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Testing\" />
     <Folder Include="Areas\Author\Controllers\" />
     <Folder Include="Areas\Author\Models\" />

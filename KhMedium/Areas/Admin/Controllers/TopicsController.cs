@@ -21,9 +21,9 @@ namespace KhMedium.Areas.Admin.Controllers
         {
   
             //ViewBag.CategoryList = new SelectList(_context.Categories.GetAll(), "Id", "Name");
-            var ListData = _context.Categories.GetAll();
+            var listData = _context.Categories.GetAll();
            
-            ViewBag.List = new SelectList(ListData, "Id", "Name");
+            ViewBag.List = new SelectList(listData, "Id", "Name");
             return View();
         }
         [ValidateAntiForgeryToken]
@@ -32,6 +32,8 @@ namespace KhMedium.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
+                var listData = _context.Categories.GetAll();
+                ViewBag.List = new SelectList(listData, "Id", "Name");
                 return View(model);
             }
 
@@ -56,7 +58,11 @@ namespace KhMedium.Areas.Admin.Controllers
         public ActionResult Edits(Topic topic)
         {
             if (!ModelState.IsValid)
+            {
+                var listData = _context.Categories.GetAll();
+                ViewBag.List = new SelectList(listData, "Id", "Name");
                 return View(topic);
+            }
             topic.CreatedAt = DateTime.Now;
             _context.Topics.Update(topic);
             _context.Complete();
