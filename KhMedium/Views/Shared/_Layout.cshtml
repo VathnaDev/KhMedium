@@ -163,28 +163,28 @@ NAVBAR
             <div class="navbar-collapse collapse" id="navbarColor02" style="">
                 <ul class="navbar-nav mr-auto d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Business <span class="sr-only">(current)</span></a>
+                        <a>@(Html.ActionLink("Business","Index", "Topics", routeValues:  new { topicId = "66ef99f4-32da-4daf-ae91-20fd7ec81b36" }, htmlAttributes: new { @class = "nav-link" }))<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Design</a>
+                        <a>@(Html.ActionLink("Design", "Index", "Topics", routeValues: new { topicId = "736f4fe2-331e-42e9-a857-a50828cee176" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Data Science</a>
+                        <a>@(Html.ActionLink("Data Science", "Index", "Topics", routeValues: new { topicId = "a27e3807-82cb-4ca5-b877-5e07ae3c9311" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Marketing</a>
+                        <a>@(Html.ActionLink("Marketing", "Index", "Topics", routeValues: new { topicId = "95c702ae-b79d-421e-9918-9a822de75c08" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Freelancing</a>
+                        <a>@(Html.ActionLink("Freelancing", "Index", "Topics", routeValues: new { topicId = "6341f92b-7c00-404f-aa3c-9ddefd499b4d" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Art</a>
+                        <a>@(Html.ActionLink("Art", "Index", "Topics", routeValues: new { topicId = "6b92ef38-f1b0-4911-8199-eeeadeb25bef" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Economy</a>
+                        <a>@(Html.ActionLink("Economy", "Index", "Topics", routeValues: new { topicId = "e2cf6252-9c85-4ebd-b148-41785d4003ff" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="docs.html">Education</a>
+                        <a>@(Html.ActionLink("Education", "Index", "Topics", routeValues: new { topicId = "5b6e6e77-3f16-4329-b623-0c5e4982aafb" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                 </ul>
                 @if (User.Identity.IsAuthenticated)
