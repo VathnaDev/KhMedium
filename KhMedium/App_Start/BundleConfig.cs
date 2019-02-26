@@ -66,6 +66,7 @@ namespace KhMedium
                 "~/Content/bower_components/datatables.net/js/jquery.dataTables.min.js",
                 "~/Content/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js",
                 "~/Content/bower_components/jquery-ui/jquery-ui.min.js",
+                "~/Content/datatable/dataTables.responsive.js",
                 "~/Content/dist/js/demo.js"));
         }
     }

@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<KhMedium.Entities.Publication>
+@using KhMedium.Utils
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
@@ -39,8 +40,8 @@
                         <td>@item.Name</td>
                         <td>@item.Description</td>
                         <td>@item.ContactInfo</td>
-                        <td><img src="@item.Avatar" width="30" height="30"/></td>
-                        <td><img src="@item.Logo"  width="30" height="30"/></td>
+                        <td><img src="@StringUtils.GetFullImagePath(item.Logo)" width="30" height="30"/></td>
+                        <td><img src="@StringUtils.GetFullImagePath(item.Cover)"  width="30" height="30"/></td>
                         <td>@item.CreatedAt</td>
                         <td>@item.UpdatedAt</td>
                        
