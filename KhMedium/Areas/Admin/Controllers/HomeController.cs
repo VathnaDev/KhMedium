@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         // GET: admin/Home
