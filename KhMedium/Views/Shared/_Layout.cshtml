@@ -1,4 +1,5 @@
-﻿@*<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+@*<!DOCTYPE html>
     <html>
     <head>
         <meta charset="utf-8"/>
@@ -199,7 +200,7 @@ NAVBAR
                                     <a href="../article/create">New Story</a>
                                     <a href="../publication/index">Publication</a>
                                     <a href="#">Bookmarks</a>
-                                    <a href="../profile/index">Profile</a>
+                                    @Html.ActionLink("Profile", "Index", "Profile", routeValues: new { userId = User.Identity.GetUserId(), authorId = "" }, htmlAttributes:null)
                                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                     {
                                         @Html.AntiForgeryToken()

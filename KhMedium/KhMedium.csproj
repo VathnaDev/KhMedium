@@ -367,6 +367,7 @@
     <Compile Include="Models\ViewModel\CreatePublicationViewModel.cs" />
     <Compile Include="Models\ViewModel\HomeViewModel.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModel\ProfileViewModel.cs" />
     <Compile Include="Models\ViewModel\SearchViewModel.cs" />
     <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
     <Compile Include="Models\ViewModel\TopicArticlesViewModel.cs" />
