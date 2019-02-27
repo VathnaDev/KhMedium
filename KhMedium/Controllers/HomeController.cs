@@ -30,7 +30,7 @@ namespace KhMedium.Controllers
             var viewModel = new HomeViewModel()
             {
                 Topics = _context.Topics.GetAll().ToList(),
-                FeatureArticles = _context.Articles.GetFeatureArticle(uid),
+                FeatureArticles = _context.Articles.GetFeatureArticle(uid).Take(4).ToList(),
                 BasedHistoryArticles = _context.Articles.GetFeatureArticle(uid),
                 PopularArticles = _context.Articles.GetPopularArticle(uid).Take(4).ToList(),
                 AllStoriesArticles = allArticles
