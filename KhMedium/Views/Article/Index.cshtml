@@ -2,9 +2,43 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    //<link rel="stylesheet" href="~/Views/Article/css/samples.css">
+    //<link rel="stylesheet" href="~/Views/Article/css/codemirror/neo.css">
 }
 
-<h2>Index</h2>
+@*@section Styles{
+    <link href="@Url.Content("~/Content/pages/Article/css/samples.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/pages/Article/css/codemirror/neo.css")" rel="stylesheet" type="text/css" />
+}*@
 
+
+
+
+<h2>Index</h2>
+<textarea name="editor1"></textarea>
+@section scripts{
+@*<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>*@
+<script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor1');
+</script>
+    }
+
+
+
+
+
+@*@section scripts{
+    <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/[version.number]/[distribution]/ckeditor.js"></script>
+    <script>
+        CKEDITOR.plugins.addExternal('abbr', '/myplugins/abbr/', 'plugin.js');
+
+        // extraPlugins needs to be set too.
+        CKEDITOR.replace('editor1', {
+            extraPlugins: 'abbr'
+        });
+    </script>
+   ]*@
 
 

@@ -204,8 +204,10 @@
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestTageController.cs" />
     <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
@@ -6698,6 +6700,14 @@
     <Content Include="Content\pages\mailbox\read-mail.html" />
     <Content Include="Content\pages\tables\data.html" />
     <Content Include="Content\pages\tables\simple.html" />
+    <Content Include="Content\pages\tagsinput.css" />
+    <Content Include="Content\pages\TEST\jquery-tag-this.css" />
+    <Content Include="Content\pages\TEST\jquery-tag-this.min.css" />
+    <Content Include="Content\pages\TEST\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="Content\pages\TEST\main.js" />
+    <Content Include="Content\pages\TEST\prism.css" />
+    <Content Include="Content\pages\TEST\prism.js" />
+    <Content Include="Content\pages\TEST\style.css" />
     <Content Include="Content\pages\tops\index.css" />
     <Content Include="Content\pages\UI\buttons.html" />
     <Content Include="Content\pages\UI\general.html" />
@@ -7494,6 +7504,13 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\tagsinput.js" />
+    <Content Include="Scripts\TEST\jquery-1.11.0.min.js" />
+    <Content Include="Scripts\TEST\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\TEST\jquery.tagthis.js" />
+    <Content Include="Scripts\TEST\jquery.tagthis.min.js" />
+    <Content Include="Scripts\TEST\main.js" />
+    <Content Include="Scripts\TEST\prism.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -7536,6 +7553,7 @@
     <Content Include="Views\Article\Create.cshtml" />
     <Content Include="Views\Tag\Index.cshtml" />
     <Content Include="Views\Topics\Index.cshtml" />
+    <Content Include="Views\TestTage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

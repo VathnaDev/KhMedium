@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+
+}
+@section Styles{
+<link rel="stylesheet" href="prism.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+@*<link rel="stylesheet" href="../dist/jquery-tag-this.css?v=5">
+<link rel="stylesheet" href="../lib/jquery-ui-1.9.2.custom.min.css">*@
+<link rel="stylesheet" href="~/Content/pages/TEST/jquery-tag-this.css">
+<link rel="stylesheet" href="~/Content/pages/TEST/jquery-tag-this.min.css">
+@*<link rel="stylesheet" href="style.css?v=5">*@
+<link rel="stylesheet" href="~/Content/pages/TEST/style.css">
+}
+<script>var fruitList = ["apple","orange","pear","pomegranate","peach", "plum", "banana","lemon", "lime", "kiwi", "watermelon", "mango", "melon", "cherry", "apricot"];</script>
+<h3>Examples:</h3>
+<div class="example">
+    <label for="simple-tags">Here's the simplest way to use Tag-This. Type some text and get a tag!</label>
+    <input type="text" id="simple-tags" name="simple-tags">
+    <button class="simple-clear-all-button small-button">clear all</button>
+    <button class="see-code-button small-button">see code</button>
+</div>
+
+
+<p>jQuery Tag-This is written and maintained by Dan Gribbin. Get in touch on <a title="Dan Gribbin Twitter" href="http://www.twitter.com/dangribbin" target="_blank">twitter.</a></p>
+@section scripts{
+@*<script src="../lib/jquery-1.11.0.min.js"></script>
+<script src="../lib/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../dist/jquery.tagthis.js?v=6"></script>
+<script src="main.js?v=5"></script>
+<script src="prism.js"></script>*@
+
+<script src="~/Scripts/TEST/jquery-1.11.0.min.js"></script>
+<script src="~/Scripts/TEST/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="~/Scripts/TEST/jquery.tagthis.js"></script>
+<script src="~/Scripts/TEST/main.js"></script>
+<script src="~/Scripts/TEST/prism.js"></script>
+
+    
+}
+
+
