@@ -23,7 +23,6 @@ namespace KhMedium.Controllers
 
 //            var author = _context.Authors.GetAuthorByUserId(User.Identity.GetUserId());
             var author = userId != null ? _context.Authors.GetAuthorByUserId(User.Identity.GetUserId()) : _context.Authors.Get(authorId);
-//            var author = _context.Authors.Get(authorId);
             var viewModel = new ProfileViewModel()
             {
                 Author = author,

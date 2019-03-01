@@ -199,7 +199,7 @@ NAVBAR
                                 <div class="dropdown-content">
                                     <a href="../article/create">New Story</a>
                                     <a href="../publication/index">Publication</a>
-                                    <a href="#">Bookmarks</a>
+                                    <a href="../bookmark/index">Bookmarks</a>
                                     @Html.ActionLink("Profile", "Index", "Profile", routeValues: new { userId = User.Identity.GetUserId(), authorId = "" }, htmlAttributes:null)
                                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                     {

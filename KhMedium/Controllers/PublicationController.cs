@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using KhMedium.Data;
 using KhMedium.Entities;
 using KhMedium.Models.ViewModel;
+using Microsoft.AspNet.Identity;
 
 namespace KhMedium.Controllers
 {
@@ -12,18 +13,27 @@ namespace KhMedium.Controllers
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
 
-        // GET
+        [Authorize]
         public ActionResult Index()
         {
-            return View();
+            var authorPublications = _context.Authors.GetAuthorByUserId(User.Identity.GetUserId()).AuthorPublications.ToList();
+
+            var viewModel = new PublicationViewModel()
+            {
+                Publications = authorPublications
+            };
+
+            return View(viewModel);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(CreatePublicationViewModel model)
         {
             var publication = new Publication();
