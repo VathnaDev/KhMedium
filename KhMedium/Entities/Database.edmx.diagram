@@ -56,6 +56,7 @@
         <EntityTypeShape EntityType="khmediumModel.AuthorPublication" Width="1.5" PointX="10.375" PointY="0.75" />
         <AssociationConnector Association="khmediumModel.FK_AuthorPublication_Authors" />
         <AssociationConnector Association="khmediumModel.FK_AuthorPublication_Publications" />
+        <AssociationConnector Association="khmediumModel.FK_Authors_AspNetUsers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

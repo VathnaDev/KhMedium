@@ -1,0 +1,245 @@
+﻿@using KhMedium.Utils
+@model KhMedium.Entities.Author
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Author Information</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.DisplayFor(m => m.Name, new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.AspNetUser.Email, new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.DisplayFor(m => m.AspNetUser.Email, new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Bio, new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.DisplayFor(m => m.Bio, new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Followers, new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.DisplayFor(m => m.Followers.Count, new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.Label("Following", new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.DisplayFor(m => m.Followings.Count, new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.Label("Publication", new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.DisplayFor(m => m.AuthorPublications.Count, new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    @Html.LabelFor(m => m.ProfilePicture, new {@class = "col-md-2 control-label"})
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <img src="@Model.ProfilePicture" style="border: 2px solid gray;" width="100" height="100"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.box-body -->
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Author's Publication</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsives">
+        @if (Model.AuthorPublications.Any())
+        {
+            <table id="tbPublication" class="table table-bordered table-striped dataTable ">
+                <thead>
+                <tr>
+                    <th>
+                        No
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Desciption
+                    </th>
+                    <th>
+                        Contact
+                    </th>
+                    <th>
+                        Logo
+                    </th>
+                    <th style="width: 20%">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                @for (var i = 1; i <= Model.AuthorPublications.Count; i++)
+                {
+                    var pub = Model.AuthorPublications.ToList()[i - 1].Publication;
+                    <tr>
+                        <td>@i</td>
+                        <td>@pub.Name</td>
+                        <td>@pub.Description</td>
+                        <td>@pub.ContactInfo</td>
+                        <td>
+                            <img src="~/FileUpload/@pub.Logo" width="30" height="30"/>
+                        </td>
+                        <td class="text-center">
+                            @Html.ActionLink("Leave", "Delete", new {id = pub.Id}, new {@class = "btn btn-danger"})
+                        </td>
+                    </tr>
+                }
+
+                </tbody>
+
+            </table>
+        }
+        else
+        {
+            <h3 class="text-center">You don't join any publication</h3>
+        }
+    </div>
+    <!-- /.box-body -->
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Following</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsives">
+                @if (Model.Followings.Any())
+                {
+                    <table id="tbPublication" class="table table-bordered table-striped dataTable ">
+                        <thead>
+                        <tr>
+                            <th>
+                                Profile
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th style="width: 20%">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @for (var i = 1; i <= Model.Followings.Count; i++)
+                        {
+                            var f = Model.Followings.ToList()[i - 1].Author;
+                            <tr>
+                                <td>
+                                    <img src="~/FileUpload/@f.ProfilePicture" width="30" height="30" />
+                                </td>
+                                <td>@f.Name</td>
+                                <td class="text-center">
+                                    @Html.ActionLink("Leave", "Delete", new {id = f.Id}, new {@class = "btn btn-danger"})
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h3 class="text-center">You don't have any following</h3>
+                }
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Followers</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsives">
+                @if (Model.Followers.Any())
+                {
+                    <table id="tbPublication" class="table table-bordered table-striped dataTable ">
+                        <thead>
+                        <tr>
+                            <th>
+                                Profile
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th style="width: 20%">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @for (var i = 1; i <= Model.Followers.Count; i++)
+                        {
+                            var f = Model.Followings.ToList()[i - 1].Author;
+                            <tr>
+                                <td>
+                                    <img src="~/FileUpload/@f.ProfilePicture" width="60" height="60" />
+                                </td>
+                                <td>@f.Name</td>
+                                <td class="text-center">
+                                    @Html.ActionLink("Leave", "Delete", new {id = f.Id}, new {@class = "btn btn-danger"})
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h3 class="text-center">You don't have any follower</h3>
+                }
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function() {
+        $('table').DataTable({
+            "order": [[0, "asc"]]
+        });
+    });
+</script>

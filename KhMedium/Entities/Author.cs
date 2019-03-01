@@ -42,5 +42,6 @@ namespace KhMedium.Entities
         public virtual ICollection<Following> Followings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AuthorPublication> AuthorPublications { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

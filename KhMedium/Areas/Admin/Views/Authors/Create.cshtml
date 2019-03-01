@@ -1,0 +1,63 @@
+﻿@model KhMedium.Models.ViewModel.RegisterViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+<br/>
+@using (Html.BeginForm("Create", "Authors", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    {
+        @Html.ValidationSummary(true)
+        {
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Create Author</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name)
+                                @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Bio)
+                                @Html.TextBoxFor(m => m.Bio, new {@class = "form-control"})
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword)
+                                @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Profile)
+                                <input type="file" name="Profile" class="form-control"/>
+                            </div>
+                            <div class="box-footer">
+                                @Html.ActionLink("Cancel", "Index", "Tags", new {@Class = "btn btn-default"})
+                                <button type="submit" class="btn btn-info pull-right">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+}

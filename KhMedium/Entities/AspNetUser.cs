@@ -27,6 +27,7 @@ namespace KhMedium.Entities
             this.Shares = new HashSet<Share>();
             this.UserTopics = new HashSet<UserTopic>();
             this.AspNetRoles = new HashSet<AspNetRole>();
+            this.Authors = new HashSet<Author>();
         }
     
         public string Id { get; set; }
@@ -63,5 +64,7 @@ namespace KhMedium.Entities
         public virtual ICollection<UserTopic> UserTopics { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Author> Authors { get; set; }
     }
 }
