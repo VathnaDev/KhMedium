@@ -79,5 +79,21 @@ namespace KhMedium.Areas.Admin.Controllers
             _context.Complete();
             return RedirectToAction("Index");
         }
+
+        public ActionResult UnFollow(String id,String authorId)
+        {
+            var following = _context.Followings.Get(id);
+            _context.Followings.Remove(following);
+            _context.Complete();
+            return RedirectToAction("Details", new { id = authorId });
+        }
+
+        public ActionResult RemoveFollower(String id, String authorId)
+        {
+            var follower= _context.Followers.Get(id);
+            _context.Followers.Remove(follower);
+            _context.Complete();
+            return RedirectToAction("Details", new { id = authorId });
+        }
     }
 }

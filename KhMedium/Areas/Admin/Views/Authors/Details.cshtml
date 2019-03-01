@@ -105,7 +105,7 @@
                     <th>
                         Logo
                     </th>
-                    <th style="width: 20%">Action</th>
+@*                    <th style="width: 20%">Action</th>*@
                 </tr>
                 </thead>
                 <tbody>
@@ -121,9 +121,9 @@
                         <td>
                             <img src="~/FileUpload/@pub.Logo" width="30" height="30"/>
                         </td>
-                        <td class="text-center">
-                            @Html.ActionLink("Leave", "Delete", new {id = pub.Id}, new {@class = "btn btn-danger"})
-                        </td>
+@*                        <td class="text-center">*@
+@*                            @Html.ActionLink("Leave", "Delete", new {id = pub.Id}, new {@class = "btn btn-danger"})*@
+@*                        </td>*@
                     </tr>
                 }
 
@@ -171,22 +171,24 @@
                             {
                                 image = f.Author.ProfilePicture;
                                 name = f.Author.Name;
-                            }else if (f.Publication != null)
+                            }
+                            else if (f.Publication != null)
                             {
                                 image = f.Publication.Logo;
                                 name = f.Publication.Name;
-                            }else if (f.Topic != null)
+                            }
+                            else if (f.Topic != null)
                             {
                                 image = f.Topic.Cover;
                                 name = f.Topic.Name;
                             }
                             <tr>
                                 <td>
-                                    <img src="~/FileUpload/@image" width="30" height="30" />
+                                    <img src="~/FileUpload/@image" width="30" height="30"/>
                                 </td>
                                 <td>@name</td>
                                 <td class="text-center">
-                                    @Html.ActionLink("Leave", "Delete", new {id = f.Id}, new {@class = "btn btn-danger"})
+                                    @Html.ActionLink("Unfollow", "UnFollow", new {id = f.Id, authorId = Model.Id}, new {@class = "btn btn-danger"})
                                 </td>
                             </tr>
                         }
@@ -223,36 +225,36 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @for (var i = 1; i <= Model.AspNetUser.Followers.Count; i++)
+                        @for (var i = 1; i <= Model.AspNetUser.Followers.Count; i++)
+                        {
+                            var f = Model.AspNetUser.Followers.ToList()[i - 1];
+                            String image = "";
+                            String name = "";
+                            if (f.Author != null)
                             {
-                                var f = Model.AspNetUser.Followers.ToList()[i - 1];
-                                String image = "";
-                                String name = "";
-                                if (f.Author != null)
-                                {
-                                    image = f.Author.ProfilePicture;
-                                    name = f.Author.Name;
-                                }
-                                else if (f.Publication != null)
-                                {
-                                    image = f.Publication.Logo;
-                                    name = f.Publication.Name;
-                                }
-                                else if (f.Topic != null)
-                                {
-                                    image = f.Topic.Cover;
-                                    name = f.Topic.Name;
-                                }
-                                <tr>
-                                    <td>
-                                        <img src="~/FileUpload/@image" width="30" height="30" />
-                                    </td>
-                                    <td>@name</td>
-                                    <td class="text-center">
-                                        @Html.ActionLink("Leave", "Delete", new { id = f.Id }, new { @class = "btn btn-danger" })
-                                    </td>
-                                </tr>
+                                image = f.Author.ProfilePicture;
+                                name = f.Author.Name;
                             }
+                            else if (f.Publication != null)
+                            {
+                                image = f.Publication.Logo;
+                                name = f.Publication.Name;
+                            }
+                            else if (f.Topic != null)
+                            {
+                                image = f.Topic.Cover;
+                                name = f.Topic.Name;
+                            }
+                            <tr>
+                                <td>
+                                    <img src="~/FileUpload/@image" width="30" height="30"/>
+                                </td>
+                                <td>@name</td>
+                                <td class="text-center">
+                                    @Html.ActionLink("Remove", "RemoveFollower", new { id = f.Id, authorId = Model.Id }, new {@class = "btn btn-danger"})
+                                </td>
+                            </tr>
+                        }
                         </tbody>
                     </table>
                 }
