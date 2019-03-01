@@ -27,12 +27,12 @@ namespace KhMedium.Entities
         public string Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+        public string Thumbnail { get; set; }
         public string TopicId { get; set; }
         public string AuthorId { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
-        public string Thumbnail { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual Topic Topic { get; set; }

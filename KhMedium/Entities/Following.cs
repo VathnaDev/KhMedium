@@ -17,14 +17,14 @@ namespace KhMedium.Entities
         public string Id { get; set; }
         public string FollowingId { get; set; }
         public string UserId { get; set; }
-        public string AuthorId { get; set; }
         public string PublicationId { get; set; }
         public string TopicId { get; set; }
         public System.DateTime CreatedAt { get; set; }
+        public string AuthorId { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Author Author { get; set; }
         public virtual Publication Publication { get; set; }
         public virtual Topic Topic { get; set; }
+        public virtual Author Author { get; set; }
     }
 }

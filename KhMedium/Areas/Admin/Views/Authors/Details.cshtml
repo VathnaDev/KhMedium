@@ -147,7 +147,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsives">
-                @if (Model.Followings.Any())
+                @if (Model.AspNetUser.Followings.Any())
                 {
                     <table id="tbPublication" class="table table-bordered table-striped dataTable ">
                         <thead>
@@ -162,14 +162,29 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @for (var i = 1; i <= Model.Followings.Count; i++)
+                        @for (var i = 1; i <= Model.AspNetUser.Followings.Count; i++)
                         {
-                            var f = Model.Followings.ToList()[i - 1].Author;
+                            var f = Model.AspNetUser.Followings.ToList()[i - 1];
+                            String image = "";
+                            String name = "";
+                            if (f.Author != null)
+                            {
+                                image = f.Author.ProfilePicture;
+                                name = f.Author.Name;
+                            }else if (f.Publication != null)
+                            {
+                                image = f.Publication.Logo;
+                                name = f.Publication.Name;
+                            }else if (f.Topic != null)
+                            {
+                                image = f.Topic.Cover;
+                                name = f.Topic.Name;
+                            }
                             <tr>
                                 <td>
-                                    <img src="~/FileUpload/@f.ProfilePicture" width="30" height="30" />
+                                    <img src="~/FileUpload/@image" width="30" height="30" />
                                 </td>
-                                <td>@f.Name</td>
+                                <td>@name</td>
                                 <td class="text-center">
                                     @Html.ActionLink("Leave", "Delete", new {id = f.Id}, new {@class = "btn btn-danger"})
                                 </td>
@@ -193,7 +208,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsives">
-                @if (Model.Followers.Any())
+                @if (Model.AspNetUser.Followers.Any())
                 {
                     <table id="tbPublication" class="table table-bordered table-striped dataTable ">
                         <thead>
@@ -208,19 +223,36 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @for (var i = 1; i <= Model.Followers.Count; i++)
-                        {
-                            var f = Model.Followings.ToList()[i - 1].Author;
-                            <tr>
-                                <td>
-                                    <img src="~/FileUpload/@f.ProfilePicture" width="60" height="60" />
-                                </td>
-                                <td>@f.Name</td>
-                                <td class="text-center">
-                                    @Html.ActionLink("Leave", "Delete", new {id = f.Id}, new {@class = "btn btn-danger"})
-                                </td>
-                            </tr>
-                        }
+                            @for (var i = 1; i <= Model.AspNetUser.Followers.Count; i++)
+                            {
+                                var f = Model.AspNetUser.Followers.ToList()[i - 1];
+                                String image = "";
+                                String name = "";
+                                if (f.Author != null)
+                                {
+                                    image = f.Author.ProfilePicture;
+                                    name = f.Author.Name;
+                                }
+                                else if (f.Publication != null)
+                                {
+                                    image = f.Publication.Logo;
+                                    name = f.Publication.Name;
+                                }
+                                else if (f.Topic != null)
+                                {
+                                    image = f.Topic.Cover;
+                                    name = f.Topic.Name;
+                                }
+                                <tr>
+                                    <td>
+                                        <img src="~/FileUpload/@image" width="30" height="30" />
+                                    </td>
+                                    <td>@name</td>
+                                    <td class="text-center">
+                                        @Html.ActionLink("Leave", "Delete", new { id = f.Id }, new { @class = "btn btn-danger" })
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 }

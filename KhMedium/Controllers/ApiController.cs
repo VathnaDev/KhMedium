@@ -53,32 +53,35 @@ namespace KhMedium.Controllers
 
         [HttpPost]
         [Authorize]
-        public JsonResult FollowUser(string followingId, FollowType type)
+        public JsonResult Follow(string followingId, FollowType type)
         {
             var following = new Following()
             {
                 Id = Guid.NewGuid().ToString(),
-                FollowingId = Guid.NewGuid().ToString(),
+                FollowingId = followingId,
+                UserId = User.Identity.GetUserId(),
                 CreatedAt = DateTime.Now,
-                UserId = User.Identity.GetUserId()
             };
+
             var follower = new Follower()
             {
                 Id = Guid.NewGuid().ToString(),
-                FollowerId = Guid.NewGuid().ToString(),
                 CreatedAt = DateTime.Now
             };
 
             switch (type)
             {
                 case FollowType.Author:
-                    follower.AuthorId = followingId;
+                    following.AuthorId = followingId;
+                    var author = _context.Authors.Get(followingId);
+                    follower.UserId = author.AspNetUser.Id;
+                    follower.FollowerId = author.Id;
                     break;
                 case FollowType.Publication:
-                    follower.PublicationId = followingId;
+                    following.PublicationId = followingId;
                     break;
                 case FollowType.Topic:
-                    follower.TopicId = followingId;
+                    following.TopicId = followingId;
                     break;
             }
             _context.Followers.Add(follower);

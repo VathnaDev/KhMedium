@@ -263,85 +263,85 @@
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Data\UserTopicRespository.cs" />
     <Compile Include="Entities\Article.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ArticleTag.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\AspNetRole.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\AspNetUser.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\AspNetUserClaim.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\AspNetUserLogin.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Author.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\AuthorPublication.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Bookmark.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Category.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Clap.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Comment.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\C__MigrationHistory.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Database.Context.cs">
+    <Compile Include="Entities\Db.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.Context.tt</DependentUpon>
+      <DependentUpon>Db.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Database.cs">
+    <Compile Include="Entities\Db.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Database.Designer.cs">
+    <Compile Include="Entities\Db.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.edmx</DependentUpon>
+      <DependentUpon>Db.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\File.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Follower.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Following.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Publication.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Share.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sysdiagram.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Tag.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Topic.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\UserTopic.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -6896,15 +6896,15 @@
     <Content Include="Content\starter.html" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tokenize2.min.css" />
-    <Content Include="Entities\Database.Context.tt">
+    <Content Include="Entities\Db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.Context.cs</LastGenOutput>
+      <DependentUpon>Db.edmx</DependentUpon>
+      <LastGenOutput>Db.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Entities\Database.tt">
+    <Content Include="Entities\Db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.cs</LastGenOutput>
+      <DependentUpon>Db.edmx</DependentUpon>
+      <LastGenOutput>Db.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="FileUpload\7ad77c3d-d1bf-4c4d-b225-d075c2743b88.jpg" />
@@ -7523,13 +7523,6 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Author\Views\web.config" />
     <Content Include="Areas\Guest\Views\web.config" />
-    <EntityDeploy Include="Entities\Database.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Database.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Entities\Database.edmx.diagram">
-      <DependentUpon>Database.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Tags\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Tags\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Tags\Edits.cshtml" />
@@ -7554,6 +7547,13 @@
     <Content Include="Areas\Admin\Views\Authors\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Edits.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Details.cshtml" />
+    <EntityDeploy Include="Entities\Db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\Db.edmx.diagram">
+      <DependentUpon>Db.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
