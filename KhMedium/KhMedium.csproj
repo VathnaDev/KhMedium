@@ -211,6 +211,7 @@
     <Compile Include="Areas\Admin\Controllers\TopicsController.cs" />
     <Compile Include="Areas\Admin\Models\AuthorViewModel.cs" />
     <Compile Include="Areas\Admin\Models\BookmarkViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\HomeViewModel.cs" />
     <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
     <Compile Include="Areas\Guest\GuestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -7556,6 +7557,7 @@
       <DependentUpon>Db.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\Edits.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

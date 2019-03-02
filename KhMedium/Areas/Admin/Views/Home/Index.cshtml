@@ -1,9 +1,190 @@
-﻿
+﻿@model KhMedium.Areas.Admin.Models.HomeViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
+<section class="content">
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua">
+                <i class="ion ion-ios-people-outline"></i>
+            </span>
+
+            <div class="info-box-content">
+                <h4 class="">អ្នកនិពន្ធ</h4>
+                <span class="info-box-number">
+                    @Model.TotalAuthors<small> នាក់</small>
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-red">
+                <i class="fa fa-newspaper-o"></i>
+            </span>
+
+            <div class="info-box-content">
+                <h4 class="">អត្តបទសរុប</h4>
+                <span class="info-box-number">
+                    @Model.TotalArticles<small> អត្តបទ</small>
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-green">
+                <i class="ion ion-ios-person-outline"></i>
+            </span>
+
+            <div class="info-box-content">
+                <h4 class="">សាធារណៈជនសរុប</h4>
+                <span class="info-box-number">
+                    @Model.TotalPulications<small> សាធារណៈជន</small>
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-yellow">
+                <i class="ion ion-ios-people"></i>
+            </span>
+
+            <div class="info-box-content">
+                <h4 class="">សមាជិកថ្មី</h4>
+                <span class="info-box-number">
+                    @Model.TotalNewMember<small> នាក់</small>
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">អត្តបទពេញនិយម</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsives">
+        <table id="dataTable" class="table table-bordered table-striped dataTable ">
+            <thead>
+
+            <tr>
+                <th>
+                    លេខរៀង
+                </th>
+                <th>
+                    ចំណងជើង
+                </th>
+                <th>
+                    ប្រធានបទ
+                </th>
+                <th>
+                    អ្នកនិពន្ធ
+                </th>
+                <th style="width: 10%">សកម្មភាព</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for (var i = 1; i <= Model.PopularArticles.Count(); i++)
+            {
+                var article = Model.PopularArticles[i - 1];
+                <tr>
+                    <td>@i</td>
+                    <td>@article.Title</td>
+                    <td>@article.Topic.Name</td>
+                    <td>
+                        @article.Author.Name
+                    </td>
+                    <td class="text-center">
+                        @Html.ActionLink("មើល", "Details", "Articles", new {id = article.Id}, new {@class = "btn btn-info"})
+                    </td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">សាធារណៈជនពេញនិយម</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+        <table id="publications" class="table table-bordered table-striped dataTable">
+            <thead>
+
+            <tr>
+                <th>លេខរៀង</th>
+                <th>ឈ្មោះ</th>
+                <th>ការពិពណ៌នា</th>
+                <th>ទំនាក់ទំនង</th>
+                <th>រូបសញ្ញា</th>
+                <th style="width: 10%">សកម្មភាព</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            @for (var i = 1; i <= Model.Publications.Count; i++)
+            {
+                var item = Model.Publications[i - 1];
+                <tr>
+                    <td>@i</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.ContactInfo</td>
+                    <td>
+                        <img src="~/FileUpload/@item.Logo" width="30" height="30"/>
+                    </td>
+                    <td class="text-center">
+                        @Html.ActionLink("មើល", "Details", "Articles", new {id = item.Id}, new {@class = "btn btn-info"})
+                    </td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+</section>
 
 
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "order": [[1, "asc"]]
+        });
+    });
 
+    $(document).ready(function() {
+        $('#publications').DataTable({
+            "order": [[1, "asc"]]
+        });
+    });
+</script>
