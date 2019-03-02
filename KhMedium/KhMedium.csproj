@@ -7556,6 +7556,8 @@
     <Content Include="Areas\Admin\Views\Authors\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Edits.cshtml" />
     <Content Include="Areas\Admin\Views\Authors\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\Edits.cshtml" />
     <EntityDeploy Include="Entities\Db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Db.Designer.cs</LastGenOutput>
@@ -7563,8 +7565,6 @@
     <Content Include="Entities\Db.edmx.diagram">
       <DependentUpon>Db.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Articles\Edits.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
