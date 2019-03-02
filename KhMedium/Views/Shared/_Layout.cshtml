@@ -147,7 +147,14 @@
         /*     color: white; */
         /*     background-color: rgb(148, 0, 211); */
         /* }    */
-        
+        .navbar .highlight .nav-link {
+            color: rgb(148, 0, 211) !important;
+            border: 1px solid rgb(148, 0, 211);
+        }
+            .navbar .highlight .nav-link:hover {
+                color: white !important;
+                background-color: rgb(148, 0, 211);
+            }
     </style>
 </head>
 <body>
@@ -218,7 +225,7 @@ NAVBAR
                     <ul class="navbar-nav ml-auto d-flex align-items-center">
                         <li class="nav-item highlight btn-sign-in">
                             @* <a class="nav-link" href="https://www.facebook.com">Sign In</a> *@
-                            <a>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link" })</a>
+                            <a>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link btn btn-auth" })</a>
                         </li>
                         <li class="nav-item highlight btn-register">
                             <a>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</a>
@@ -238,12 +245,12 @@ NAVBAR
     <!--------------------------------------
     FOOTER
     --------------------------------------->
-    <div class="container mt-5">
+    <div class="container mt-5" id="body-content">
         @RenderBody()
         
 
         <footer class="bg-white border-top p-3 text-muted small">
-            <div class="row align-items-center justify-content-between">
+            <div class="row align-items-center justify-content-between web-footer">
                 <div>
                     <span class="navbar-brand mr-2"><strong>KhMedium</strong></span> Copyright &copy;
                     <script>document.write(new Date().getFullYear())</script>

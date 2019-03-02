@@ -1,4 +1,6 @@
-﻿@using KhMedium.Utils
+﻿@using KhMedium.Data
+@using KhMedium.Utils
+@using Microsoft.AspNet.Identity
 @model KhMedium.Models.ViewModel.ProfileViewModel
 @{
     ViewBag.Title = "Index";
@@ -536,11 +538,11 @@
                 <div class="bk s k bl v ae"></div>
                 <div class="t bm">
                     <div class="bn ab bo">
-                        <img alt="@Model.Author.Name" src="@StringUtils.GetFullImagePath(Model.Author.ProfilePicture)" class="k bh bp bq" width="80" height="80">
+                        <img alt="@Model.Author.Name" src="@StringUtils.GetArticleThumbnailPath(Model.Author.ProfilePicture)" class="k bh bp bq" width="80" height="80">
                     </div>
                     <div class="br k">
                         <div class="bs bt bu k bv bw">
-                            <img alt="@Model.Author.Name" src="@StringUtils.GetFullImagePath(Model.Author.ProfilePicture)" class="k bh bx by" width="120" height="120">
+                            <img alt="@Model.Author.Name" src="@StringUtils.GetArticleThumbnailPath(Model.Author.ProfilePicture)" class="k bh bx by" width="120" height="120">
                         </div>
                         <div class="bz ca t u cb">
                             <h1 class="cc z cd ag ce ah cf cg ch k">@Model.Author.Name</h1>
@@ -580,16 +582,20 @@
                                 @Html.ActionLink(article.Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = article.AuthorId }, htmlAttributes: new { @class = "text-muted" })
                             </div>
                             <small class="text-muted">@article.CreatedAt</small>
-                            <span style="float: right; cursor: pointer;">
-@*                                 @if (article.IsBookmarked()) *@
-@*                                 { *@
-@*                                     <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/bookmarked.png" /> *@
-@*                                 } *@
-@*                                 else *@
-@*                                 { *@
-@*                                     <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png" /> *@
-@*                                 } *@
-                            </span>
+                            @if (article.Author.UserId != User.Identity.GetUserId())
+                            {
+                                <span style="float: right; cursor: pointer;">
+                                    @if (article.IsBookmarked())
+                                    {
+                                        <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/bookmarked.png" />
+                                    }
+                                    else
+                                    {
+                                        <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png" />
+                                    }
+                                </span>
+                            }
+                           
                         </div>
 
                     </div>
@@ -605,4 +611,38 @@
             @* </div> *@
         </section>
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+    $(document).ready(function() {
+        $('.bookmark').click(function() {
+            var articleId = $(this)[0].id;
+            var imageTag = $(this);
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ToggleBookmark", "Api")",
+                data: JSON.stringify({
+                    "articleId": articleId
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+//                    $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
+                    console.log(response.result);
+                    if (response.result) {
+                        $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
+                    }
+                    else {
+                        $(imageTag).attr('src', 'Content/assets/img/unbookmark.png');
+                    }
+                },
+                failure: function(response) {
+                    console.log("Failure " + response);
+                },
+                error: function(response) {
+                    console.log("Error " + response.message);
+                }
+            });
+        });
+    });
+    </script>
 </body>

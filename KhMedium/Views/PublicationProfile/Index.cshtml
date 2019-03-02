@@ -1,0 +1,430 @@
+﻿@using KhMedium.Utils
+@model KhMedium.Models.ViewModel.PublicationProfileViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .element.style {
+        background-image: url(https://cdn-images-1.medium.com/max/1600/1*A0o0mx0x5b-g0bgAwH9Ppw.jpeg);
+        background-position: 44.067796610169495% 80.5% !important;
+    }
+
+    .collectionHeader--layoutMedium .collectionHeader-aspectRatioContent {
+        position: relative;
+        display: table-cell;
+        width: 50%;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+
+    .u-backgroundSizeCover {
+        background-size: cover !important;
+        padding: 30px 0;
+    }
+
+    user agent stylesheet
+    div {
+        display: block;
+    }
+
+    .collectionHeader--withBackground .collectionHeader-overlayBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,.175);
+        height: 100vh;
+    }
+
+    .u-maxWidth1072 {
+        max-width: 1072px !important;
+    }
+
+    .u-paddingRight20 {
+        padding-right: 20px !important;
+    }
+
+    .u-paddingLeft20 {
+        padding-left: 20px !important;
+    }
+
+    .u-marginAuto {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .u-borderBox {
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+    }
+
+    .u-foreground {
+        position: relative !important;
+        z-index: 100 !important;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+        display: block;
+    }
+
+    article, aside, footer, header, hgroup, main, nav, section {
+        display: block;
+    }
+
+    Style Attribute {
+        display: block;
+        visibility: visible;
+    }
+
+    .btn-sm {
+        width: 150px;
+    }
+
+    .col {
+        position: relative;
+        min-height: 1px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .col, .container, .row {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .u-size4of12 {
+        width: 33.33333333% !important;
+    }
+
+    .u-size10of12, .u-size11of12, .u-size12of12, .u-size1of12, .u-size2of12, .u-size3of12, .u-size4of12, .u-size5of12, .u-size6of12, .u-size7of12, .u-size8of12, .u-size9of12 {
+        float: left !important;
+    }
+
+    .u-paddingRight12 {
+        padding-right: 12px !important;
+    }
+
+    .u-paddingLeft12 {
+        padding-left: 12px !important;
+    }
+
+    .u-marginBottom15 {
+        margin-bottom: 15px !important;
+    }
+
+    .row {
+        margin-right: -20px;
+        margin-left: -20px;
+    }
+
+    .col, .container, .row {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .u-marginLeftNegative12 {
+        margin-left: -12px !important;
+    }
+
+    .u-marginRightNegative12 {
+        margin-right: -12px !important;
+    }
+
+    .u-marginTop15 {
+        margin-top: 15px !important;
+    }
+
+    .u-maxWidth1032 {
+        max-width: 1032px !important;
+    }
+
+    .u-marginAuto {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .u-marginTop30 {
+        margin-top: 30px !important;
+    }
+
+    .u-marginBottom15 {
+        margin-bottom: 15px !important;
+    }
+
+    .u-borderBox {
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+        display: block;
+    }
+
+    .u-marginTop30 {
+        margin-top: 30px !important;
+    }
+
+    .col {
+        position: relative;
+        min-height: 1px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .col, .container, .row {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .u-size4of12 {
+        width: 33.33333333% !important;
+    }
+
+    .u-size10of12, .u-size11of12, .u-size12of12, .u-size1of12, .u-size2of12, .u-size3of12, .u-size4of12, .u-size5of12, .u-size6of12, .u-size7of12, .u-size8of12, .u-size9of12 {
+        float: left !important;
+    }
+
+    .u-paddingRight12 {
+        padding-right: 12px !important;
+    }
+
+    .u-paddingLeft12 {
+        padding-left: 12px !important;
+    }
+
+    .u-marginBottom15 {
+        margin-bottom: 15px !important;
+    }
+
+
+    .postArticle--full .graf--title.graf--leading {
+        padding-top: 16px !important;
+    }
+
+    .uiScale {
+        line-height: 20px;
+        font-size: 16px;
+    }
+
+    .u-fontSize15 {
+        font-size: 17px !important;
+    }
+
+    .u-marginVertical24 {
+        margin-top: 24px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .u-flexCenter {
+        display: -webkit-box !important;
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-align: center !important;
+        -webkit-align-items: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+    }
+
+    .u-flex0 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    }
+
+    .link {
+        color: white !important;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .avatar {
+        display: block;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: ellipsis;
+        line-height: normal;
+        position: relative;
+    }
+
+    a,
+    button,
+    input {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a {
+        background-color: transparent;
+    }
+
+    .avatar-image {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+    }
+
+    .u-size50x50 {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    img {
+        border: 0;
+    }
+
+    div {
+        display: block;
+    }
+
+    .u-paddingLeft15 {
+        padding-left: 15px !important;
+    }
+
+    .u-flex1 {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+
+    .u-overflowHidden {
+        overflow: hidden !important;
+    }
+
+    div {
+        display: block;
+    }
+
+    .uiScale {
+        line-height: 20px;
+        font-size: 16px;
+    }
+
+    .u-fontSize15 {
+        font-size: 17px !important;
+    }
+
+    .readingTime:after {
+        content: attr(title);
+    }
+    .web-footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .btn-follow {
+        color: white;
+        background-color: rgb(148, 0, 211);
+        background-image: none;
+    }
+        /* .btn-follow:hover { */
+        /*     color: white; */
+        /*     background-color: rgb(148, 0, 211); */
+        /*     background-image: none; */
+        /* } */
+</style>
+<div class="collectionHeader-aspectRatioTable">
+    <div class="collectionHeader-aspectRatioContent u-backgroundSizeCover js-collectionHeaderBackground" style="background-image: url(@StringUtils.GetArticleThumbnailPath(@Model.Publication.Cover)); background-position: 44.067796610169495% 80.5% !important;">
+        <div class="collectionHeader-overlayBackground u-height100vh"></div>
+        <header class="collectionHeader-heroAndInlineNav u-borderBox u-maxWidth1072 u-paddingLeft20 u-paddingRight20 u-marginAuto u-foreground js-collectionHeader">
+            <div class="collectionHeader-hero js-collectionHeaderHero u-clearfix u-imageSpectrum">
+                <div class="collectionHeader-heroInner">
+                    <div class="collectionHeader-logo js-collectionHeaderLogo" style="max-width: 311px;">
+                        <a class="link u-baseColor--link" href="https://proandroiddev.com" title="Go to ProAndroidDev" aria-label="Go to ProAndroidDev" data-collection-slug="proandroiddev">
+                            <div class="u-relative u-marginAuto">
+                                <div style="padding-bottom: 10%"></div>
+                                <img class="collectionHeader-logoImage js-collectionHeaderLogoImage" src="@StringUtils.GetArticleThumbnailPath(@Model.Publication.Logo)" data-image-id="1*7250sTGDO9j2z2AwEGV5bA@2x.png" alt="ProAndroidDev" data-width="1000" data-height="296">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="collectionHeader-nameAndDescription u-hide">
+                        <a class="link u-baseColor--link" style="cursor: default !important;">
+                            <h1 style="padding: 20px 0 !important">@Model.Publication.Name</h1>
+                        </a>
+                        <!-- <div style="padding-bottom: 3%"></div> -->
+                        <!-- <h2 class="collectionHeader-description js-collectionDescription">Professional Android Development: the latest posts from Android Professionals and Google Developer Experts.</h2> -->
+                    </div>
+                    <button type="button" class="btn btn-follow btn-sm">Follow</button>
+                    <!-- <button class="button button--primary button--filled button--smallest button--withChrome u-accentColor--buttonNormal button--withIcon button--withSvgIcon button--withIconRight button--withIconAndLabel js-relationshipButton is-smallPill" data-action="show-more-collection-actions" data-collection-id="c72404660798">
+                        <span class="button-label  js-buttonLabel">Following</span>
+                        <span class="svgIcon svgIcon--arrowDown svgIcon--11px u-relative u-top1 u-paddingLeft6">
+                            <svg class="svgIcon-use" width="11" height="11">
+                                <path d="M0 2.77l5.095 5.648.427.472.427-.472L10.99 2.83l-.85-.77-4.618 5.142L.85 2z" fill-rule="evenodd">
+                                </path></svg></span></button> -->
+                </div>
+                <div style="padding-bottom: 1%"></div>
+
+            </div>
+        </header>
+    </div>
+    <div class="collectionHeader-aspectRatioCell">
+        <div class="collectionHeader-aspectRatioFullWidth"></div>
+    </div>
+    <div style="padding-bottom: 1%"></div>
+    <div class="collectionHeader-heroAndInlineNav u-borderBox u-maxWidth1072 u-paddingLeft20 u-paddingRight20 u-marginAuto u-foreground js-collectionHeader">
+        <div class="row" style="padding: 20px">
+            @foreach (var article in Model.Articles)
+            {
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://cdn-images-1.medium.com/max/311/1*7250sTGDO9j2z2AwEGV5bA@2x.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            <div class="uiScale uiScale-ui--regular uiScale-caption--regular u-flexCenter u-marginVertical24 u-fontSize15 js-postMetaLockup">
+                                <div class="u-flex0">
+                                    <a class="link u-baseColor--link avatar" href="#"
+                                       data-action="show-user-card" data-action-source="post_header_lockup" data-action-value="b0d50f0b5bb7"
+                                       data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">
+                                        <img src="https://cdn-images-1.medium.com/fit/c/78/78/1*S_VOWMtvaNHQ5za0F4GGXw.png" class="avatar-image u-size50x50"
+                                             alt="Go to the profile of Simon Morris">
+                                    </a>
+                                </div>
+                                <div class="u-flex1 u-paddingLeft15 u-overflowHidden">
+                                    <div class="u-paddingBottom3">
+                                        <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker"
+                                           href="#" data-action="show-user-card" data-action-value="b0d50f0b5bb7"
+                                           data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">Simon Morris</a>
+
+                                    </div>
+                                    <div class="ui-caption u-noWrapWithEllipsis js-testPostMetaInlineSupplemental">
+                                        <time datetime="2019-01-10T20:02:26.519Z">Jan 11</time>
+                                        <span class="middotDivider u-fontSize12"></span>
+                                        <span class="readingTime" title="8 min read"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+
+        </div>
+    </div>
+
+</div>
+@* <div class="jumbotron jumbotron-fluid"> *@
+@*     <div class="container"> *@
+@*         $1$ <h1 class="display-4">Fluid jumbotron</h1> #1# *@
+@*         $1$ <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> #1# *@
+@*          *@
+@*     </div> *@
+@* </div> *@
+<script>
+    document.getElementById("body-content").classList.remove('container');
+    document.getElementById("body-content").classList.add('container-fluid');
+</script>

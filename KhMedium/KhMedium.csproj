@@ -223,6 +223,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\PublicationController.cs" />
+    <Compile Include="Controllers\PublicationProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Controllers\TopicsController.cs" />
@@ -370,6 +371,7 @@
     <Compile Include="Models\ViewModel\HomeViewModel.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
     <Compile Include="Models\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="Models\ViewModel\PublicationProfileViewModel.cs" />
     <Compile Include="Models\ViewModel\PublicationViewModel.cs" />
     <Compile Include="Models\ViewModel\SearchViewModel.cs" />
     <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
@@ -7617,6 +7619,7 @@
     <Content Include="Views\Topics\Index.cshtml" />
     <Content Include="Views\ArticleDetail\Index.cshtml" />
     <Content Include="Views\Bookmark\Index.cshtml" />
+    <Content Include="Views\PublicationProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

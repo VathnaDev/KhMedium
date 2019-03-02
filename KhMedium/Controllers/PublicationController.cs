@@ -47,7 +47,7 @@ namespace KhMedium.Controllers
             _context.Publications.Add(publication);
             _context.Complete();
 
-            var author = _context.Authors.GetAll().FirstOrDefault();
+            var author = _context.Authors.GetAuthorByUserId(User.Identity.GetUserId());
             var authorPub = new AuthorPublication();
             authorPub.Id = Guid.NewGuid().ToString();
             authorPub.PublicationId = publication.Id;

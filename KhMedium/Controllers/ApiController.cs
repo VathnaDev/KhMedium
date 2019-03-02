@@ -30,7 +30,7 @@ namespace KhMedium.Controllers
                 _context.Complete();
                 return Json(new
                 {
-                    result = true
+                    result = false
                 }, JsonRequestBehavior.AllowGet);
             }
             else
@@ -46,7 +46,7 @@ namespace KhMedium.Controllers
                 _context.Complete();
                 return Json(new
                 {
-                    result = false
+                    result = true
                 }, JsonRequestBehavior.AllowGet);
             }
         }

@@ -341,15 +341,16 @@
                     <a class="link u-baseColor--link avatar" href="#"
                        data-action="show-user-card" data-action-source="post_header_lockup" data-action-value="b0d50f0b5bb7"
                        data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">
-                        <img src="https://cdn-images-1.medium.com/fit/c/78/78/1*S_VOWMtvaNHQ5za0F4GGXw.png" class="avatar-image u-size50x50"
-                             alt="Go to the profile of Simon Morris">
+                        <img src="@StringUtils.GetArticleThumbnailPath(@Model.Article.Author.ProfilePicture)" class="avatar-image u-size50x50"
+                           >
                     </a>
                 </div>
                 <div class="u-flex1 u-paddingLeft15 u-overflowHidden">
                     <div class="u-paddingBottom3">
-                        <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker"
-                           href="#" data-action="show-user-card" data-action-value="b0d50f0b5bb7"
-                           data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">@Model.Article.Author.Name</a>
+                        <a>@Html.ActionLink(@Model.Article.Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = @Model.Article.AuthorId }, htmlAttributes: new { @class = "ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker" })</a>
+                        @* <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker" *@
+                        @*    href="#" data-action="show-user-card" data-action-value="b0d50f0b5bb7" *@
+                        @*    data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">@Model.Article.Author.Name</a> *@
                         <span class="followState js-followState" data-user-id="b0d50f0b5bb7">
 
                             <button class="button button--primary button--smallest button--dark u-noUserSelect button--withChrome u-accentColor--buttonDark button--follow js-followButton u-marginLeft10 u-xs-hide"
@@ -363,7 +364,7 @@
                     <div class="ui-caption u-noWrapWithEllipsis js-testPostMetaInlineSupplemental">
                         <time datetime="2019-01-10T20:02:26.519Z">@Model.Article.CreatedAt</time>
                         <span class="middotDivider u-fontSize12"></span>
-                        <span class="readingTime" title="8 min read"></span>
+                        
                     </div>
                 </div>
             </div>
@@ -432,7 +433,7 @@
 
 
         </div>
-
+    </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
