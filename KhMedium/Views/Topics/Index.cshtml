@@ -1,0 +1,206 @@
+﻿@model KhMedium.Models.ViewModel.TopicArticlesViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <link href="@Url.Content("~/Content/css/style.nav.css.css")" rel="stylesheet" type="text/css" />
+}
+<link href="~/Content/pages/tops/index.css" rel="stylesheet" type="text/css"/>
+<style>
+   .topic-title {
+       font-size: 30px;
+       color: black;
+       font-weight: 800;
+   }
+   .topic-description {
+       font-size: 15px;
+       color: rgba(0, 0, 0, .7);
+       line-height: 1.3 !important;
+   }
+   .content {
+       margin-top: 120px;
+   }
+    .btn-follow {
+        width: 80px;
+        height: 35px;
+        color: rgb(148, 0, 211);
+        border: 1px solid rgb(148, 0, 211);
+        line-height: 1;
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+   .btn-follow:hover {
+       color: rgb(148, 0, 211);
+   }
+</style>
+<section class="k l m n o p q s cg content">
+	<section class="o ch q c">
+		<div class="z ci ac">
+			<div class="c v cj">
+				<div class="c ck ac">
+					<h2 class="ai y cl bj cm bk cn co cp c an cq cr">@Model.Topic.Name</h2>
+					<div class="cs c">
+						<span class="bj b bk bl bm bn c an ct cr bo bp">Founding, funding, and beyond.</span>
+					</div>
+				</div>
+				<div class="cu c ap ac">
+					<a href="#" class="btn btn-follow">Follow</a>
+				</div>
+			</div>
+			<div class="da c db ac">
+				<span class="bj b bk bl bm bn c bo bp">Follow to get great stories about <!-- -->Startups<!-- --> in your inbox and on your homepage</span>
+			</div>
+		</div>
+		<div class="cs c ap ac">
+			<div class="o dc">
+				<span class="bj cm bk dd de df c dg dh di">Featured</span>
+				<div class="z dj dk dl ac">
+					<a href="" class="c dm dn do dp dq o"></a>
+				</div>
+				<div class="dr c x">
+					<a href="" class="c dm dn do dp ds o"></a>
+				</div>
+				<div class="dt c du">
+					<div class="dv dw">
+						<h1 class="ai y cl bj cm bk dx dy dz c an ea cr">
+                            <a href="">
+                                @Model.FeatureArticle.Title
+                            </a>
+						</h1>
+						<div class="eb c">
+							<p class="bo bp bj b bk ec ed bn c an ee cr dv ef">
+								<a href="">@Model.FeatureArticle.Content</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="eg z eh">
+					<div class="dv dw">
+						<h3 class="ai y cl bj cm bk ei ej ek c an el cr">
+							<a href="https://medium.com/drewmillard/nothing-can-stop-google-duckduckgo-is-trying-anyway-718eb7391423?source=topic_page---------------------------20">@Model.FeatureArticle.Title</a>
+						</h3>
+						<div class="eb c">
+							<p class="bo bp bj b bk ec ed bn c an ee cr dv ef">
+                                <a href="">@Model.FeatureArticle.Content</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="em c">
+					<div class="s t">
+						<a href="">
+							<img alt="Drew Millard" src="https://miro.medium.com/fit/c/80/80/1*sQ0GLVTkBJIX49OP_uc_5Q.jpeg" class="c en eo ep" width="40" height="40">
+						</a>
+						<div class="bq c">
+							<a href="">
+                                <span class="bj b bk bl bm bn c ai y">
+                                    @if (@Model.FeatureArticle.Author != null)
+                                    {
+                                        @Model.FeatureArticle.Author.Name
+                                    }
+                                    
+                                </span>
+							</a>
+							<span class="bj b bk bl bm bn c bo bp">
+								<div class="s t">
+                                    <div class="eq s er">
+                                        @* @Model.FeatureArticle.CreatedAt *@
+                                        
+                                    </div>
+									
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ew c ex ac">
+			<div>
+				<h2 class="bj cm bk ey ez fa ai y fb fc di">Latest</h2>
+                <div class="fd fe c">
+                    @foreach (var article in @Model.LatestArticles)
+                    {
+                        <section class="m n o ff q c">
+                            <div class="o dc">
+                                <section class="fd fe s">
+                                    <div class="l fg q s fh cg fi fj fk v">
+                                        <div class="fl c fk v cj">
+                                            <div class="dv dw">
+                                                <h3 class="ai y cl bj cm bk ec fm fn c an ee cr">
+                                                    <a href="">@article.Title</a>
+                                                </h3>
+                                                <div class="eb c">
+                                                    <p class="bo bp bj b bk bl bm bn c an ct cr dv ef">
+                                                        <a href="">@article.Content</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="z fo ac">
+                                                <a href="" class="c dm dn fp fq fr fs">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ft c">
+                                            <div class="o s cg">
+                                                <div class="c fi">
+                                                    <div class="s">
+                                                        <span class="bj b bk bl bm bn c an ct cr ai y">
+                                                            <a href="">@article.Author.Name</a>
+                                                        </span>
+                                                    </div>
+                                                    <span class="bj b bk bl bm bn c bo bp">
+                                                        <div class="s t">@article.CreatedAt</div>
+                                                    </span>
+                                                </div>
+                                                <div class="c ev as fu ac">
+                                                    <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c">
+                                        <div class="dc c x">
+                                            <a href="" class="c dm dn fp fv dc fw">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    }
+
+                </div>
+            </div>
+          </div>
+
+    </section>
+
+    <div class="container refLeft" style="margin-top: 30px; margin-left: 50px;">
+        @* <div class="row"> *@
+            <div class="col-lg-12">
+                <h1 class="topic-title">@Model.Topic.Name</h1>
+                <span class="topic-description">Founding, funding, and beyond.</span>
+                <br/>
+                @* <div class="col-md-12"> *@
+                    <button class="btn btn-follow">Follow</button>
+                @* </div> *@
+                <br/>
+                @* <button type="submit" class="btn border" style="margin-top: 20px; margin-bottom:20px;border-color: rgba(0, 0, 0, 0.54);">Confirm identity</button> *@
+                @* <div class="col-lg-12"> *@
+                <span class="topic-description">Follow to get great stories about Startups in your inbox and on your homepage</span>
+                @* </div> *@
+                <div class="col-md-12" style="margin-top: 50px; padding-left: 0px; padding-right: 0px;">
+                    <h4 class="bj cm bk eq er es ai y et eu ev">Related topics</h4>
+                    <hr/>
+                </div>
+            @* </div> *@
+        </div>
+        
+
+    </div>
+</section>

@@ -1,4 +1,5 @@
-﻿
+﻿@using KhMedium.Utils
+@model KhMedium.Models.ViewModel.ProfileViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -58,10 +59,29 @@
     button, input, optgroup, select, textarea {
         margin: 0;
     }
+    .ep {
+        padding: 23px 0;
+    }
+    .eo {
+        margin-bottom: 24px;
+    }
+    .en {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+    .em {
+        border-radius: 5px;
+    }
+    .el {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .c {
+        background-color: rgba(255, 255, 255, 1);
+    }
+
 </style>
 <style type="text/css" data-fela-rehydration="108" data-fela-type="RULE">
     .a {
-        font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        /* font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
     }
 
     .b {
@@ -93,7 +113,7 @@
     }
 
     .i {
-        max-width: 728px;
+        max-width: 900px;
     }
 
     .j {
@@ -161,7 +181,7 @@
     }
 
     .ag {
-        font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+        /* font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; */
     }
 
     .ah {
@@ -273,7 +293,7 @@
     }
 
     .bk {
-        margin-bottom: 64px;
+        margin-bottom: 0px;
     }
 
     .bm {
@@ -293,7 +313,7 @@
     }
 
     .br {
-        margin-bottom: 30px;
+        margin-bottom: 100px;
     }
 
     .bs {
@@ -489,6 +509,24 @@
     .bw {
         display: none;
     }
+    
+</style>
+<style>
+    .article-content {
+        overflow: hidden !important;
+        max-height: 50px !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        font-weight: 400 !important;
+    }
+    .thumbnail {
+        border-radius: 3px;
+    }
+    .text-dark:hover {
+        text-decoration: none;
+    }
 </style>
 <body>
     <div id="root">
@@ -498,14 +536,14 @@
                 <div class="bk s k bl v ae"></div>
                 <div class="t bm">
                     <div class="bn ab bo">
-                        <img alt="Vorreakboth Chhoeurn" src="https://miro.medium.com/fit/c/160/160/1*xxLZfRO516UUxRCpLsGHmQ.jpeg" class="k bh bp bq" width="80" height="80">
+                        <img alt="@Model.Author.Name" src="@StringUtils.GetArticleThumbnailPath(Model.Author.ProfilePicture)" class="k bh bp bq" width="80" height="80">
                     </div>
                     <div class="br k">
                         <div class="bs bt bu k bv bw">
-                            <img alt="Vorreakboth Chhoeurn" src="https://miro.medium.com/fit/c/240/240/1*xxLZfRO516UUxRCpLsGHmQ.jpeg" class="k bh bx by" width="120" height="120">
+                            <img alt="@Model.Author.Name" src="@StringUtils.GetArticleThumbnailPath(Model.Author.ProfilePicture)" class="k bh bx by" width="120" height="120">
                         </div>
                         <div class="bz ca t u cb">
-                            <h1 class="cc z cd ag ce ah cf cg ch k">Vorreakboth Chhoeurn</h1>
+                            <h1 class="cc z cd ag ce ah cf cg ch k">@Model.Author.Name</h1>
                             <div class="cp t u cb">
                                 <a href="" class="cq cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az">Edit profile</a>
                             </div>
@@ -526,9 +564,45 @@
                     </div>
                 </div>
             </div>
-            <div class="fa k">
-                <p class="al am ag b ah cl cm ak k ei hc">Vorreakboth Chhoeurn hasn’t been active on Medium yet. Check back later to see their stories, claps, and highlights.</p>
-            </div>
+            @foreach (var article in Model.Articles)
+            {
+                <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
+                    <div class="col-md-9">
+                        <h2 class="col-md-12 mb-1 h4 font-weight-bold">
+                            <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
+                        </h2>
+                        <div class="col-md-12 article-content">
+                            @(new HtmlString(article.Content))
+                        </div>
+                        @* <div class="col-md-12" style="position: absolute; bottom: 0"> *@
+                        <div class="col-md-12" style="margin-top: 30px;">
+                            <div class="card-text text-muted small">
+                                @Html.ActionLink(article.Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = article.AuthorId }, htmlAttributes: new { @class = "text-muted" })
+                            </div>
+                            <small class="text-muted">@article.CreatedAt</small>
+                            <span style="float: right; cursor: pointer;">
+@*                                 @if (article.IsBookmarked()) *@
+@*                                 { *@
+@*                                     <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/bookmarked.png" /> *@
+@*                                 } *@
+@*                                 else *@
+@*                                 { *@
+@*                                     <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png" /> *@
+@*                                 } *@
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <img style="height: 160px" class="thumbnail" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
+                        @* <img style="height: 150px" src=""> *@
+                    </div>
+
+                </div>
+            }
+            @* <div class="fa k"> *@
+            @*     <p class="al am ag b ah cl cm ak k ei hc">Vorreakboth Chhoeurn hasn’t been active on Medium yet. Check back later to see their stories, claps, and highlights.</p> *@
+            @* </div> *@
         </section>
     </div>
 </body>

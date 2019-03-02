@@ -1,4 +1,5 @@
-﻿@*<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+@*<!DOCTYPE html>
     <html>
     <head>
         <meta charset="utf-8"/>
@@ -60,9 +61,10 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="../../use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    @* <link rel="stylesheet" href="../../use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> *@
     <!-- Main CSS -->
     @Styles.Render("~/Content/css")
+
     <style>
         .affix {
             top: 20px;
@@ -137,7 +139,7 @@
             display: block;
         }
 
-        /* .btn-auth { */
+    /* .btn-auth { */
         /*     color: rgb(148, 0, 211) !important; */
         /*     border: 1px solid rgb(148, 0, 211); */
         /* } */
@@ -147,6 +149,12 @@
         /*     background-color: rgb(148, 0, 211); */
         /* }    */
         
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Angkor|Nokora|Preahvihear" rel="stylesheet">
+    <style>
+        h1, h2, h3, h4, h5, h6 { font-family: 'Preahvihear', cursive; }
+
+        body { font-family: 'Nokora', serif; }
     </style>
 </head>
 <body>
@@ -163,28 +171,28 @@ NAVBAR
             <div class="navbar-collapse collapse" id="navbarColor02" style="">
                 <ul class="navbar-nav mr-auto d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Intro <span class="sr-only">(current)</span></a>
+                        <a>@(Html.ActionLink("Business","Index", "Topics", routeValues:  new { topicId = "66ef99f4-32da-4daf-ae91-20fd7ec81b36" }, htmlAttributes: new { @class = "nav-link" }))<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Culture</a>
+                        <a>@(Html.ActionLink("Design", "Index", "Topics", routeValues: new { topicId = "736f4fe2-331e-42e9-a857-a50828cee176" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Tech</a>
+                        <a>@(Html.ActionLink("Data Science", "Index", "Topics", routeValues: new { topicId = "a27e3807-82cb-4ca5-b877-5e07ae3c9311" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Politics</a>
+                        <a>@(Html.ActionLink("Marketing", "Index", "Topics", routeValues: new { topicId = "95c702ae-b79d-421e-9918-9a822de75c08" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Health</a>
+                        <a>@(Html.ActionLink("Freelancing", "Index", "Topics", routeValues: new { topicId = "6341f92b-7c00-404f-aa3c-9ddefd499b4d" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="article.html">Collections</a>
+                        <a>@(Html.ActionLink("Art", "Index", "Topics", routeValues: new { topicId = "6b92ef38-f1b0-4911-8199-eeeadeb25bef" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a>@(Html.ActionLink("Economy", "Index", "Topics", routeValues: new { topicId = "e2cf6252-9c85-4ebd-b148-41785d4003ff" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="docs.html">Template <span class="badge badge-secondary">docs</span></a>
+                        <a>@(Html.ActionLink("Education", "Index", "Topics", routeValues: new { topicId = "5b6e6e77-3f16-4329-b623-0c5e4982aafb" }, htmlAttributes: new { @class = "nav-link" }))</a>
                     </li>
                 </ul>
                 @if (User.Identity.IsAuthenticated)
@@ -198,8 +206,8 @@ NAVBAR
                                 <div class="dropdown-content">
                                     <a href="../article/create">New Story</a>
                                     <a href="../publication/index">Publication</a>
-                                    <a href="#">Bookmarks</a>
-                                    <a href="../profile/index">Profile</a>
+                                    <a href="../bookmark/index">Bookmarks</a>
+                                    @Html.ActionLink("Profile", "Index", "Profile", routeValues: new { userId = User.Identity.GetUserId(), authorId = "" }, htmlAttributes:null)
                                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                     {
                                         @Html.AntiForgeryToken()

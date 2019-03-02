@@ -217,6 +217,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ArticleDetailController.cs" />
+    <Compile Include="Controllers\BookmarkController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -227,6 +229,7 @@
     <Compile Include="Controllers\PublicationController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Data\AuthorPublicationRepository.cs" />
     <Compile Include="Data\AuthorRepository.cs" />
     <Compile Include="Data\Core\IArticleRepository.cs" />
@@ -364,10 +367,14 @@
     <Compile Include="Models\TopicModel.cs" />
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModel\ArticleDetailViewModel.cs" />
+    <Compile Include="Models\ViewModel\BookmarkViewModel.cs" />
     <Compile Include="Models\ViewModel\CreateArticleViewModel.cs" />
     <Compile Include="Models\ViewModel\CreatePublicationViewModel.cs" />
     <Compile Include="Models\ViewModel\HomeViewModel.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="Models\ViewModel\PublicationViewModel.cs" />
     <Compile Include="Models\ViewModel\SearchViewModel.cs" />
     <Compile Include="Models\ViewModel\SelectedTopicViewModel.cs" />
     <Compile Include="Models\ViewModel\TopicArticlesViewModel.cs" />
@@ -7620,6 +7627,8 @@
     <Content Include="Views\Search\Users.cshtml" />
     <Content Include="Views\Start\Index.cshtml" />
     <Content Include="Views\Start\SelectTopics.cshtml" />
+    <Content Include="Views\ArticleDetail\Index.cshtml" />
+    <Content Include="Views\Bookmark\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7629,6 +7638,9 @@
     <Folder Include="Areas\Author\Views\Shared\" />
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Models\" />
+    <Folder Include="Views\Api\" />
+    <Folder Include="Views\File\" />
+    <Folder Include="Views\Follow\" />
     <Folder Include="Views\Infomation\" />
   </ItemGroup>
   <ItemGroup>

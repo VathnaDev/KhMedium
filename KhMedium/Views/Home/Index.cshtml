@@ -1,34 +1,60 @@
 ﻿@using KhMedium.Data
+@using KhMedium.Utils
 @model KhMedium.Models.ViewModel.HomeViewModel
 
 @{
     ViewBag.Title = "Home Page";
 }
 
+<style>
+    .article-content {
+        overflow: hidden!important;
+        max-height: 47px!important;
+        text-overflow: ellipsis!important;
+        display: -webkit-box!important;
+        -webkit-line-clamp: 2!important;
+        -webkit-box-orient: vertical;
+        font-weight: 400 !important;
+    }
+    .thumbnail {
+        border-radius: 3px;
+    }
+    .text-dark:hover {
+        text-decoration: none;
+    }
+</style>
+
 <div class="container pt-4 pb-4">
     <div class="row">
         <div class="col-lg-6">
+        @if (Model.FeatureArticles.Any())
+        {
             <div class="card border-0 mb-4 box-shadow h-xl-300">
-                <div style="background-image: url(/Content/assets/img/demo/blog4.jpg); height: 150px; background-size: cover; background-repeat: no-repeat;"></div>
+                <div style="background-image: url(@StringUtils.GetArticleThumbnailPath(Model.FeatureArticles[0].Thumbnail)); height: 150px; background-size: cover; background-repeat: no-repeat;">
+                    @* @Html.ActionLink("123", "Index", "ArticleDetail", routeValues: new { topicId = "123" }, htmlAttributes: new { @class = "nav-link" }) *@
+                </div>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-                    @if (Model.FeatureArticles.Any())
-                    {
-                        <h2 class="h4 font-weight-bold">
-                            <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a>
-                        </h2>
-                        <p class="card-text">
-                            @Model.FeatureArticles[0].Content
-                        </p>
-                        <div>
-                            <small class="d-block">
-                                <a class="text-muted" href="author.html">@Model.FeatureArticles[0].Author.Name</a>
-                            </small>
-                            <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
-                        </div>
-                    }
+
+                    <h2 class="h4 font-weight-bold">
+                        @Html.ActionLink(Model.FeatureArticles[0].Title, "Index", "ArticleDetail", routeValues: new { id = Model.FeatureArticles[0].Id }, htmlAttributes: new { @class = "text-dark" })
+                        @* <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a> *@
+                    </h2>
+                    <p class="card-text article-content">
+                        @(new HtmlString(@Model.FeatureArticles[0].Content))
+                    </p>
+                    <div>
+                        <small class="d-block">
+                            @Html.ActionLink(Model.FeatureArticles[0].Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = Model.FeatureArticles[0].AuthorId }, htmlAttributes: new { @class = "text-muted" })
+                            @* <a class="text-muted" href="#">@Model.FeatureArticles[0].Author.Name</a> *@
+                        </small>
+                        <small class="text-muted">@Model.FeatureArticles[0].CreatedAt</small>
+                    </div>
+
 
                 </div>
             </div>
+        }
+
         </div>
         <div class="col-lg-6">
             @for (var i = 1; i < Model.FeatureArticles.Count; i++)
@@ -36,12 +62,12 @@
                 var article = Model.FeatureArticles[i];
                 <div class="flex-md-row mb-4 box-shadow">
                     <div class="mb-3 d-flex align-items-center">
-                        <img height="80" src="~/Content/assets/img/demo/blog4.jpg">
+                        <img height="80" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
                         <div class="pl-3">
                             <h2 class="mb-2 h6 font-weight-bold">
-                                <a class="text-dark" href="article.html">@article.Title</a>
+                                <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
                             </h2>
-                            <div class="card-text text-muted small">
+                            <div class="card-text text-muted small article-content">
                                 @(new HtmlString(@article.Content))
                             </div>
                             <small class="text-muted">@article.CreatedAt</small>
@@ -65,31 +91,33 @@
                 <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
                     <div class="col-md-9">
                         <h2 class="col-md-12 mb-1 h4 font-weight-bold">
-                            <a class="text-dark" href="article.html">@article.Title</a>
+                            <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
                         </h2>
-                        <div class="col-md-12">
+                        <div class="col-md-12 article-content">
                             @(new HtmlString(article.Content))
                         </div>
-                        <div class="col-md-12" style="position: absolute; bottom: 0">
+                        @* <div class="col-md-12" style="position: absolute; bottom: 0"> *@
+                        <div class="col-md-12" style="margin-top: 30px;">
                             <div class="card-text text-muted small">
-                                @article.Author.Name
+                                @Html.ActionLink(article.Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = article.AuthorId }, htmlAttributes: new {@class="text-muted"})
                             </div>
                             <small class="text-muted">@article.CreatedAt</small>
                             <span style="float: right; cursor: pointer;">
                                 @if (article.IsBookmarked())
                                 {
-                                    <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/bookmarked.png"/>
+                                    <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/bookmarked.png" />
                                 }
                                 else
                                 {
-                                    <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png"/>
+                                    <img id="@article.Id" class="bookmark" width="20" height="20" src="~/Content/assets/img/unbookmark.png" />
                                 }
                             </span>
                         </div>
 
                     </div>
                     <div class="col-md-3">
-                        <img style="height: 150px" src="~/Content/assets/img/demo/blog8.jpg">
+                        <img style="height: 160px" class="thumbnail" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
+                        @* <img style="height: 150px" src=""> *@
                     </div>
 
                 </div>
@@ -147,7 +175,6 @@
         $('.bookmark').click(function() {
             var articleId = $(this)[0].id;
             var imageTag = $(this);
-            console.log(articleId);
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("ToggleBookmark", "Api")",
@@ -156,11 +183,14 @@
                 }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: function(response) {
-                    if (response.result)
+                success: function (response) {
+//                    $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
+                    if (response.result) {
                         $(imageTag).attr('src', 'Content/assets/img/bookmarked.png');
-                    else
+                    }
+                    else {
                         $(imageTag).attr('src', 'Content/assets/img/unbookmark.png');
+                    }
                 },
                 failure: function(response) {
                     console.log("Failure " + response);

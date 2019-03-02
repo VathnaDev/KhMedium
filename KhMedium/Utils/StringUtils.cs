@@ -12,5 +12,10 @@ namespace KhMedium.Utils
         {
             return Path.Combine(HttpContext.Current.Server.MapPath("~/FileUpload/"), path);
         }
+
+        public static string GetArticleThumbnailPath(string path)
+        {
+            return ("/FileUpload/" + path);
+        }
     }
 }

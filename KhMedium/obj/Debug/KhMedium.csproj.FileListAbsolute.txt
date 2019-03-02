@@ -198,10 +198,6 @@ D:\ASP\kh\KhMedium\bin\Microsoft.AI.Web.xml
 D:\ASP\kh\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache
 D:\ASP\kh\KhMedium\obj\Debug\KhMedium.dll
 D:\ASP\kh\KhMedium\obj\Debug\KhMedium.pdb
-E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
-E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CoreCompileInputs.cache
-E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
-E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
 E:\VisualStudioProjects\KhMedium\KhMedium\bin\ApplicationInsights.config
 E:\VisualStudioProjects\KhMedium\KhMedium\bin\roslyn\csc.exe
 E:\VisualStudioProjects\KhMedium\KhMedium\bin\roslyn\csc.exe.config
@@ -300,7 +296,11 @@ E:\VisualStudioProjects\KhMedium\KhMedium\bin\Microsoft.AI.DependencyCollector.x
 E:\VisualStudioProjects\KhMedium\KhMedium\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\VisualStudioProjects\KhMedium\KhMedium\bin\Microsoft.AI.WindowsServer.xml
 E:\VisualStudioProjects\KhMedium\KhMedium\bin\Microsoft.AI.Web.xml
+E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
+E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CoreCompileInputs.cache
 E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CopyComplete
-C:\Users\user\documents\visual studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
-C:\Users\user\documents\visual studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CoreCompileInputs.cache
-C:\Users\user\documents\visual studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CopyComplete
+E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
+E:\VisualStudioProjects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csproj.CopyComplete

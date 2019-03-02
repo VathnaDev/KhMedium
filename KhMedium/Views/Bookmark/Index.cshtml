@@ -1,0 +1,113 @@
+﻿@using KhMedium.Utils
+@model KhMedium.Models.ViewModel.BookmarkViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .mw800 {
+        max-width: 800px !important
+    }
+    .bookmark-header {
+        padding-top: 64px;
+        padding-bottom: 80px;
+    }
+    .article-content {
+        overflow: hidden !important;
+        max-height: 47px !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        font-weight: 400 !important;
+    }
+
+    .thumbnail {
+        border-radius: 3px;
+    }
+
+    .text-dark:hover {
+        text-decoration: none;
+    }
+    .k {
+        display: block;
+    }
+    .j {
+        box-sizing: border-box;
+    }
+    .i {
+        max-width: 900px;
+    }
+    .h {
+        width: 100%;
+    }
+    .g {
+        margin-right: auto;
+    }
+    .f {
+        margin-left: auto;
+    }
+    .e {
+        padding-right: 0px;
+    }
+    .d {
+        padding-left: 0px;
+    }
+    .remove {
+        color: rgba(0, 0, 0, .5) !important;
+    }
+    .remove:hover {
+        color: black !important;
+    }
+</style>
+<div class="container mw800">
+    <div class="row justify-content-between">
+        <div class="col-md-12">
+            <div class="row bookmark-header">
+                <div class="col-md-8">
+                    <h1>Bookmark</h1>
+                </div>
+            </div>
+        </div>
+        <section class="d e f g h i j k">
+            @* <div class="col-md-8"> *@
+                @foreach (var bookmark in Model.Bookmarks)
+                {
+                    <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
+                        <div class="col-md-9">
+                            <h2 class="col-md-12 mb-1 h4 font-weight-bold">
+                                <a>@Html.ActionLink(bookmark.Article.Title, "Index", "ArticleDetail", routeValues: new { id = bookmark.Article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
+                            </h2>
+                            <div class="col-md-12 article-content">
+                                @(new HtmlString(bookmark.Article.Content))
+                            </div>
+                            @* <div class="col-md-12" style="position: absolute; bottom: 0"> *@
+                            <div class="col-md-12" style="margin-top: 30px">
+                                <div class="card-text text-muted small">
+                                    @Html.ActionLink(bookmark.Article.Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = bookmark.Article.AuthorId }, htmlAttributes: new { @class = "text-muted" })
+                                </div>
+                                <small class="text-muted">@bookmark.Article.CreatedAt</small>
+                                <a class="nav-link remove" style="float: right; cursor: pointer">
+                                    Remove
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <img style="height: 160px" class="thumbnail" src="@StringUtils.GetArticleThumbnailPath(bookmark.Article.Thumbnail)">
+                            @* <img style="height: 150px" src=""> *@
+                        </div>
+
+                    </div>
+                }
+            
+                @* </div> *@
+        
+            </section>
+
+    </div>
+
+</div>
+
+
