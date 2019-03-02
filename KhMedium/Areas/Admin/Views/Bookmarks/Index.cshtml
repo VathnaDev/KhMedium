@@ -6,12 +6,12 @@
 }
 
 
-@Html.ActionLink("Create", "Create", "Bookmarks", new {@Class = "btn btn-info pull-right"})
+@Html.ActionLink("បង្កើត", "Create", "Bookmarks", new {@Class = "btn btn-info pull-right"})
 <br/>
 <br/>
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">List of Bookmarks</h3>
+        <h3 class="box-title">បញ្ជីចំណាំ</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -20,10 +20,10 @@
             <thead>
 
             <tr>
-                <th>No</th>
-                <th>Article Title</th>
-                <th>User</th>
-                <th style="width: 20%">Action</th>
+                <th>លេខរៀង</th>
+                <th>ចំណងជើងអត្ថបទ</th>
+                <th>អ្នក​ប្រើ</th>
+                <th style="width: 20%">សកម្មភាព</th>
             </tr>
             </thead>
             <tbody>
@@ -35,8 +35,8 @@
                     <td>@bookmark.Article.Title</td>
                     <td>@bookmark.AspNetUser.UserName</td>
                     <td class="text-center">
-                        @Html.ActionLink("Edit", "Edits", new {id = bookmark.Id}, new {@class = "btn btn-warning"})
-                        @Html.ActionLink("Delete", "Delete", new {id = bookmark.Id}, new {@class = "btn btn-danger"})
+                        @Html.ActionLink("កែប្រែ", "Edits", new {id = bookmark.Id}, new {@class = "btn btn-warning"})
+                        @Html.ActionLink("លុប", "Delete", new {id = bookmark.Id}, new {@class = "btn btn-danger"})
                     </td>
                 </tr>
             }

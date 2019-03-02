@@ -17,17 +17,17 @@
                 <div class="col-sm-6">
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Create Category</h3>
+                            <h3 class="box-title">បង្កើតប្រភេទ</h3>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
-                                @Html.Label("Name")
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.Label("ឈ្មោះ")
+                                @Html.EditorFor(model => model.Name,new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                             </div>
                             <div class="box-footer">
-                                @Html.ActionLink("Cancel", "Index", "Category", new { @Class = "btn btn-default" })
-                                <button type="submit" class="btn btn-info pull-right">Save</button>
+                                @Html.ActionLink("បោះបង់", "Index", "Category", new { @Class = "btn btn-default" })
+                                <button type="submit" class="btn btn-info pull-right">រក្សាទុក</button>
                             </div>
                         </div>
                     </div>

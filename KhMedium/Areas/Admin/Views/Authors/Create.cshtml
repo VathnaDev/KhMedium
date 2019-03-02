@@ -2,11 +2,6 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
-}
-
-@{
-    ViewBag.Title = "Create";
     Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
@@ -21,37 +16,37 @@
                 <div class="col-sm-6">
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Create Author</h3>
+                            <h3 class="box-title">បង្កើតអ្នកនិពន្ធ</h3>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Name)
-                                @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+                                ឈ្មោះ​ពេញ
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Email)
-                                @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+                                អ៊ីមែល
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Bio)
-                                @Html.TextBoxFor(m => m.Bio, new {@class = "form-control"})
+                                ជីវ
+                                @Html.TextBoxFor(m => m.Bio, new { @class = "form-control" })
                             </div>
 
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Password)
-                                @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+                                ពាក្យសម្ងាត់
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(m => m.ConfirmPassword)
-                                @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+                                បញ្ជាក់ពាក្យសម្ងាត់
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Profile)
+                                រូបភាព
                                 <input type="file" name="Profile" class="form-control"/>
                             </div>
                             <div class="box-footer">
-                                @Html.ActionLink("Cancel", "Index", "Tags", new {@Class = "btn btn-default"})
-                                <button type="submit" class="btn btn-info pull-right">Save</button>
+                                @Html.ActionLink("បោះបង់", "Index", "Tags", new {@Class = "btn btn-default"})
+                                <button type="submit" class="btn btn-info pull-right">រក្សាទុក</button>
                             </div>
                         </div>
                     </div>
