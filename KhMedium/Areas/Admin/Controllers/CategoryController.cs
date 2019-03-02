@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());

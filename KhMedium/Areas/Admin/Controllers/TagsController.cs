@@ -8,6 +8,7 @@ using KhMedium.Entities;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TagsController : Controller
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());

@@ -219,6 +219,7 @@
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InfomationController.cs" />
     <Compile Include="Controllers\LutherController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -7626,6 +7627,7 @@
     <Folder Include="Areas\Author\Views\Shared\" />
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Models\" />
+    <Folder Include="Views\Infomation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

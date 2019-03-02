@@ -9,6 +9,7 @@ using KhMedium.Areas.Admin.Models;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BookmarksController : Controller
     {
         private readonly KhMediumEntities _entities = new KhMediumEntities();

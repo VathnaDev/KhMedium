@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ArticlesController : Controller
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());

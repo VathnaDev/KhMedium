@@ -12,6 +12,7 @@ using KhMedium.Utils;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AuthorsController : Controller
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
