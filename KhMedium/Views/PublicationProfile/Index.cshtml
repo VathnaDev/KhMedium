@@ -405,7 +405,9 @@
                     <div class="card" style="width: 18rem;">
                         <img src="@StringUtils.GetArticleThumbnailPath(@article.Thumbnail)" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title article-title">@article.Title</h5>
+                            <h5 class="card-title article-title">
+                                @Html.ActionLink(article.Title, "Index", "ArticleDetail", new { id = article.Id }, null)
+                            </h5>
                             <div class="card-text article-content">@(new HtmlString(@article.Content))</div>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             <div class="uiScale uiScale-ui--regular uiScale-caption--regular u-flexCenter u-marginVertical24 u-fontSize15 js-postMetaLockup">

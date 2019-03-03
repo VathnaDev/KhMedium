@@ -52,7 +52,7 @@ namespace KhMedium.Controllers
             _context.Articles.Add(article);
             _context.Complete();
 
-            return View("Index");
+            return RedirectToAction("Index", "Home");
         }
 
     }

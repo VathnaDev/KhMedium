@@ -341,7 +341,7 @@
             </h1>
             <div class="uiScale uiScale-ui--regular uiScale-caption--regular u-flexCenter u-marginVertical24 u-fontSize15 js-postMetaLockup">
                 <div class="u-flex0">
-                    <a class="link u-baseColor--link avatar" href="#"
+                    <a class="link u-baseColor--link avatar"
                        data-action="show-user-card" data-action-source="post_header_lockup" data-action-value="b0d50f0b5bb7"
                        data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">
                         <img src="@StringUtils.GetArticleThumbnailPath(@Model.Article.Author.ProfilePicture)" class="avatar-image u-size50x50"
@@ -354,15 +354,15 @@
                         @* <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker" *@
                         @*    href="#" data-action="show-user-card" data-action-value="b0d50f0b5bb7" *@
                         @*    data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">@Model.Article.Author.Name</a> *@
-                        <span class="followState js-followState" data-user-id="b0d50f0b5bb7">
-
-                            <button class="button button--primary button--smallest button--dark u-noUserSelect button--withChrome u-accentColor--buttonDark button--follow js-followButton u-marginLeft10 u-xs-hide"
-                                    data-action="toggle-subscribe-user" data-action-value="b0d50f0b5bb7" data-action-source="post_header_lockup-b0d50f0b5bb7-------------------------follow_byline"
-                                    data-subscribe-source="post_header_lockup" data-follow-context-entity-id="f022e8641c1a">
-                                <span class="button-label  button-defaultState js-buttonLabel">Follow</span>
-                                <span class="button-label button-activeState">Following</span>
-                            </button>
-                        </span>
+                        @* <span class="followState js-followState" data-user-id="b0d50f0b5bb7"> *@
+                        @* *@
+                        @*     <button class="button button--primary button--smallest button--dark u-noUserSelect button--withChrome u-accentColor--buttonDark button--follow js-followButton u-marginLeft10 u-xs-hide" *@
+                        @*             data-action="toggle-subscribe-user" data-action-value="b0d50f0b5bb7" data-action-source="post_header_lockup-b0d50f0b5bb7-------------------------follow_byline" *@
+                        @*             data-subscribe-source="post_header_lockup" data-follow-context-entity-id="f022e8641c1a"> *@
+                        @*         <span class="button-label  button-defaultState js-buttonLabel">Follow</span> *@
+                        @*         <span class="button-label button-activeState">Following</span> *@
+                        @*     </button> *@
+                        @* </span> *@
                     </div>
                     <div class="ui-caption u-noWrapWithEllipsis js-testPostMetaInlineSupplemental">
                         <time datetime="2019-01-10T20:02:26.519Z">@Model.Article.CreatedAt</time>

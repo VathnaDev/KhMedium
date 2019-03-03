@@ -7616,7 +7616,7 @@
     <Content Include="Views\Tag\Index.cshtml" />
     <Content Include="_AdminLayoutStart.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
-    <Content Include="Views\Publication\Create.cshtml" />
+    <Content Include="Views\Publication\_Create.cshtml" />
     <Content Include="Views\Publication\Index.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Search\Publications.cshtml" />
@@ -7628,6 +7628,7 @@
     <Content Include="Views\ArticleDetail\Index.cshtml" />
     <Content Include="Views\Bookmark\Index.cshtml" />
     <Content Include="Views\PublicationProfile\Index.cshtml" />
+    <Content Include="Views\Publication\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

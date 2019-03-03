@@ -55,7 +55,7 @@ namespace KhMedium.Controllers
             _context.AuthorPublication.Add(authorPub);
 
             _context.Complete();
-            return View();
+            return RedirectToAction("Index", "Publication");
         }
     }
 }
