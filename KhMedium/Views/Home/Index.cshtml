@@ -38,7 +38,7 @@
         @if (Model.FeatureArticles.Any())
         {
             <div class="card border-0 mb-4 box-shadow h-xl-300">
-                <div style="background-image: url(@StringUtils.GetArticleThumbnailPath(Model.FeatureArticles[0].Thumbnail)); height: 150px; background-size: cover; background-repeat: no-repeat;">
+                <div style="background-image: url(@StringUtils.GetArticleThumbnailPath(Model.FeatureArticles[0].Thumbnail)); height: 200px; background-size: cover; background-repeat: no-repeat;">
                     @* @Html.ActionLink("123", "Index", "ArticleDetail", routeValues: new { topicId = "123" }, htmlAttributes: new { @class = "nav-link" }) *@
                 </div>
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
@@ -47,7 +47,7 @@
                         @Html.ActionLink(Model.FeatureArticles[0].Title, "Index", "ArticleDetail", routeValues: new { id = Model.FeatureArticles[0].Id }, htmlAttributes: new { @class = "text-dark ellipsis-title", @style="max-height: 28px;" })
                         @* <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a> *@
                     </h2>
-                    <div class="card-text article-content">
+                    <div class="card-text article-content" style="max-height: 100px !important;">
                         @(new HtmlString(@Model.FeatureArticles[0].Content))
                     </div>
                     <div>

@@ -21,7 +21,7 @@ namespace KhMedium.Controllers
         {
             string uid = "";
 
-            var allArticles = _context.Articles.GetAll().OrderBy(a => a.CreatedAt).Take(10).ToList();
+            var allArticles = _context.Articles.GetAll().OrderBy(a => a.CreatedAt).Where(a => a.DeletedAt == null).Take(10).ToList();
 
             if (User.Identity.IsAuthenticated)
             {
@@ -30,9 +30,9 @@ namespace KhMedium.Controllers
             var viewModel = new HomeViewModel()
             {
                 Topics = _context.Topics.GetAll().ToList(),
-                FeatureArticles = _context.Articles.GetFeatureArticle(uid).Take(4).ToList(),
-                BasedHistoryArticles = _context.Articles.GetFeatureArticle(uid),
-                PopularArticles = _context.Articles.GetPopularArticle(uid).Take(4).ToList(),
+                FeatureArticles = _context.Articles.GetFeatureArticle(uid).Where(a => a.DeletedAt == null).Take(4).ToList(),
+                BasedHistoryArticles = _context.Articles.GetFeatureArticle(uid).Where(a => a.DeletedAt == null).ToList(),
+                PopularArticles = _context.Articles.GetPopularArticle(uid).Where(a => a.DeletedAt == null).Take(4).ToList(),
                 AllStoriesArticles = allArticles
                 
             };

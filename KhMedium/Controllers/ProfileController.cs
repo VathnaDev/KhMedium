@@ -26,7 +26,7 @@ namespace KhMedium.Controllers
             var viewModel = new ProfileViewModel()
             {
                 Author = author,
-                Articles = _context.Authors.Get(author.Id).Articles.ToList(), 
+                Articles = _context.Authors.Get(author.Id).Articles.Where(a => a.DeletedAt == null).ToList(), 
                 Followings = _context.Authors.Get(author.Id).Followings.ToList(),
                 Followers = _context.Authors.Get(author.Id).Followers.ToList()
             };

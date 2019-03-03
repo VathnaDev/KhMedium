@@ -21,7 +21,7 @@ namespace KhMedium.Controllers
             var articles = new List<Article>();
             foreach (var auth in pub.AuthorPublications)
             {
-                articles.AddRange(auth.Author.Articles);
+                articles.AddRange(auth.Author.Articles.Where(a => a.DeletedAt == null));
             }
 
             var viewModel = new PublicationProfileViewModel()

@@ -18,9 +18,9 @@ namespace KhMedium.Controllers
         {
             var viewModel = new TopicArticlesViewModel()
             {
-                LatestArticles = _context.Articles.GetArticlesByTopic(topicId),
-                FeatureArticle = _context.Articles.GetArticlesByTopic(topicId).FirstOrDefault(),
-                PopularArticles = _context.Articles.GetArticlesByTopic(topicId),
+                LatestArticles = _context.Articles.GetArticlesByTopic(topicId).Where(a => a.DeletedAt == null).ToList(),
+                FeatureArticle = _context.Articles.GetArticlesByTopic(topicId).FirstOrDefault(a => a.DeletedAt == null),
+                PopularArticles = _context.Articles.GetArticlesByTopic(topicId).Where(a => a.DeletedAt == null).ToList(),
                 RelatedTopics = new List<string>(),
                 Topic = _context.Topics.Get(topicId)
             };
