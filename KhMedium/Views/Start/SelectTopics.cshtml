@@ -21,6 +21,11 @@
         vertical-align: middle;
         line-height: 90px;
     }
+    .btn-info, .btn-info:hover {
+        color: #FFF;
+        background-color: #9400d3;
+        border-color: #9400d3;
+    }
 </style>
 
 <br/>
@@ -29,10 +34,10 @@
     <div class="container">
         <div class="row">
             <h3 id="title" class="col-md-10">
-                Select all the topics you're interested in reading about.
+                ជ្រើសរើសប្រធានបទទាំងអស់ដែលអ្នកចាប់អារម្មណ៍ក្នុងការអាន
             </h3>
             <div class="col-md-2 pull-right">
-                <input type="submit" id = "btn-start" class = "btn btn-info" name="save" value="Start Reading" />
+                <input type="submit" id = "btn-start" class = "btn btn-info" name="save" value="ចាប់ផ្ដើមអាន" />
             </div>
         </div>
         <div class="row">
@@ -66,19 +71,19 @@
         function toggleTopic(e) {
             var topic = $(this).data('value');
             if (selectedTopics.indexOf(topic) < 0) {
-                $(this).css('background-color', 'rgba(3,168,124, 0.7)');
+                $(this).css('background-color', 'rgba(148, 0, 211, 0.5)');
                 selectedTopics.push(topic);
             } else {
-                $(this).css('background-color', 'rgba(0,0,0, 0.7)');
+                $(this).css('background-color', 'rgba(0,0,0, 0.8)');
                 selectedTopics.splice(selectedTopics.indexOf(topic), 1);
             }
 
             if (selectedTopics.length > 4) {
                 $('#btn-start').show();
-                $('#title').html("Great! We'll make sure you see the best stories on those topics");
+                $('#title').html("ល្អណាស់! យើងនឹងធ្វើឱ្យប្រាកដថាអ្នកឃើញរឿងរ៉ាវល្អ ៗ នៅលើប្រធានបទទាំងនោះ");
             } else {
                 $('#btn-start').hide();
-                $('#title').html("Select all the topics you're interested in reading about.");
+                $('#title').html("ជ្រើសរើសប្រធានបទទាំងអស់ដែលអ្នកចាប់អារម្មណ៍ក្នុងការអាន");
             }
 
             $('#selectedTopics').empty();
