@@ -70,26 +70,25 @@
             top: 20px;
             z-index: 9999 !important;
         }
+
         .inset {
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            box-shadow:
-                      inset 0 0 0 2px rgba(255,255,255,0.6), 
-                      0 1px 1px rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 0 2px rgba(255,255,255,0.6), 0 1px 1px rgba(0,0,0,0.1);
             background-color: transparent !important;
             z-index: 999;
             margin-top: 10px;
         }
 
-        .inset img {
-            border-radius: inherit;
-            width: inherit;
-            height: inherit;
-            display: block;
-            position: relative;
-            z-index: 998;
-        }
+            .inset img {
+                border-radius: inherit;
+                width: inherit;
+                height: inherit;
+                display: block;
+                position: relative;
+                z-index: 998;
+            }
         /* Style The Dropdown Button */
         .dropbtn {
             color: white;
@@ -120,26 +119,26 @@
             z-index: 1;
         }
 
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: rgba(0, 0, 0, .5);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: rgba(0, 0, 0, .5);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
 
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: white;
-            color: black;
-        }
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: white;
+                    color: black;
+                }
 
         /* Show the dropdown menu on hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-    /* .btn-auth { */
+        /* .btn-auth { */
         /*     color: rgb(148, 0, 211) !important; */
         /*     border: 1px solid rgb(148, 0, 211); */
         /* } */
@@ -148,20 +147,24 @@
         /*     color: white; */
         /*     background-color: rgb(148, 0, 211); */
         /* }    */
-        
+
     </style>
     <link href="https://fonts.googleapis.com/css?family=Angkor|Nokora|Preahvihear" rel="stylesheet">
     <style>
-        h1, h2, h3, h4, h5, h6 { font-family: 'Preahvihear', cursive; }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Preahvihear', cursive;
+        }
 
-        body { font-family: 'Nokora', serif; }
+        body {
+            font-family: 'Nokora', serif;
+        }
     </style>
 </head>
 <body>
-<!--------------------------------------
-NAVBAR
+    <!--------------------------------------
+    NAVBAR
 
-    --------------------------------------->
+        --------------------------------------->
     <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/"><strong>KhMedium</strong></a>
@@ -171,7 +174,7 @@ NAVBAR
             <div class="navbar-collapse collapse" id="navbarColor02" style="">
                 <ul class="navbar-nav mr-auto d-flex align-items-center">
                     <li class="nav-item">
-                        <a>@(Html.ActionLink("Business","Index", "Topics", routeValues:  new { topicId = "66ef99f4-32da-4daf-ae91-20fd7ec81b36" }, htmlAttributes: new { @class = "nav-link" }))<span class="sr-only">(current)</span></a>
+                        <a>@(Html.ActionLink("Business", "Index", "Topics", routeValues: new { topicId = "66ef99f4-32da-4daf-ae91-20fd7ec81b36" }, htmlAttributes: new { @class = "nav-link" }))<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a>@(Html.ActionLink("Design", "Index", "Topics", routeValues: new { topicId = "736f4fe2-331e-42e9-a857-a50828cee176" }, htmlAttributes: new { @class = "nav-link" }))</a>
@@ -200,23 +203,23 @@ NAVBAR
                     <ul class="nav navbar-nav navbar-right d-flex align-items-center">
                         <li>
                             <div class="dropdown">
-                                <div class="inset"> 
-                                    <img src="http://rs775.pbsrc.com/albums/yy35/PhoenyxStar/link-1.jpg~c200"> 
-                                </div> 
+                                <div class="inset">
+                                    <img src="http://rs775.pbsrc.com/albums/yy35/PhoenyxStar/link-1.jpg~c200">
+                                </div>
                                 <div class="dropdown-content">
-                                    <a href="../article/create">New Story</a>
-                                    <a href="../publication/index">Publication</a>
-                                    <a href="../bookmark/index">Bookmarks</a>
-                                    @Html.ActionLink("Profile", "Index", "Profile", routeValues: new { userId = User.Identity.GetUserId(), authorId = "" }, htmlAttributes:null)
+                                    <a href="../article/create">បង្កើតអត្ថបទ</a>
+                                    <a href="../publication/index">ការបោះពុម្ពផ្សាយ</a>
+                                    <a href="../bookmark/index">មើលពេលក្រោយ</a>
+                                    @Html.ActionLink("គណនី", "Index", "Profile", routeValues: new { userId = User.Identity.GetUserId(), authorId = "" }, htmlAttributes: null)
                                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                     {
                                         @Html.AntiForgeryToken()
-                                        <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                                        <a href="javascript:document.getElementById('logoutForm').submit()">ចាកចេញ</a>
                                     }
                                 </div>
                                 <a class="dropbtn"></a>
                             </div>
-                       
+
                         </li>
                     </ul>
                 }
@@ -225,10 +228,10 @@ NAVBAR
                     <ul class="navbar-nav ml-auto d-flex align-items-center">
                         <li class="nav-item highlight btn-sign-in">
                             @* <a class="nav-link" href="https://www.facebook.com">Sign In</a> *@
-                            <a>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link" })</a>
+                            <a>@Html.ActionLink("ចូលគណនី", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</a>
                         </li>
                         <li class="nav-item highlight btn-register">
-                            <a>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</a>
+                            <a>@Html.ActionLink("បង្កើតគណនី", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</a>
                         </li>
                     </ul>
                 }
@@ -247,17 +250,17 @@ NAVBAR
     --------------------------------------->
     <div class="container mt-5">
         @RenderBody()
-        
+
 
         <footer class="bg-white border-top p-3 text-muted small">
             <div class="row align-items-center justify-content-between">
                 <div>
-                    <span class="navbar-brand mr-2"><strong>KhMedium</strong></span> Copyright &copy;
+                    <span class="navbar-brand mr-2"><strong>KhMedium</strong></span> រក្សសិទ្ធដោយ &copy;
                     <script>document.write(new Date().getFullYear())</script>
-                    . All rights reserved.
+                    . រក្សាសិទ្ធិគ្រប់យ៉ាង.
                 </div>
                 <div>
-                    Made with <a target="_blank" class="text-secondary font-weight-bold" href="https://www.wowthemes.net/mundana-free-html-bootstrap-template/">KhMedium Team</a> by RUPP YEAR 4 CLASS E1.
+                    បង្កើតដោយក្រុម <a target="_blank" class="text-secondary font-weight-bold" href="https://www.wowthemes.net/mundana-free-html-bootstrap-template/">KhMedium</a> ដោយ RUPP YEAR 4 CLASS E1.
                 </div>
             </div>
         </footer>

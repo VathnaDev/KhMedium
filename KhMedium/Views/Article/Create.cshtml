@@ -20,7 +20,7 @@
             photo.Save(@"~\" + imagePath);
         }
     }
-   
+
 }
 <style>
     .margin-top60 {
@@ -119,30 +119,30 @@
         margin-top: 30px;
     }
 </style>
-@using (Html.BeginForm("CreateArticle", "Article", FormMethod.Post, new {enctype = "multipart/form-data"}))
+@using (Html.BeginForm("CreateArticle", "Article", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="container">
         <div class="row">
-            <h1 class="col-md-12">Create Article</h1>
+            <h1 class="col-md-12">បង្កើតអត្ថបទ</h1>
             <div class="col-md-12 form-group row margin-top60">
                 <div class="col-md-12 input-border-bottom">
-                    <input type="text" name="Title" class="form-control title" placeholder="Title">
+                    <input type="text" name="Title" class="form-control title" placeholder="ចំណងជើង">
                 </div>
             </div>
             <div class="col-md-12">
-                <label for="Image">Article Thumbnail</label>
+                <label for="Image">រូបដំណាងអត្ថបទ</label>
                 <span class="btn btn-default btn-file">
-                    Browse <input type="file" name="ArticlesImage">
+                    រកមើល <input type="file" name="ArticlesImage">
                 </span>
                 <label id="fileName"></label>
-                <br/>      
+                <br />
             </div>
-            @Html.DropDownListFor(x => Model.TopicId, new SelectList(Model.Topics, "Id", "Name"), htmlAttributes: new {@class = "form-control topic"})
+            @Html.DropDownListFor(x => Model.TopicId, new SelectList(Model.Topics, "Id", "Name"), htmlAttributes: new { @class = "form-control topic" })
             <div class="col-md-12 margin-top30">
                 <textarea name="Content"></textarea>
             </div>
             <div class="col-md-12 none-padding-left  margin-top60">
-                <button class="btn btn-save">Save</button>
+                <button class="btn btn-save">រក្សាទុក</button>
             </div>
         </div>
 
@@ -158,6 +158,6 @@
             $("#fileName").text(fileName);
         });
     });
-</script>   
+</script>
 
 
