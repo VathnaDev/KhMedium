@@ -38,10 +38,8 @@ namespace KhMedium.Areas.Admin.Controllers
         public ActionResult Create(CreateArticleViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
-            var file = Request.Files[0];
             var userId = User.Identity.GetUserId();
             var author = _context.Authors.GetAuthorByUserId(userId);
-            //Foreign Keys are simulated for simplicity
             var article = new Article();
             article.Id = Guid.NewGuid().ToString();
             article.Title = model.Title;
@@ -55,23 +53,36 @@ namespace KhMedium.Areas.Admin.Controllers
             article.Thumbnail = thumnail.Path;
             _context.Articles.Add(article);
             _context.Complete();
-
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edits(String id)
         {
-            var catergory = _context.Articles.Get(id);
-            return View(catergory);
+            var article = _context.Articles.Get(id);
+            var model = new CreateArticleViewModel
+            {
+                Id =  article.Id,
+                Title = article.Title,
+                Content = article.Content,
+                TopicId = article.TopicId,
+                ImageName = article.Thumbnail,
+                Topics = _context.Topics.GetAll().ToList()
+            };
+            return View(model);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edits(String id, Article article)
+        public ActionResult Edits(String id, CreateArticleViewModel viewModel)
         {
             if (!ModelState.IsValid)
-                return View(article);
+                return View(viewModel);
+            var article = _context.Articles.Get(viewModel.Id);
+            article.Title = viewModel.Title;
+            article.Content = viewModel.Content;
+            article.TopicId = viewModel.TopicId;
             article.UpdatedAt = DateTime.Now;
+            if(viewModel.ArticlesImage != null)
+                article.Thumbnail = FileController.SaveFile(viewModel.ArticlesImage).Path;
             _context.Articles.Update(article);
             _context.Complete();
             return RedirectToAction("Index");

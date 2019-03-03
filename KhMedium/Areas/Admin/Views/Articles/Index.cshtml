@@ -45,9 +45,9 @@
                         @article.Author.Name
                     </td>
                     <td class="text-center">
-                        @Html.ActionLink("មើល", "Details", new {id = article.Id}, new {@class = "btn btn-info"})
-                        @Html.ActionLink("កែប្រែ", "Edits", new {id = article.Id}, new {@class = "btn btn-warning"})
-                        @Html.ActionLink("លុប", "Delete", new {id = article.Id}, new {@class = "btn btn-danger"})
+                        @Html.ActionLink("មើល", "Index", "ArticleDetail", new { id = article.Id, area = "" }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("កែប្រែ", "Edits", new { id = article.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("លុប", "Delete", new { id = article.Id }, new { @class = "btn btn-danger" })
                     </td>
                 </tr>
             }

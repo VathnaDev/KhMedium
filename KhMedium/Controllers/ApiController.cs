@@ -93,6 +93,27 @@ namespace KhMedium.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"> Id is the publication or user or topic id</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize]
+        public JsonResult UnFollow(string id)
+        {
+            var currentUserId = User.Identity.GetUserId();
+            var following = _context.Followings.SingleOrDefault(f => f.UserId == currentUserId && f.FollowingId == id);
+            var follower = _context.Followers.SingleOrDefault(f => f.UserId == id && f.FollowerId == currentUserId);
+            _context.Followers.Remove(follower);
+            _context.Followings.Remove(following);
+            _context.Complete();
+            return Json(new
+            {
+                result = true
+            }, JsonRequestBehavior.AllowGet);
+        }
+
         public enum FollowType
         {
             Author,

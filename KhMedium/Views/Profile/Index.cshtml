@@ -561,7 +561,26 @@
                             @if (Model.Author.UserId != User.Identity.GetUserId())
                             {
                                 <div class="cp t u cb" style="margin-top: 18px;">
-                                    <a id="@Model.Author.Id" class="cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az btn btn-follow" style="color: rgb(148, 0, 211)">Follow</a>
+                                    @{ var isFollowing = false; }
+                                    @foreach (var authorFollow in Model.Followings)
+                                    {
+                                        if (authorFollow.AuthorId == Model.Author.Id)
+                                        {
+                                            isFollowing = true;
+
+                                        }
+                                      
+                                    }
+                                    @if (isFollowing)
+                                    {
+                                        <a id="@Model.Author.Id" class="cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az btn btn-following">Following</a>
+
+                                    }
+                                    else
+                                    {
+                                        <a id="@Model.Author.Id" class="cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az btn btn-follow">Follow</a>
+
+                                    }
                                 </div>
                             }
                             
@@ -662,20 +681,49 @@
 
         $('.btn-follow').click(function() {
             var authorId = $(this)[0].id;
+           
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("Follow", "Api")",
+                    data: JSON.stringify({
+                        "followingId": authorId,
+                        "type": "Author"
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(response) {
+                        var followingCount = parseInt($('.following-count').text().split(" ")[0]) + 1;
+                        $('.following-count').text(followingCount + " Followings");
+                        $('.btn-follow').text('Following');
+                        $('.btn-follow').removeClass("btn-follow").addClass("btn-following");
+                    },
+                    failure: function(response) {
+                        console.log("Failure " + response);
+                    },
+                    error: function(response) {
+                        console.log("Error " + response.message);
+                    }
+                });
+            
+            
+        });
+
+        $('.btn-following').click(function() {
+            var authorId = $(this)[0].id;
             $.ajax({
                 type: "POST",
-                url: "@Url.Action("Follow", "Api")",
+                url: "@Url.Action("UnFollow", "Api")",
                 data: JSON.stringify({
-                    "followingId": authorId,
-                    "type": "Author"
+                    "id": authorId
                 }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function(response) {
-                    var followingCount = parseInt($('.following-count').text().split(" ")[0]) + 1;
+                    console.log(response);
+                    var followingCount = parseInt($('.following-count').text().split(" ")[0]) - 1;
                     $('.following-count').text(followingCount + " Followings");
-                    $('.btn-follow').text('Following');
-                    $('.btn-follow').removeClass("btn-follow").addClass("btn-following");
+                    $('.btn-following').text('Follow');
+                    $('.btn-following').removeClass("btn-following").addClass("btn-follower");
                 },
                 failure: function(response) {
                     console.log("Failure " + response);
