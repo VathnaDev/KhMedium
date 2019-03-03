@@ -18,29 +18,30 @@ namespace KhMedium.Entities
         public Author()
         {
             this.Articles = new HashSet<Article>();
+            this.AuthorPublications = new HashSet<AuthorPublication>();
             this.Followers = new HashSet<Follower>();
             this.Followings = new HashSet<Following>();
-            this.AuthorPublications = new HashSet<AuthorPublication>();
         }
     
         public string Id { get; set; }
         public string Name { get; set; }
         public string ProfilePicture { get; set; }
+        public string Bio { get; set; }
         public string PublicationId { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public System.DateTime UpdatedAt { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
         public string UserId { get; set; }
-        public string Bio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Article> Articles { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AuthorPublication> AuthorPublications { get; set; }
         public virtual Publication Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Follower> Followers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Following> Followings { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AuthorPublication> AuthorPublications { get; set; }
     }
 }

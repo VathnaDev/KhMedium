@@ -23,6 +23,13 @@
     .text-dark:hover {
         text-decoration: none;
     }
+    .ellipsis-title {
+        overflow: hidden!important;
+        text-overflow: ellipsis!important;
+        display: -webkit-box!important;
+        -webkit-line-clamp: 2!important;
+        -webkit-box-orient: vertical;
+    }
 </style>
 
 <div class="container pt-4 pb-4">
@@ -37,7 +44,7 @@
                 <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
 
                     <h2 class="h4 font-weight-bold">
-                        @Html.ActionLink(Model.FeatureArticles[0].Title, "Index", "ArticleDetail", routeValues: new { id = Model.FeatureArticles[0].Id }, htmlAttributes: new { @class = "text-dark" })
+                        @Html.ActionLink(Model.FeatureArticles[0].Title, "Index", "ArticleDetail", routeValues: new { id = Model.FeatureArticles[0].Id }, htmlAttributes: new { @class = "text-dark ellipsis-title", @style="max-height: 28px;" })
                         @* <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a> *@
                     </h2>
                     <p class="card-text article-content">
@@ -63,12 +70,12 @@
                 var article = Model.FeatureArticles[i];
                 <div class="flex-md-row mb-4 box-shadow">
                     <div class="mb-3 d-flex align-items-center">
-                        <img height="80" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
+                        <img height="120" width="200" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
                         <div class="pl-3">
                             <h2 class="mb-2 h6 font-weight-bold">
-                                <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
+                                <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark ellipsis-title", @style="max-height: 20px;" })</a>
                             </h2>
-                            <div class="card-text text-muted small article-content">
+                            <div class="card-text text-muted small article-content" style="max-height: 45px !important;">
                                 @(new HtmlString(@article.Content))
                             </div>
                             <small class="text-muted">@article.CreatedAt</small>
@@ -92,7 +99,7 @@
                 <div class="mb-3 d-flex justify-content-between" style="margin-bottom: 2rem !important">
                     <div class="col-md-9">
                         <h2 class="col-md-12 mb-1 h4 font-weight-bold">
-                            <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
+                            <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark ellipsis-title", @style="max-height: 28px;" })</a>
                         </h2>
                         <div class="col-md-12 article-content">
                             @(new HtmlString(article.Content))
@@ -121,7 +128,7 @@
 
                     </div>
                     <div class="col-md-3">
-                        <img style="height: 160px" class="thumbnail" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
+                        <img style="height: 160px; object-fit: cover" class="rounded" src="@StringUtils.GetArticleThumbnailPath(article.Thumbnail)">
                         @* <img style="height: 150px" src=""> *@
                     </div>
 
@@ -139,7 +146,7 @@
                         <li>
                             <span>
                                 <h6 class="font-weight-bold">
-                                    <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark" })</a>
+                                    <a>@Html.ActionLink(article.Title, "Index", "ArticleDetail", routeValues: new { id = article.Id }, htmlAttributes: new { @class = "text-dark article-title" })</a>
                                    
                                 </h6>
                                 <p class="text-muted">

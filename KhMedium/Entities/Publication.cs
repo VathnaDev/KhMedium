@@ -17,29 +17,29 @@ namespace KhMedium.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Publication()
         {
+            this.AuthorPublications = new HashSet<AuthorPublication>();
             this.Authors = new HashSet<Author>();
             this.Followers = new HashSet<Follower>();
             this.Followings = new HashSet<Following>();
-            this.AuthorPublications = new HashSet<AuthorPublication>();
         }
     
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Logo { get; set; }
+        public string Cover { get; set; }
         public string ContactInfo { get; set; }
         public System.DateTime UpdatedAt { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
-        public string Cover { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AuthorPublication> AuthorPublications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Author> Authors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Follower> Followers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Following> Followings { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AuthorPublication> AuthorPublications { get; set; }
     }
 }

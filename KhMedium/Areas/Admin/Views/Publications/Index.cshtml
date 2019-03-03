@@ -5,12 +5,12 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
-@Html.ActionLink("Create", "Create", "Publications", new { @Class = "btn btn-info pull-right" })
+@Html.ActionLink("បង្កើត", "Create", "Publications", new { @Class = "btn btn-info pull-right" })
 <br />
 <br />
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">List of Publications</h3>
+        <h3 class="box-title">បញ្ជីនៃសាធារណៈជន</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -19,15 +19,15 @@
             <thead>
 
                 <tr>
-                    <th>No</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>ContactInfo</th>
-                    <th>Avatar</th>
-                    <th>Logo</th>
-                    <th>Create At</th>
-                    <th>Update At</th>
-                    <th style="width: 20%">Action</th>
+                    <th>លេខរៀង</th>
+                    <th>ឈ្មោះ</th>
+                    <th>ការពិពណ៌នា</th>
+                    <th>ទំនាក់ទំនង</th>
+@*                    <th>Avatar</th>*@
+                    <th>រូបសញ្ញា</th>
+@*                    <th>Create At</th>*@
+@*                    <th>Update At</th>*@
+                    <th style="width: 20%">សកម្មភាព</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,14 +40,14 @@
                         <td>@item.Name</td>
                         <td>@item.Description</td>
                         <td>@item.ContactInfo</td>
-                        <td><img src="@StringUtils.GetFullImagePath(item.Logo)" width="30" height="30"/></td>
-                        <td><img src="@StringUtils.GetFullImagePath(item.Cover)"  width="30" height="30"/></td>
-                        <td>@item.CreatedAt</td>
-                        <td>@item.UpdatedAt</td>
+                        <td><img src="~/FileUpload/@item.Logo" width="30" height="30"/></td>
+@*                        <td><img src="@StringUtils.GetFullImagePath(item.Cover)"  width="30" height="30"/></td>*@
+@*                        <td>@item.CreatedAt</td>*@
+@*                        <td>@item.UpdatedAt</td>*@
                        
                         <td class="text-center">
-                            @Html.ActionLink("Edit", "Edits", new { id = item.Id }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("កែប្រែ", "Edits", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("លុប", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
                         </td>
                     </tr>
                 }

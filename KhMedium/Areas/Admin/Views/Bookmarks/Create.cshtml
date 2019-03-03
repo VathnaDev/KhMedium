@@ -1,0 +1,51 @@
+﻿@model KhMedium.Areas.Admin.Models.BookmarkViewModel
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+<br/>
+@using (Html.BeginForm("Create", "Bookmarks", FormMethod.Post, new {@Class = "form-horizontal"}))
+{
+    @Html.AntiForgeryToken()
+    {
+        @Html.ValidationSummary(true)
+        {
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">បង្កើតចំណាំ</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.Articles, "អត្ថបទ", htmlAttributes: new {@class = "control-label "})
+                                </div>
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.ArticleId, Model.Articles, new {@class = "form-control"})
+                                    @Html.ValidationMessageFor(model => model.ArticleId, "", new {@class = "text-danger"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.AuthorId, "អ្នក​ប្រើ", htmlAttributes: new {@class = "control-label"})
+                                </div>
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.AuthorId, Model.Authors, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AuthorId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            @Html.ActionLink("ថយក្រោយ", "Index", "Bookmarks", new {@Class = "btn btn-default"})
+                            <button type="submit" class="btn btn-info pull-right">រក្សាទុក</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}

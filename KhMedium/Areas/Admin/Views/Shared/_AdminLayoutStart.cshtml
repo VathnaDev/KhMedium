@@ -7,80 +7,86 @@
     <title>AdminLTE 2 | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-   
+
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link href="https://fonts.googleapis.com/css?family=Angkor|Nokora|Preahvihear" rel="stylesheet">
+    <style>
+    h1, h2, h3, h4, h5, h6 { font-family: 'Preahvihear', cursive; }
+
+        body { font-family: 'Nokora', serif; }
+    </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-  
-    <div class="wrapper">
-        @{
-            Html.RenderPartial("_Header");
-        }
-        <!-- Left side column. contains the logo and sidebar -->
-        @{
-            Html.RenderPartial("_NavBar");
-        }
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    Dashboard
-                    <small>Control panel</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
-            </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <!-- Small boxes (Stat box) -->
-                @RenderBody()
-                @*@RenderSection("content", true)*@
+<div class="wrapper">
+    @{
+        Html.RenderPartial("_Header");
+    }
+    <!-- Left side column. contains the logo and sidebar -->
+    @{
+        Html.RenderPartial("_NavBar");
+    }
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                ផ្ទាំងគ្រប់គ្រង
+                <small>ផ្ទាំងបញ្ជា</small>
+            </h1>
+            @*                <ol class="breadcrumb">*@
+            @*                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>*@
+            @*                    <li class="active">Dashboard</li>*@
+            @*                </ol>*@
+        </section>
 
-                <!-- /.row -->
-                <!-- Main row -->
-                <div class="row">
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            @RenderBody()
+            @*@RenderSection("content", true)*@
 
-                </div>
-                <!-- /.row (main row) -->
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
 
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                <b>Version</b> 2.4.0
             </div>
-            <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-            reserved.
-        </footer>
+            <!-- /.row (main row) -->
 
-        <!-- Control Sidebar -->
-        @{
-            Html.RenderPartial("_ControlSlideBar");
-        }
-        <!-- /.control-sidebar -->
-        <!-- Add the sidebar's background. This div must be placed
-        immediately after the control sidebar -->
-        <div class="control-sidebar-bg"></div>
+        </section>
+        <!-- /.content -->
     </div>
-    <!-- ./wrapper -->
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.4.0
+        </div>
+        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    @{
+        Html.RenderPartial("_ControlSlideBar");
+    }
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+    immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
 
 
-    @Scripts.Render("~/bundles/js")
-    @RenderSection("scripts", required: false)
+@Scripts.Render("~/bundles/js")
+@RenderSection("scripts", required: false)
 
-    <script>
-        $.widget.bridge('uibutton', $.ui.button);
-    </script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
 
 </body>
 

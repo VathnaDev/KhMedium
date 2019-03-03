@@ -1,0 +1,58 @@
+﻿@model KhMedium.Models.ViewModel.RegisterViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+
+<br/>
+@using (Html.BeginForm("Create", "Authors", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    {
+        @Html.ValidationSummary(true)
+        {
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">បង្កើតអ្នកនិពន្ធ</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                ឈ្មោះ​ពេញ
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                អ៊ីមែល
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                ជីវ
+                                @Html.TextBoxFor(m => m.Bio, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                ពាក្យសម្ងាត់
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                បញ្ជាក់ពាក្យសម្ងាត់
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                រូបភាព
+                                <input type="file" name="Profile" class="form-control"/>
+                            </div>
+                            <div class="box-footer">
+                                @Html.ActionLink("បោះបង់", "Index", "Tags", new {@Class = "btn btn-default"})
+                                <button type="submit" class="btn btn-info pull-right">រក្សាទុក</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+}

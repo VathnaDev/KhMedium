@@ -1,13 +1,15 @@
-﻿<aside class="main-sidebar">
+﻿@using KhMedium.Controllers
+@using Microsoft.AspNet.Identity
+<aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- Sidebar user panel -->
+        <!-- Sidebar user panel -->]
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="~/Content/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="~/FileUpload/@InfomationController.GetLoginUser(User.Identity.GetUserId()).ProfilePicture" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>@InfomationController.GetLoginUser(User.Identity.GetUserId()).Name</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -25,35 +27,58 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <li class="header">ម៉ឺនុយ</li>
+            @*            <li class="active">*@
+            @*                <a href="#">*@
+            @*                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>*@
+            @*                </a>*@
+            @**@
+            @*            </li>*@
+            <li>
+                <a href="@Url.Action("Index", "Home") ">
+                    <i class="fa fa-dashboard text-green"></i> <span>ផ្ទាំងគ្រប់គ្រង</span>
                 </a>
-              
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Category") ">
+                    <i class="fa fa-list text-green"></i> <span>ប្រភេទ</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Topics") ">
+                    <i class="fa fa-tags text-green"></i> <span>ប្រធានបទ</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Articles") ">
+                    <i class="fa fa-newspaper-o text-green"></i> <span>អត្ថបទ</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Publications") ">
+                    <i class="fa fa-user-circle text-green"></i> <span>សាធារណៈជន</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Authors") ">
+                    <i class="fa fa-users text-green"></i> <span>អ្នកនិពន្ធ</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Bookmarks") ">
+                    <i class="fa fa-bookmark text-green"></i> <span>ចំណាំ</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Tags") ">
+                    <i class="fa fa-tags text-green"></i> <span>ស្លាក</span>
+                </a>
             </li>
 
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-folder"></i> <span>KhMedia</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="@Url.Action("Index", "Tags") "><i class="fa fa-circle-o text-green"></i> <span>Tags</span></a></li>
-                    <li><a href="@Url.Action("Index", "Topics") "><i class="fa fa-circle-o text-green"></i> <span>Topics</span></a></li>
-                    <li><a href="@Url.Action("Index", "Category") "><i class="fa fa-circle-o text-green"></i> <span>Category</span></a></li>
-                    <li><a href="@Url.Action("Index", "Publications") "><i class="fa fa-circle-o text-green"></i> <span>Publications</span></a></li>
 
-                 
-                </ul>
-            </li>
-          
-            
-            <li class="header">LABELS</li>
+            @*            <li class="header">LABELS</li>*@
             @*<li><a href=""@Url.Action("actionName", "controllerName", new { id = "id" })"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>*@
-           
+
         </ul>
     </section>
     <!-- /.sidebar -->

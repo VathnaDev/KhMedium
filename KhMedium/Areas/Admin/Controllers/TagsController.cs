@@ -8,6 +8,7 @@ using KhMedium.Entities;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TagsController : Controller
     {
         private readonly UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
@@ -15,22 +16,7 @@ namespace KhMedium.Areas.Admin.Controllers
         // GET: Admin/Tags
         public ActionResult Index()
         {
-          
-            //Seed Data For First Run
             var tags = _context.Tags.GetAll().OrderBy(t => t.Name);
-            if (tags.ToList().Count == 0)
-            {
-                for (var i = 0; i < 30; i++)
-                    _context.Tags.Add(
-                        new Tag()
-                        {
-                            Id = Guid.NewGuid().ToString(),
-                            Name = "Tag " + i,
-                            CreatedAt = DateTime.Now
-                        }
-                    );
-                _context.Complete();
-            }
             return View(tags);
         }
 

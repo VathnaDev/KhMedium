@@ -4,12 +4,12 @@
     Layout = "~/Areas/admin/Views/Shared/_AdminLayoutStart.cshtml";
 }
 
-@Html.ActionLink("Create", "Create", "Tags", new { @Class = "btn btn-info pull-right" })
+@Html.ActionLink("បង្កើត", "Create", "Tags", new { @Class = "btn btn-info pull-right" })
 <br />
 <br />
 <div class="box">
 <div class="box-header">
-    <h3 class="box-title">List of Tags</h3>
+    <h3 class="box-title">បញ្ជីស្លាក</h3>
 </div>
 <!-- /.box-header -->
 <div class="box-body">
@@ -18,10 +18,9 @@
         <thead>
 
             <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Create At</th>
-                <th style="width: 20%">Action</th>
+                <th>លេខរៀង</th>
+                <th>ឈ្មោះ</th>
+                <th style="width: 20%">សកម្មភាព</th>
             </tr>
         </thead>
         <tbody>
@@ -31,10 +30,9 @@
                 <tr>
                     <td>@i</td>
                     <td>@tag.Name</td>
-                    <td>@tag.CreatedAt</td>
                     <td class="text-center">
-                        @Html.ActionLink("Edit", "Edits", new { id = tag.Id }, new { @class = "btn btn-warning" })
-                        @Html.ActionLink("Delete", "Delete", new { id = tag.Id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("កែប្រែ", "Edits", new { id = tag.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("លុប", "Delete", new { id = tag.Id }, new { @class = "btn btn-danger" })
                     </td>
                 </tr>
             }

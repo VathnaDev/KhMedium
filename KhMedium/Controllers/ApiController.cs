@@ -50,5 +50,54 @@ namespace KhMedium.Controllers
                 }, JsonRequestBehavior.AllowGet);
             }
         }
+
+        [HttpPost]
+        [Authorize]
+        public JsonResult Follow(string followingId, FollowType type)
+        {
+            var following = new Following()
+            {
+                Id = Guid.NewGuid().ToString(),
+                FollowingId = followingId,
+                UserId = User.Identity.GetUserId(),
+                CreatedAt = DateTime.Now,
+            };
+
+            var follower = new Follower()
+            {
+                Id = Guid.NewGuid().ToString(),
+                CreatedAt = DateTime.Now
+            };
+
+            switch (type)
+            {
+                case FollowType.Author:
+                    following.AuthorId = followingId;
+                    var author = _context.Authors.Get(followingId);
+                    follower.UserId = author.AspNetUser.Id;
+                    follower.FollowerId = author.Id;
+                    break;
+                case FollowType.Publication:
+                    following.PublicationId = followingId;
+                    break;
+                case FollowType.Topic:
+                    following.TopicId = followingId;
+                    break;
+            }
+            _context.Followers.Add(follower);
+            _context.Followings.Add(following);
+            _context.Complete();
+            return Json(new
+            {
+                result = true
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public enum FollowType
+        {
+            Author,
+            Publication,
+            Topic
+        }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model KhMedium.Areas.Admin.Models.AuthorViewModel
+@{
+    ViewBag.Title = "Edits";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutStart.cshtml";
+}
+<br />
+@using (Html.BeginForm("Edits", "Authors", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    {
+        @Html.ValidationSummary(true)
+        {
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">កែប្រែអ្នកនិពន្ធ</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                ឈ្មោះ​ពេញ
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                អ៊ីមែល
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                ជីវ
+                                @Html.TextBoxFor(m => m.Bio, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                រូបភាព
+                                <input type="file" name="Profile" class="form-control"/>
+                            </div>
+                            <div class="box-footer">
+                                @Html.ActionLink("បោះបង់", "Index", "Authors", new { @Class = "btn btn-default" })
+                                <button type="submit" class="btn btn-info pull-right">រក្សាទុក</button>
+                            </div>
+                            @Html.HiddenFor(model => model.AuthorId)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+}

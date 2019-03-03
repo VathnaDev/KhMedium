@@ -19,7 +19,7 @@ namespace KhMedium.Controllers
             var viewModel = new TopicArticlesViewModel()
             {
                 LatestArticles = _context.Articles.GetArticlesByTopic(topicId),
-                FeatureArticle = _context.Articles.GetArticlesByTopic(topicId).FirstOrDefault() ?? new Article(),
+                FeatureArticle = _context.Articles.GetArticlesByTopic(topicId).FirstOrDefault(),
                 PopularArticles = _context.Articles.GetArticlesByTopic(topicId),
                 RelatedTopics = new List<string>(),
                 Topic = _context.Topics.Get(topicId)
