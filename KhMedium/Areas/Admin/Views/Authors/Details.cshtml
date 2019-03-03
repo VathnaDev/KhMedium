@@ -41,7 +41,7 @@
                     <div class="form-group">
                         @Html.Label("អ្នកតាម", new {@class = "col-md-2 control-label"})
                         <div class="col-md-10">
-                            @Html.DisplayFor(m => m.Followers.Count, new {@class = "form-control"})
+                            @Html.DisplayFor(m => m.AspNetUser.Followers.Count, new {@class = "form-control"})
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         @Html.Label("តាម", new {@class = "col-md-2 control-label"})
                         <div class="col-md-10">
-                            @Html.DisplayFor(m => m.Followings.Count, new {@class = "form-control"})
+                            @Html.DisplayFor(m => m.AspNetUser.Followings.Count, new {@class = "form-control"})
                         </div>
                     </div>
                 </div>
