@@ -28,5 +28,10 @@ namespace KhMedium.Data
             return article.Bookmarks.Any(b => b.UserId == HttpContext.Current.User.Identity.GetUserId());
         }
 
+        public static bool IsFollowing(this Following following,String followingId)
+        {
+            return following.FollowingId == followingId;
+        }
+
     }
 }
