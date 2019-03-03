@@ -1,10 +1,10 @@
 ﻿@using KhMedium.Utils
 @model KhMedium.Models.ViewModel.TopicArticlesViewModel
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Scripts{
     <link href="@Url.Content("~/Content/css/style.nav.css.css")" rel="stylesheet" type="text/css" />
@@ -15,7 +15,6 @@
         font-size: 30px;
         color: black;
         font-weight: 800;
-
     }
 
     .topic-description {
@@ -42,6 +41,7 @@
         .btn-follow:hover {
             color: rgb(148, 0, 211);
         }
+
     .article-content {
         overflow: hidden !important;
         max-height: 50px !important;
@@ -60,10 +60,15 @@
         -webkit-box-orient: vertical;
         line-height: 2.0;
     }
-   
+
     a:hover {
         text-decoration: none;
         color: rgb(148, 0, 211)
+    }
+
+    .btn-following {
+        color: white !important;
+        background-color: rgb(148, 0, 211);
     }
 </style>
 <section class="k l m n o p q s cg content">
@@ -176,9 +181,9 @@
                                                 </div>
                                             </div>
                                             @*<div class="z fo ac">
-                                                <a href="" class="c dm dn fp fq fr fs">
-                                                </a>
-                                            </div>*@
+                                                    <a href="" class="c dm dn fp fq fr fs">
+                                                    </a>
+                                                </div>*@
                                         </div>
                                         <div class="ft c">
                                             <div class="o s cg">
@@ -193,10 +198,10 @@
                                                     </span>
                                                 </div>
                                                 @*<div class="c ev as fu ac">
-                                                    <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path>
-                                                    </svg>
-                                                </div>*@
+                                                        <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>*@
                                             </div>
                                         </div>
                                     </div>
@@ -224,7 +229,7 @@
             @*<span class="topic-description">Founding, funding, and beyond.</span>*@
             <br />
             @* <div class="col-md-12"> *@
-            <button class="btn btn-follow" style="margin-top: 5px;">Follow</button>
+            <button id="@Model.Topic.Id" class="btn btn-follow" style="margin-top: 5px;">Follow</button>
             @*<button class="btn btn-follow" style="margin-top: 5px;    width: 95px;">ធ្វើតាម</button>*@
             @* </div> *@
             <br />
@@ -243,3 +248,30 @@
 
     </div>
 </section>
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $('.btn-follow').click(function() {
+        var topicId = $(this)[0].id;
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Follow", "Api")",
+            data: JSON.stringify({
+                "followingId": topicId,
+                "type": "Topic"
+            }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(response) {
+
+                $('.btn-follow').text('Following');
+                $('.btn-follow').removeClass("btn-follow").addClass("btn-following");
+            },
+            failure: function(response) {
+                console.log("Failure " + response);
+            },
+            error: function(response) {
+                console.log("Error " + response.message);
+            }
+        });
+    });
+</script>

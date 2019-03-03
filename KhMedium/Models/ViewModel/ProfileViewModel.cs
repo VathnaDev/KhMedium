@@ -10,5 +10,7 @@ namespace KhMedium.Models.ViewModel
     {
         public Author Author { get; set; }
         public List<Article> Articles { get; set; }
+        public List<Following> Followings { get; set; }
+        public List<Follower> Followers { get; set; }
     }
 }

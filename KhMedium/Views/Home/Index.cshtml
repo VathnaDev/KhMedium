@@ -47,9 +47,9 @@
                         @Html.ActionLink(Model.FeatureArticles[0].Title, "Index", "ArticleDetail", routeValues: new { id = Model.FeatureArticles[0].Id }, htmlAttributes: new { @class = "text-dark ellipsis-title", @style="max-height: 28px;" })
                         @* <a class="text-dark" href="article.html">@(new HtmlString(Model.FeatureArticles[0].Title))</a> *@
                     </h2>
-                    <p class="card-text article-content">
+                    <div class="card-text article-content">
                         @(new HtmlString(@Model.FeatureArticles[0].Content))
-                    </p>
+                    </div>
                     <div>
                         <small class="d-block">
                             @Html.ActionLink(Model.FeatureArticles[0].Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = Model.FeatureArticles[0].AuthorId }, htmlAttributes: new { @class = "text-muted" })

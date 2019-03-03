@@ -529,6 +529,18 @@
     .text-dark:hover {
         text-decoration: none;
     }
+    .cz {
+        border: 1px solid rgb(148, 0, 211);
+        color: rgb(148, 0, 211);
+    }
+        .cz:hover {
+            border: 1px solid rgb(148, 0, 211);
+            color: rgb(148, 0, 211);
+        }
+    .btn-following {
+        color: white !important;
+        background-color: rgb(148, 0, 211);
+    }
 </style>
 <body>
     <div id="root">
@@ -546,9 +558,13 @@
                         </div>
                         <div class="bz ca t u cb">
                             <h1 class="cc z cd ag ce ah cf cg ch k">@Model.Author.Name</h1>
-                            <div class="cp t u cb">
-                                <a href="" class="cq cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az">Edit profile</a>
-                            </div>
+                            @if (Model.Author.UserId != User.Identity.GetUserId())
+                            {
+                                <div class="cp t u cb" style="margin-top: 18px;">
+                                    <a id="@Model.Author.Id" class="cc z cr cs ct cu cv aw cw ag b ah ai cx ak cy cz j da db az btn btn-follow" style="color: rgb(148, 0, 211)">Follow</a>
+                                </div>
+                            }
+                            
                         </div>
                         <div class="ci k">
                             <p class="cj ck ag b ah cl cm ak k"></p>
@@ -558,7 +574,7 @@
                             <span class="ag b ah ai aj ak k al am">
                                 <div class="t cb">
                                     <div class="be k">
-                                        <a href="" class="an ao ap aq ar as at au av aw co az ba bb bc">2 Following</a>
+                                        <a class="an ao ap aq ar as at au av aw co az ba bb bc following-count" style="cursor: default !important;">@Model.Followings.Count Followings</a>
                                     </div>
                                 </div>
                             </span>
@@ -634,6 +650,32 @@
                     else {
                         $(imageTag).attr('src', 'Content/assets/img/unbookmark.png');
                     }
+                },
+                failure: function(response) {
+                    console.log("Failure " + response);
+                },
+                error: function(response) {
+                    console.log("Error " + response.message);
+                }
+            });
+        });
+
+        $('.btn-follow').click(function() {
+            var authorId = $(this)[0].id;
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Follow", "Api")",
+                data: JSON.stringify({
+                    "followingId": authorId,
+                    "type": "Author"
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(response) {
+                    var followingCount = parseInt($('.following-count').text().split(" ")[0]) + 1;
+                    $('.following-count').text(followingCount + " Followings");
+                    $('.btn-follow').text('Following');
+                    $('.btn-follow').removeClass("btn-follow").addClass("btn-following");
                 },
                 failure: function(response) {
                     console.log("Failure " + response);
