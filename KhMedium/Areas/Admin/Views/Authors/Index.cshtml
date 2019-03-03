@@ -42,7 +42,7 @@
                     <td>@category.Name</td>
                     <td>@category.Bio</td>
                     <td>
-                        <img src="@category.ProfilePicture" width="20" height="20"/>
+                        <img src="~/FileUpload/@category.ProfilePicture" width="40" height="40"/>
                     </td>
                     <td class="text-center">
                         @Html.ActionLink("មើល", "Details", new { id = category.Id }, new { @class = "btn btn-info" })
