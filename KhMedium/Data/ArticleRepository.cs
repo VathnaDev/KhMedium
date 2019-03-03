@@ -52,11 +52,15 @@ namespace KhMedium.Data
 
             if (userId.IsEmpty()) return articles;
             var user = KhMediumContext.AspNetUsers.SingleOrDefault(u => u.Id == userId);
-            articles = (from userTopic in user?.UserTopics
-                from article in articles
-                where userTopic.TopicId == article.TopicId
-                select article
-            ).ToList();
+            if (user != null)
+            {
+                articles = (from userTopic in user?.UserTopics
+                        from article in articles
+                        where userTopic.TopicId == article.TopicId
+                        select article
+                    ).ToList();
+            }
+           
             return articles;
         }
 
