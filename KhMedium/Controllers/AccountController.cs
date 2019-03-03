@@ -189,7 +189,7 @@ namespace KhMedium.Controllers
 
         public bool RegisterNewUser(RegisterViewModel model)
         {
-            var user = new ApplicationUser {UserName = model.Name, Email = model.Email};
+            var user = new ApplicationUser {UserName = model.Email, Email = model.Email};
             var result = UserManager.Create(user, model.Password);
             if (result.Succeeded)
             {
@@ -202,7 +202,7 @@ namespace KhMedium.Controllers
                 author.UpdatedAt = DateTime.Now;
                 author.UserId = user.Id;
                 author.ProfilePicture = model.Profile == null
-                    ? "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Wikipedia_User-ICON_byNightsight.png/600px-Wikipedia_User-ICON_byNightsight.png"
+                    ? "default.png"
                     : FileController.SaveFile(model.Profile).Path;
                 context.Authors.Add(author);
                 context.Complete();

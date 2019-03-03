@@ -7562,6 +7562,8 @@
     <Content Include="Entities\Db.edmx.diagram">
       <DependentUpon>Db.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\Edits.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
