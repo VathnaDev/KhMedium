@@ -324,10 +324,34 @@
         padding-left: 50px;
         padding-right: 50px;
     }
+    .card-img-top {
+        height: 200px;
+    }
     .btn-follow {
         color: white;
         background-color: rgb(148, 0, 211);
         background-image: none;
+    }
+    .article-content {
+        overflow: hidden !important;
+        height: 47px !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        font-weight: 400 !important;
+    }
+    .article-title {
+        overflow: hidden !important;
+        height: 25px !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+    
+    }
+    .article-author {
+        color: black !important;
     }
         /* .btn-follow:hover { */
         /*     color: white; */
@@ -374,15 +398,15 @@
     </div>
     <div style="padding-bottom: 1%"></div>
     <div class="collectionHeader-heroAndInlineNav u-borderBox u-maxWidth1072 u-paddingLeft20 u-paddingRight20 u-marginAuto u-foreground js-collectionHeader">
-        <div class="row" style="padding: 20px">
+        <div class="row">
             @foreach (var article in Model.Articles)
             {
-                <div class="col-sm">
+                <div class="col-sm" style="padding: 20px">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://cdn-images-1.medium.com/max/311/1*7250sTGDO9j2z2AwEGV5bA@2x.png" class="card-img-top" alt="...">
+                        <img src="@StringUtils.GetArticleThumbnailPath(@article.Thumbnail)" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title article-title">@article.Title</h5>
+                            <div class="card-text article-content">@(new HtmlString(@article.Content))</div>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             <div class="uiScale uiScale-ui--regular uiScale-caption--regular u-flexCenter u-marginVertical24 u-fontSize15 js-postMetaLockup">
                                 <div class="u-flex0">
@@ -395,15 +419,15 @@
                                 </div>
                                 <div class="u-flex1 u-paddingLeft15 u-overflowHidden">
                                     <div class="u-paddingBottom3">
-                                        <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker"
-                                           href="#" data-action="show-user-card" data-action-value="b0d50f0b5bb7"
-                                           data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">Simon Morris</a>
+                                        @Html.ActionLink(article.Author.Name, "Index", "Profile", routeValues: new { userId = "", authorId = article.Author.Id }, htmlAttributes: new { @class = "ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker article-author" })
+                                        @* <a class="ds-link ds-link--styleSubtle ui-captionStrong u-inlineBlock link link--darken link--darker" *@
+                                        @*    href="#" data-action="show-user-card" data-action-value="b0d50f0b5bb7" *@
+                                        @*    data-action-type="hover" data-user-id="b0d50f0b5bb7" dir="auto">@article.Author.Name</a> *@
 
                                     </div>
                                     <div class="ui-caption u-noWrapWithEllipsis js-testPostMetaInlineSupplemental">
-                                        <time datetime="2019-01-10T20:02:26.519Z">Jan 11</time>
+                                        <time style="color: rgba(0, 0, 0, .5);">@article.CreatedAt</time>
                                         <span class="middotDivider u-fontSize12"></span>
-                                        <span class="readingTime" title="8 min read"></span>
                                     </div>
                                 </div>
                             </div>

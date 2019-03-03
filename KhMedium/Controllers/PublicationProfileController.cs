@@ -16,10 +16,18 @@ namespace KhMedium.Controllers
         // GET: PublicationProfile
         public ActionResult Index(string publicationId)
         {
+
+            var pub = _context.Publications.Get(publicationId);
+            var articles = new List<Article>();
+            foreach (var auth in pub.AuthorPublications)
+            {
+                articles.AddRange(auth.Author.Articles);
+            }
+
             var viewModel = new PublicationProfileViewModel()
             {
                 Publication = _context.Publications.Get(publicationId),
-                Articles = _context.Articles.Find(a => a.Author.Publication.Id == publicationId).ToList()
+                Articles = articles
 
             };
         
