@@ -384,6 +384,7 @@
     <Compile Include="Utils\StringUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Content\assets\css\main.css" />
     <Content Include="Content\assets\css\vendor\bootstrap-toc.css" />
     <Content Include="Content\assets\css\vendor\prism.css" />
@@ -7629,6 +7630,7 @@
     <Content Include="Views\Start\SelectTopics.cshtml" />
     <Content Include="Views\ArticleDetail\Index.cshtml" />
     <Content Include="Views\Bookmark\Index.cshtml" />
+    <Content Include="Views\Topics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
