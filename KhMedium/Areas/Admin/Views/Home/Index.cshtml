@@ -161,7 +161,7 @@
                         <img src="~/FileUpload/@item.Logo" width="30" height="30"/>
                     </td>
                     <td class="text-center">
-                        @Html.ActionLink("មើល", "Details", "Articles", new {id = item.Id}, new {@class = "btn btn-info"})
+                        @Html.ActionLink("មើល", "Index", "PublicationProfile", new { publicationId = item.Id, area = "" }, new {@class = "btn btn-info"})
                     </td>
                 </tr>
             }

@@ -68,14 +68,15 @@ namespace KhMedium.Controllers
                 Id = Guid.NewGuid().ToString(),
                 CreatedAt = DateTime.Now
             };
-
             switch (type)
             {
                 case FollowType.Author:
                     following.AuthorId = followingId;
                     var author = _context.Authors.Get(followingId);
                     follower.UserId = author.AspNetUser.Id;
-                    follower.FollowerId = author.Id;
+                    var currentAuthor = _context.Authors.GetAuthorByUserId(following.UserId);
+                    follower.FollowerId = currentAuthor.Id;
+                    follower.AuthorId = currentAuthor.Id;
                     break;
                 case FollowType.Publication:
                     following.PublicationId = followingId;

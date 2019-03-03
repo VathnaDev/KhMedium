@@ -41,7 +41,7 @@
                     <div class="form-group">
                         @Html.Label("អ្នកតាម", new {@class = "col-md-2 control-label"})
                         <div class="col-md-10">
-                            @Html.DisplayFor(m => m.Followers.Count, new {@class = "form-control"})
+                            @Html.DisplayFor(m => m.AspNetUser.Followers.Count, new {@class = "form-control"})
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         @Html.Label("តាម", new {@class = "col-md-2 control-label"})
                         <div class="col-md-10">
-                            @Html.DisplayFor(m => m.Followings.Count, new {@class = "form-control"})
+                            @Html.DisplayFor(m => m.AspNetUser.Followings.Count, new {@class = "form-control"})
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                             <th>
                                 ឈ្មោះ
                             </th>
-                            <th style="width: 20%">សកម្មភាព</th>
+@*                            <th style="width: 20%">សកម្មភាព</th>*@
                         </tr>
                         </thead>
                         <tbody>
@@ -187,9 +187,9 @@
                                     <img src="~/FileUpload/@image" width="30" height="30"/>
                                 </td>
                                 <td>@name</td>
-                                <td class="text-center">
-                                    @Html.ActionLink("លុប", "UnFollow", new {id = f.Id, authorId = Model.Id}, new {@class = "btn btn-danger"})
-                                </td>
+@*                                <td class="text-center">*@
+@*                                    @Html.ActionLink("លុប", "UnFollow", new {id = f.FollowingId, authorId = Model.Id}, new {@class = "btn btn-danger"})*@
+@*                                </td>*@
                             </tr>
                         }
                         </tbody>
@@ -221,7 +221,7 @@
                             <th>
                                 ឈ្មោះ
                             </th>
-                            <th style="width: 20%">Action</th>
+@*                            <th style="width: 20%">Action</th>*@
                         </tr>
                         </thead>
                         <tbody>
@@ -250,9 +250,9 @@
                                     <img src="~/FileUpload/@image" width="30" height="30"/>
                                 </td>
                                 <td>@name</td>
-                                <td class="text-center">
-                                    @Html.ActionLink("យកចេញ", "RemoveFollower", new { id = f.Id, authorId = Model.Id }, new {@class = "btn btn-danger"})
-                                </td>
+@*                                <td class="text-center">*@
+@*                                    @Html.ActionLink("យកចេញ", "RemoveFollower", new { id = f.FollowerId, authorId = Model.Id }, new {@class = "btn btn-danger"})*@
+@*                                </td>*@
                             </tr>
                         }
                         </tbody>

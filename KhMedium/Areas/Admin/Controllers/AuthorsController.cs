@@ -9,6 +9,7 @@ using KhMedium.Areas.Admin.Models;
 using KhMedium.Controllers;
 using KhMedium.Models.ViewModel;
 using KhMedium.Utils;
+using Microsoft.AspNet.Identity;
 
 namespace KhMedium.Areas.Admin.Controllers
 {
@@ -62,6 +63,8 @@ namespace KhMedium.Areas.Admin.Controllers
             author.AspNetUser.Email = viewModel.Email;
             author.Bio = viewModel.Bio;
             author.UpdatedAt = DateTime.Now;
+            if (viewModel.Profile != null)
+                author.ProfilePicture = FileController.SaveFile(viewModel.Profile).Path;
             _context.Authors.Update(author);
             _context.Complete();
             return RedirectToAction("Index");
@@ -81,20 +84,23 @@ namespace KhMedium.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult UnFollow(String id,String authorId)
+        public ActionResult UnFollow(String id, String authorId)
         {
-            var following = _context.Followings.Get(id);
+            var currentUserId = User.Identity.GetUserId();
+            var following = _context.Followings.SingleOrDefault(f => f.UserId == currentUserId && f.FollowingId == id);
+            var follower = _context.Followers.SingleOrDefault(f => f.UserId == id && f.FollowerId == currentUserId);
+            _context.Followers.Remove(follower);
             _context.Followings.Remove(following);
             _context.Complete();
-            return RedirectToAction("Details", new { id = authorId });
+            return RedirectToAction("Details", new {id = authorId});
         }
 
         public ActionResult RemoveFollower(String id, String authorId)
         {
-            var follower= _context.Followers.Get(id);
+            var follower = _context.Followers.Get(id);
             _context.Followers.Remove(follower);
             _context.Complete();
-            return RedirectToAction("Details", new { id = authorId });
+            return RedirectToAction("Details", new {id = authorId});
         }
     }
 }
